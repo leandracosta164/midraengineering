@@ -1,0 +1,776 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/PageHero.astro";
+import CTA from "../components/CTA.astro";
+
+const values = [
+  {
+    title: "Technical Excellence",
+    text: "Every project is developed using sound engineering principles, attention to detail, and current industry standards."
+  },
+  {
+    title: "Client Partnership",
+    text: "We believe successful projects begin with communication, transparency, and responsiveness."
+  },
+  {
+    title: "Practical Design",
+    text: "Our solutions are designed to be efficient, buildable, and cost-conscious while meeting regulatory requirements."
+  },
+  {
+    title: "Integrity",
+    text: "We approach every project with professionalism, honesty, and accountability."
+  }
+];
+---
+
+<Layout
+title="About MIDRA Engineering"
+description="Learn about MIDRA Engineering and our commitment to delivering responsive civil engineering solutions throughout New Jersey."
+>
+
+<PageHero
+title="About MIDRA Engineering"
+subtitle="Professional Civil Engineering Solutions Built on Experience, Communication, and Practical Design."
+/>
+
+<section class="about-story">
+
+<div class="background-grid"></div>
+<div class="background-glow"></div>
+
+<div class="container">
+
+<div class="about-grid">
+
+<div class="about-content">
+
+<span class="section-tag">
+
+WHO WE ARE
+
+</span>
+
+<h2>
+
+Engineering That
+Puts Clients First.
+
+</h2>
+
+<p>
+
+MIDRA Engineering is a civil engineering consulting
+firm dedicated to delivering dependable engineering
+solutions for residential, commercial, and municipal
+projects throughout New Jersey.
+
+</p>
+
+<p>
+
+We understand that every project represents an
+investment. Whether planning a custom residence,
+developing commercial property, or improving public
+infrastructure, our objective is to simplify the
+engineering process while providing accurate,
+practical, and efficient solutions.
+
+</p>
+
+<p>
+
+From initial planning and permitting through final
+construction support, we work closely with clients,
+architects, surveyors, contractors, and municipalities
+to keep projects moving forward with confidence.
+
+</p>
+
+</div>
+
+<div class="about-card">
+
+<div class="card-top">
+
+<h3>
+
+Our Mission
+
+</h3>
+
+<p>
+
+Deliver engineering solutions that balance
+technical excellence with responsive client
+service.
+
+</p>
+
+</div>
+
+<div class="mission-list">
+
+<div>
+
+<strong>
+
+✔ Practical Engineering
+
+</strong>
+
+<span>
+
+Efficient designs that work in the field.
+
+</span>
+
+</div>
+
+<div>
+
+<strong>
+
+✔ Clear Communication
+
+</strong>
+
+<span>
+
+Keeping clients informed from start to finish.
+
+</span>
+
+</div>
+
+<div>
+
+<strong>
+
+✔ Reliable Delivery
+
+</strong>
+
+<span>
+
+Meeting schedules while maintaining quality.
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="values">
+
+<div class="container">
+
+<div class="section-header">
+
+<span>
+
+OUR VALUES
+
+</span>
+
+<h2>
+
+The Principles That
+Guide Every Project
+
+</h2>
+
+</div>
+
+<div class="values-grid">
+
+{
+values.map(value => (
+
+<div class="value-card">
+
+<h3>
+
+{value.title}
+
+</h3>
+
+<p>
+
+{value.text}
+
+</p>
+
+</div>
+
+))
+}
+
+</div>
+
+</div>
+
+</section>
+
+<CTA />
+
+<style>
+
+.about-story{
+
+position:relative;
+
+overflow:hidden;
+
+padding:130px 0;
+
+background:white;
+
+}
+
+.background-grid{
+
+position:absolute;
+
+inset:0;
+
+opacity:.18;
+
+background-image:
+
+linear-gradient(
+rgba(14,58,93,.05) 1px,
+transparent 1px
+),
+
+linear-gradient(
+90deg,
+rgba(14,58,93,.05) 1px,
+transparent 1px
+);
+
+background-size:60px 60px;
+
+pointer-events:none;
+
+}
+
+.background-glow{
+
+position:absolute;
+
+right:-240px;
+
+top:-220px;
+
+width:620px;
+
+height:620px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(
+circle,
+rgba(198,161,91,.10),
+transparent 72%
+);
+
+pointer-events:none;
+
+}
+
+.about-grid{
+
+position:relative;
+
+z-index:2;
+
+display:grid;
+
+grid-template-columns:
+
+1.15fr .85fr;
+
+gap:80px;
+
+align-items:center;
+
+}
+
+.about-content{
+
+max-width:700px;
+
+}
+
+.section-tag{
+
+display:inline-flex;
+
+align-items:center;
+
+padding:10px 18px;
+
+background:white;
+
+border:1px solid rgba(14,58,93,.08);
+
+border-radius:999px;
+
+font-size:.78rem;
+
+font-weight:800;
+
+letter-spacing:.14em;
+
+text-transform:uppercase;
+
+color:#0E3A5D;
+
+margin-bottom:26px;
+
+box-shadow:
+
+0 14px 35px rgba(0,0,0,.06);
+
+}
+.about-content h2{
+
+font-size:clamp(
+2.8rem,
+5vw,
+4.2rem
+);
+
+line-height:1.06;
+
+font-weight:800;
+
+letter-spacing:-.03em;
+
+color:#16324A;
+
+margin:0 0 28px;
+
+text-wrap:balance;
+
+}
+
+.about-content p{
+
+margin:0 0 22px;
+
+font-size:1.08rem;
+
+line-height:1.95;
+
+color:#66707C;
+
+}
+
+.about-card{
+
+position:relative;
+
+overflow:hidden;
+
+padding:44px;
+
+border-radius:30px;
+
+background:
+
+linear-gradient(
+135deg,
+#0E3A5D,
+#184F7C
+);
+
+color:white;
+
+box-shadow:
+
+0 35px 90px
+rgba(14,58,93,.18);
+
+}
+
+.about-card::before{
+
+content:"";
+
+position:absolute;
+
+top:-120px;
+
+right:-120px;
+
+width:280px;
+
+height:280px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(
+circle,
+rgba(255,255,255,.10),
+transparent 72%
+);
+
+}
+
+.card-top{
+
+position:relative;
+
+z-index:2;
+
+}
+
+.card-top h3{
+
+margin:0 0 16px;
+
+font-size:2rem;
+
+font-weight:800;
+
+}
+
+.card-top p{
+
+margin:0 0 34px;
+
+line-height:1.9;
+
+color:rgba(255,255,255,.84);
+
+}
+
+.mission-list{
+
+position:relative;
+
+z-index:2;
+
+display:grid;
+
+gap:26px;
+
+}
+
+.mission-list div{
+
+padding:22px 0;
+
+border-top:1px solid rgba(255,255,255,.16);
+
+}
+
+.mission-list div:first-child{
+
+border-top:none;
+
+padding-top:0;
+
+}
+
+.mission-list strong{
+
+display:block;
+
+margin-bottom:8px;
+
+font-size:1.15rem;
+
+font-weight:800;
+
+color:white;
+
+}
+
+.mission-list span{
+
+display:block;
+
+line-height:1.8;
+
+color:rgba(255,255,255,.80);
+
+}
+
+.values{
+
+position:relative;
+
+padding:130px 0;
+
+background:
+
+linear-gradient(
+180deg,
+#F8FAFC,
+#FFFFFF
+);
+
+}
+
+.section-header{
+
+max-width:760px;
+
+margin:0 auto 70px;
+
+text-align:center;
+
+}
+
+.section-header span{
+
+display:inline-flex;
+
+align-items:center;
+
+padding:10px 18px;
+
+background:white;
+
+border:1px solid rgba(14,58,93,.08);
+
+border-radius:999px;
+
+font-size:.78rem;
+
+font-weight:800;
+
+letter-spacing:.14em;
+
+text-transform:uppercase;
+
+color:#0E3A5D;
+
+margin-bottom:22px;
+
+box-shadow:
+
+0 14px 35px rgba(0,0,0,.05);
+
+}
+
+.section-header h2{
+
+font-size:clamp(
+2.7rem,
+5vw,
+3.9rem
+);
+
+line-height:1.1;
+
+font-weight:800;
+
+letter-spacing:-.03em;
+
+color:#16324A;
+
+margin:0;
+
+}
+
+.values-grid{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(2,1fr);
+
+gap:30px;
+
+}
+
+.value-card{
+
+padding:38px;
+
+background:white;
+
+border-radius:24px;
+
+border:1px solid #EEF2F6;
+
+box-shadow:
+
+0 18px 45px rgba(15,58,93,.06);
+
+transition:
+
+transform .35s ease,
+box-shadow .35s ease,
+border-color .35s ease;
+
+}
+
+.value-card:hover{
+
+transform:translateY(-8px);
+
+border-color:
+
+rgba(198,161,91,.28);
+
+box-shadow:
+
+0 30px 70px rgba(15,58,93,.12);
+
+}
+
+.value-card h3{
+
+margin:0 0 18px;
+
+font-size:1.45rem;
+
+font-weight:800;
+
+color:#16324A;
+
+}
+
+.value-card p{
+
+margin:0;
+
+font-size:1rem;
+
+line-height:1.9;
+
+color:#66707C;
+
+}
+@media (max-width:1100px){
+
+.about-grid{
+
+grid-template-columns:1fr;
+
+gap:60px;
+
+}
+
+.about-content{
+
+max-width:100%;
+
+}
+
+.about-card{
+
+max-width:760px;
+
+margin:0 auto;
+
+}
+
+}
+
+@media (max-width:768px){
+
+.about-story,
+
+.values{
+
+padding:90px 0;
+
+}
+
+.about-content h2,
+
+.section-header h2{
+
+font-size:2.5rem;
+
+}
+
+.about-content p{
+
+font-size:1rem;
+
+}
+
+.values-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.about-card{
+
+padding:34px;
+
+}
+
+}
+
+@media (max-width:480px){
+
+.about-story,
+
+.values{
+
+padding:80px 0;
+
+}
+
+.section-tag,
+
+.section-header span{
+
+font-size:.68rem;
+
+padding:8px 14px;
+
+}
+
+.about-card{
+
+padding:28px;
+
+border-radius:24px;
+
+}
+
+.card-top h3{
+
+font-size:1.7rem;
+
+}
+
+.value-card{
+
+padding:28px;
+
+}
+
+.value-card h3{
+
+font-size:1.3rem;
+
+}
+
+}
+
+</style>
+
+</Layout>

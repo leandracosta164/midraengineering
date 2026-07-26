@@ -1,0 +1,809 @@
+---
+const stats = [
+  {
+    value: "100%",
+    label: "Client Focused"
+  },
+  {
+    value: "NJDEP",
+    label: "Compliant Designs"
+  },
+  {
+    value: "Residential",
+    label: "Commercial & Municipal"
+  },
+  {
+    value: "From Concept",
+    label: "Through Construction"
+  }
+];
+---
+
+<section class="trust-section">
+
+<div class="background-pattern"></div>
+<div class="background-glow"></div>
+
+<div class="container">
+
+<div class="trust-grid">
+
+<div class="trust-content">
+
+<span class="trust-tag">
+
+WHY CLIENTS TRUST MIDRA
+
+</span>
+
+<h2>
+
+Building Long-Term
+Relationships Through
+Quality Engineering.
+
+</h2>
+
+<p>
+
+At MIDRA Engineering, every project is approached
+with the same objective: provide practical engineering
+solutions while making the entire process as smooth
+and predictable as possible for our clients.
+
+</p>
+
+<p>
+
+We understand that engineering is more than drawings
+and calculations. It is communication, responsiveness,
+problem solving, and helping clients confidently move
+their projects from the earliest planning stages
+through construction.
+
+</p>
+
+<div class="trust-highlights">
+
+<div class="highlight">
+
+<div class="highlight-icon">
+
+✓
+
+</div>
+
+<div>
+
+<strong>
+
+Clear Communication
+
+</strong>
+
+<span>
+
+Keeping clients informed throughout every phase.
+
+</span>
+
+</div>
+
+</div>
+
+<div class="highlight">
+
+<div class="highlight-icon">
+
+✓
+
+</div>
+
+<div>
+
+<strong>
+
+Practical Solutions
+
+</strong>
+
+<span>
+
+Engineering decisions focused on real-world construction.
+
+</span>
+
+</div>
+
+</div>
+
+<div class="highlight">
+
+<div class="highlight-icon">
+
+✓
+
+</div>
+
+<div>
+
+<strong>
+
+Reliable Service
+
+</strong>
+
+<span>
+
+Responsive support from concept through completion.
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="trust-panel">
+
+<div class="panel-header">
+
+<h3>
+
+Our Commitment
+
+</h3>
+
+<p>
+
+Every project receives the same level of attention,
+precision and professionalism regardless of size.
+
+</p>
+
+</div>
+
+<div class="stats-grid">
+
+{
+stats.map((stat)=>(
+
+<div class="stat-card">
+
+<strong>
+
+{stat.value}
+
+</strong>
+
+<span>
+
+{stat.label}
+
+</span>
+
+</div>
+
+))
+}
+
+</div>
+
+<div class="panel-footer">
+
+<a
+href="/contact"
+class="trust-button"
+>
+
+Start Your Project
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.trust-section{
+
+position:relative;
+
+overflow:hidden;
+
+padding:140px 0;
+
+background:
+
+linear-gradient(
+135deg,
+#0E3A5D 0%,
+#123F66 50%,
+#194D76 100%
+);
+
+}
+
+.background-pattern{
+
+position:absolute;
+
+inset:0;
+
+opacity:.12;
+
+background-image:
+
+linear-gradient(
+rgba(255,255,255,.08) 1px,
+transparent 1px
+),
+
+linear-gradient(
+90deg,
+rgba(255,255,255,.08) 1px,
+transparent 1px
+);
+
+background-size:60px 60px;
+
+pointer-events:none;
+
+}
+
+.background-glow{
+
+position:absolute;
+
+top:-240px;
+
+right:-220px;
+
+width:650px;
+
+height:650px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(
+circle,
+rgba(198,161,91,.18),
+transparent 72%
+);
+
+pointer-events:none;
+
+}
+
+.trust-grid{
+
+position:relative;
+
+z-index:2;
+
+display:grid;
+
+grid-template-columns:
+
+1fr .9fr;
+
+gap:80px;
+
+align-items:center;
+
+}
+
+.trust-content{
+
+max-width:620px;
+
+color:white;
+
+}
+
+.trust-tag{
+
+display:inline-flex;
+
+align-items:center;
+
+padding:10px 18px;
+
+border-radius:999px;
+
+background:
+
+rgba(255,255,255,.12);
+
+backdrop-filter:blur(10px);
+
+border:1px solid rgba(255,255,255,.12);
+
+font-size:.78rem;
+
+font-weight:800;
+
+letter-spacing:.14em;
+
+text-transform:uppercase;
+
+margin-bottom:28px;
+
+}
+.trust-content h2{
+
+font-size:clamp(
+2.8rem,
+5vw,
+4.3rem
+);
+
+font-weight:800;
+
+line-height:1.06;
+
+letter-spacing:-.03em;
+
+margin:0 0 28px;
+
+text-wrap:balance;
+
+}
+
+.trust-content p{
+
+font-size:1.08rem;
+
+line-height:1.95;
+
+color:rgba(255,255,255,.82);
+
+margin:0 0 24px;
+
+}
+
+.trust-highlights{
+
+display:grid;
+
+gap:24px;
+
+margin-top:46px;
+
+}
+
+.highlight{
+
+display:flex;
+
+align-items:flex-start;
+
+gap:20px;
+
+padding:20px;
+
+border-radius:22px;
+
+background:
+
+rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.06);
+
+backdrop-filter:blur(8px);
+
+transition:
+
+transform .35s ease,
+background .35s ease,
+border-color .35s ease;
+
+}
+
+.highlight:hover{
+
+transform:translateX(8px);
+
+background:
+
+rgba(255,255,255,.08);
+
+border-color:
+
+rgba(198,161,91,.35);
+
+}
+
+.highlight-icon{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+width:54px;
+
+height:54px;
+
+flex-shrink:0;
+
+border-radius:16px;
+
+background:
+
+linear-gradient(
+135deg,
+#C6A15B,
+#D8B775
+);
+
+color:white;
+
+font-weight:800;
+
+font-size:1.15rem;
+
+box-shadow:
+
+0 16px 35px
+rgba(198,161,91,.35);
+
+}
+
+.highlight strong{
+
+display:block;
+
+margin-bottom:8px;
+
+font-size:1.15rem;
+
+font-weight:800;
+
+color:white;
+
+}
+
+.highlight span{
+
+display:block;
+
+font-size:1rem;
+
+line-height:1.8;
+
+color:rgba(255,255,255,.74);
+
+}
+
+.trust-panel{
+
+background:white;
+
+border-radius:32px;
+
+padding:42px;
+
+box-shadow:
+
+0 35px 90px
+rgba(0,0,0,.22);
+
+}
+
+.panel-header{
+
+margin-bottom:36px;
+
+}
+
+.panel-header h3{
+
+font-size:2rem;
+
+font-weight:800;
+
+color:#16324A;
+
+margin:0 0 14px;
+
+}
+
+.panel-header p{
+
+font-size:1rem;
+
+line-height:1.8;
+
+color:#66707C;
+
+margin:0;
+
+}
+
+.stats-grid{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(2,1fr);
+
+gap:22px;
+
+}
+
+.stat-card{
+
+padding:28px;
+
+border-radius:22px;
+
+background:#F8FAFC;
+
+border:1px solid transparent;
+
+transition:
+
+transform .35s ease,
+box-shadow .35s ease,
+border-color .35s ease;
+
+}
+
+.stat-card:hover{
+
+transform:translateY(-6px);
+
+background:white;
+
+border-color:
+
+rgba(198,161,91,.28);
+
+box-shadow:
+
+0 20px 50px
+rgba(14,58,93,.10);
+
+}
+
+.stat-card strong{
+
+display:block;
+
+margin-bottom:10px;
+
+font-size:1.45rem;
+
+font-weight:800;
+
+color:#0E3A5D;
+
+line-height:1.3;
+
+}
+
+.stat-card span{
+
+display:block;
+
+font-size:.96rem;
+
+line-height:1.7;
+
+color:#66707C;
+
+}
+
+.panel-footer{
+
+display:flex;
+
+justify-content:center;
+
+margin-top:40px;
+
+}
+.trust-button{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:18px 38px;
+
+border-radius:999px;
+
+background:#0E3A5D;
+
+color:white;
+
+text-decoration:none;
+
+font-weight:700;
+
+letter-spacing:.02em;
+
+transition:
+
+background .35s ease,
+transform .35s ease,
+box-shadow .35s ease;
+
+box-shadow:
+
+0 22px 55px
+rgba(14,58,93,.20);
+
+}
+
+.trust-button:hover{
+
+background:#184E79;
+
+transform:translateY(-4px);
+
+box-shadow:
+
+0 30px 70px
+rgba(14,58,93,.28);
+
+}
+
+@media (max-width:1100px){
+
+.trust-section{
+
+padding:110px 0;
+
+}
+
+.trust-grid{
+
+grid-template-columns:1fr;
+
+gap:70px;
+
+}
+
+.trust-content{
+
+max-width:760px;
+
+margin:0 auto;
+
+text-align:center;
+
+}
+
+.trust-highlights{
+
+max-width:650px;
+
+margin:46px auto 0;
+
+}
+
+.highlight{
+
+text-align:left;
+
+}
+
+.trust-panel{
+
+max-width:760px;
+
+margin:0 auto;
+
+}
+
+}
+
+@media (max-width:768px){
+
+.trust-section{
+
+padding:90px 0;
+
+}
+
+.trust-content h2{
+
+font-size:2.5rem;
+
+}
+
+.trust-content p{
+
+font-size:1rem;
+
+}
+
+.stats-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.trust-panel{
+
+padding:34px;
+
+}
+
+.highlight{
+
+gap:16px;
+
+padding:18px;
+
+}
+
+.highlight-icon{
+
+width:46px;
+
+height:46px;
+
+border-radius:14px;
+
+}
+
+}
+
+@media (max-width:480px){
+
+.trust-section{
+
+padding:80px 0;
+
+}
+
+.trust-tag{
+
+font-size:.68rem;
+
+padding:8px 14px;
+
+}
+
+.trust-panel{
+
+padding:28px;
+
+border-radius:24px;
+
+}
+
+.panel-header h3{
+
+font-size:1.7rem;
+
+}
+
+.stat-card{
+
+padding:22px;
+
+}
+
+}
+
+</style>

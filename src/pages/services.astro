@@ -1,0 +1,340 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/PageHero.astro";
+import CTA from "../components/CTA.astro";
+
+const services = [
+  {
+    title: "Residential Engineering",
+    description: "Engineering services for custom homes, additions, grading, drainage, septic design coordination, and site development."
+  },
+  {
+    title: "Commercial Development",
+    description: "Comprehensive civil engineering for commercial properties, office buildings, retail, and mixed-use developments."
+  },
+  {
+    title: "Stormwater Management",
+    description: "Stormwater design, detention systems, infiltration practices, and NJDEP-compliant drainage solutions."
+  },
+  {
+    title: "Site Planning",
+    description: "Complete site layout, grading, utility coordination, ADA compliance, and permitting support."
+  },
+  {
+    title: "Permitting",
+    description: "Preparation of plans and supporting documents for municipal, county, and state approvals."
+  },
+  {
+    title: "Construction Support",
+    description: "Engineering assistance throughout construction to help projects remain compliant and on schedule."
+  }
+];
+---
+
+<Layout
+title="Civil Engineering Services | MIDRA Engineering"
+description="Professional civil engineering services throughout New Jersey for residential, commercial, municipal, and land development projects."
+>
+
+<PageHero
+title="Engineering Services"
+subtitle="Comprehensive Civil Engineering Solutions for Residential, Commercial, and Municipal Projects."
+/>
+
+<section class="services-page">
+
+<div class="background-grid"></div>
+<div class="background-glow"></div>
+
+<div class="container">
+
+<div class="services-intro">
+
+<span>
+
+WHAT WE DO
+
+</span>
+
+<h2>
+
+Engineering Solutions
+Designed Around
+Your Project
+
+</h2>
+
+<p>
+
+From initial planning through final construction,
+MIDRA Engineering provides practical engineering
+solutions focused on efficiency, compliance,
+and long-term performance.
+
+</p>
+
+</div>
+
+<div class="services-grid">
+
+{
+services.map(service => (
+
+<div class="service-card">
+
+<h3>
+
+{service.title}
+
+</h3>
+
+<p>
+
+{service.description}
+
+</p>
+
+<a href="/contact">
+
+Discuss Your Project
+
+<span>
+
+→
+
+</span>
+
+</a>
+
+</div>
+
+))
+}
+
+</div>
+
+</div>
+
+</section>
+
+<CTA />
+
+<style>
+
+.services-page{
+
+position:relative;
+
+overflow:hidden;
+
+padding:130px 0;
+
+background:
+
+linear-gradient(
+180deg,
+#F8FAFC,
+#FFFFFF
+);
+
+}
+
+.background-grid{
+
+position:absolute;
+
+inset:0;
+
+opacity:.18;
+
+background-image:
+
+linear-gradient(
+rgba(14,58,93,.05) 1px,
+transparent 1px
+),
+
+linear-gradient(
+90deg,
+rgba(14,58,93,.05) 1px,
+transparent 1px
+);
+
+background-size:60px 60px;
+
+pointer-events:none;
+
+}
+
+.background-glow{
+
+position:absolute;
+
+left:-250px;
+
+bottom:-250px;
+
+width:650px;
+
+height:650px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(
+circle,
+rgba(198,161,91,.10),
+transparent 72%
+);
+
+pointer-events:none;
+
+}
+
+.services-intro{
+
+position:relative;
+
+z-index:2;
+
+max-width:760px;
+
+margin:0 auto 75px;
+
+text-align:center;
+
+}
+
+.services-intro span{
+
+display:inline-flex;
+
+align-items:center;
+
+padding:10px 18px;
+
+background:white;
+
+border:1px solid rgba(14,58,93,.08);
+
+border-radius:999px;
+
+font-size:.78rem;
+
+font-weight:800;
+
+letter-spacing:.14em;
+
+text-transform:uppercase;
+
+color:#0E3A5D;
+
+margin-bottom:24px;
+
+box-shadow:
+
+0 14px 35px rgba(0,0,0,.05);
+
+}
+@media (max-width:1100px){
+
+.services-page{
+
+padding:110px 0;
+
+}
+
+.services-grid{
+
+grid-template-columns:
+
+repeat(2,1fr);
+
+}
+
+}
+
+@media (max-width:768px){
+
+.services-page{
+
+padding:90px 0;
+
+}
+
+.services-intro{
+
+margin-bottom:55px;
+
+}
+
+.services-intro h2{
+
+font-size:2.5rem;
+
+}
+
+.services-intro p{
+
+font-size:1rem;
+
+}
+
+.services-grid{
+
+grid-template-columns:1fr;
+
+gap:26px;
+
+}
+
+.service-card{
+
+padding:34px;
+
+}
+
+}
+
+@media (max-width:480px){
+
+.services-page{
+
+padding:80px 0;
+
+}
+
+.services-intro span{
+
+font-size:.68rem;
+
+padding:8px 14px;
+
+}
+
+.services-intro h2{
+
+font-size:2rem;
+
+}
+
+.service-card{
+
+padding:28px;
+
+border-radius:20px;
+
+}
+
+.service-card h3{
+
+font-size:1.35rem;
+
+}
+
+}
+
+</style>
+
+</Layout>

@@ -1,0 +1,772 @@
+---
+const services = [
+  "Residential Engineering",
+  "Commercial Development",
+  "Stormwater Management",
+  "Site Planning",
+  "Permitting",
+  "Construction Support"
+];
+
+const company = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Projects", href: "/projects" },
+  { label: "Contact", href: "/contact" }
+];
+---
+
+<footer class="footer">
+
+<div class="background-grid"></div>
+<div class="background-glow"></div>
+
+<div class="footer-top">
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div class="footer-brand">
+
+<a
+href="/"
+class="footer-logo"
+>
+
+<img
+  src="/Final_Midra_Logo_White.png"
+  alt="MIDRA Engineering"
+/>
+
+</a>
+
+<p>
+
+MIDRA Engineering delivers practical,
+responsive civil engineering solutions
+for residential, commercial and municipal
+projects throughout New Jersey.
+
+</p>
+
+<div class="footer-badges">
+
+<div>
+
+Civil Engineering
+
+</div>
+
+<div>
+
+Land Development
+
+</div>
+
+<div>
+
+Stormwater Design
+
+</div>
+
+</div>
+
+</div>
+
+<div>
+
+<h3>
+
+Company
+
+</h3>
+
+<nav class="footer-links">
+
+{
+company.map(link => (
+
+<a href={link.href}>
+
+{link.label}
+
+</a>
+
+))
+}
+
+</nav>
+
+</div>
+
+<div>
+
+<h3>
+
+Services
+
+</h3>
+
+<ul class="footer-services">
+
+{
+services.map(service => (
+
+<li>
+
+{service}
+
+</li>
+
+))
+}
+
+</ul>
+
+</div>
+
+<div>
+
+<h3>
+
+Get In Touch
+
+</h3>
+
+<div class="footer-contact">
+
+<div>
+
+<span>
+
+Email
+
+</span>
+
+<a href="mailto:info@midraengineering.com">
+
+info@midraengineering.com
+
+</a>
+
+</div>
+
+<div>
+
+<span>
+
+Phone
+
+</span>
+
+<a href="tel:+17325555555">
+
+(732) 555-5555
+
+</a>
+
+</div>
+
+<div>
+
+<span>
+
+Office
+
+</span>
+
+<p>
+
+New Jersey
+
+</p>
+
+</div>
+
+</div>
+
+<a
+href="/contact"
+class="footer-button"
+>
+
+Request Proposal
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<div class="container footer-bottom-inner">
+
+<p>
+
+© {new Date().getFullYear()} MIDRA Engineering.
+All Rights Reserved.
+
+</p>
+
+<div class="footer-bottom-links">
+
+<a href="/privacy">
+
+Privacy Policy
+
+</a>
+
+<a href="/terms">
+
+Terms of Use
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
+<style>
+
+.footer{
+
+position:relative;
+
+overflow:hidden;
+
+background:
+
+linear-gradient(
+180deg,
+#081b2b,
+#0B2338
+);
+
+color:white;
+
+}
+
+.background-grid{
+
+position:absolute;
+
+inset:0;
+
+opacity:.10;
+
+background-image:
+
+linear-gradient(
+rgba(255,255,255,.08) 1px,
+transparent 1px
+),
+
+linear-gradient(
+90deg,
+rgba(255,255,255,.08) 1px,
+transparent 1px
+);
+
+background-size:60px 60px;
+
+pointer-events:none;
+
+}
+
+.background-glow{
+
+position:absolute;
+
+right:-250px;
+
+top:-250px;
+
+width:650px;
+
+height:650px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(
+circle,
+rgba(198,161,91,.16),
+transparent 72%
+);
+
+pointer-events:none;
+
+}
+
+.footer-top{
+
+position:relative;
+
+padding:95px 0 60px;
+
+}
+
+.footer-grid{
+
+position:relative;
+
+z-index:2;
+
+display:grid;
+
+grid-template-columns:
+
+1.5fr 1fr 1fr 1.2fr;
+
+gap:60px;
+
+}
+
+.footer-logo{
+
+display:inline-flex;
+
+margin-bottom:26px;
+
+}
+
+.footer-logo img{
+
+height:72px;
+
+width:auto;
+
+display:block;
+
+}
+.footer-brand p{
+
+max-width:360px;
+
+margin:0 0 32px;
+
+font-size:1rem;
+
+line-height:1.9;
+
+color:rgba(255,255,255,.74);
+
+}
+
+.footer-badges{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:12px;
+
+}
+
+.footer-badges div{
+
+padding:10px 16px;
+
+border-radius:999px;
+
+background:
+
+rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(10px);
+
+font-size:.8rem;
+
+font-weight:700;
+
+color:white;
+
+}
+
+.footer h3{
+
+margin:0 0 26px;
+
+font-size:1.2rem;
+
+font-weight:800;
+
+color:white;
+
+}
+
+.footer-links{
+
+display:flex;
+
+flex-direction:column;
+
+gap:16px;
+
+}
+
+.footer-links a{
+
+color:rgba(255,255,255,.72);
+
+text-decoration:none;
+
+transition:
+
+color .3s ease,
+transform .3s ease;
+
+}
+
+.footer-links a:hover{
+
+color:#C6A15B;
+
+transform:translateX(5px);
+
+}
+
+.footer-services{
+
+list-style:none;
+
+padding:0;
+
+margin:0;
+
+display:flex;
+
+flex-direction:column;
+
+gap:16px;
+
+}
+
+.footer-services li{
+
+position:relative;
+
+padding-left:18px;
+
+line-height:1.7;
+
+color:rgba(255,255,255,.72);
+
+}
+
+.footer-services li::before{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+top:10px;
+
+width:6px;
+
+height:6px;
+
+border-radius:50%;
+
+background:#C6A15B;
+
+}
+
+.footer-contact{
+
+display:flex;
+
+flex-direction:column;
+
+gap:26px;
+
+margin-bottom:34px;
+
+}
+
+.footer-contact span{
+
+display:block;
+
+margin-bottom:8px;
+
+font-size:.75rem;
+
+font-weight:800;
+
+letter-spacing:.12em;
+
+text-transform:uppercase;
+
+color:#C6A15B;
+
+}
+
+.footer-contact a{
+
+color:white;
+
+font-weight:600;
+
+text-decoration:none;
+
+transition:
+
+color .3s ease;
+
+}
+
+.footer-contact a:hover{
+
+color:#C6A15B;
+
+}
+
+.footer-contact p{
+
+margin:0;
+
+line-height:1.7;
+
+color:rgba(255,255,255,.72);
+
+}
+
+.footer-button{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:16px 30px;
+
+border-radius:999px;
+
+background:#C6A15B;
+
+color:#0B2338;
+
+text-decoration:none;
+
+font-weight:800;
+
+transition:
+
+transform .35s ease,
+background .35s ease,
+box-shadow .35s ease;
+
+box-shadow:
+
+0 20px 50px
+rgba(0,0,0,.24);
+
+}
+
+.footer-button:hover{
+
+background:#D6B06A;
+
+transform:translateY(-4px);
+
+box-shadow:
+
+0 28px 65px
+rgba(0,0,0,.30);
+
+}
+
+.footer-bottom{
+
+border-top:1px solid rgba(255,255,255,.08);
+
+padding:28px 0;
+
+}
+
+.footer-bottom-inner{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:24px;
+
+}
+
+.footer-bottom p{
+
+margin:0;
+
+font-size:.95rem;
+
+color:rgba(255,255,255,.60);
+
+}
+
+.footer-bottom-links{
+
+display:flex;
+
+gap:24px;
+
+flex-wrap:wrap;
+
+}
+
+.footer-bottom-links a{
+
+text-decoration:none;
+
+font-size:.95rem;
+
+color:rgba(255,255,255,.60);
+
+transition:
+
+color .3s ease;
+
+}
+
+.footer-bottom-links a:hover{
+
+color:#C6A15B;
+
+}
+@media (max-width:1100px){
+
+.footer-grid{
+
+grid-template-columns:
+
+repeat(2,1fr);
+
+gap:50px;
+
+}
+
+.footer-brand{
+
+grid-column:1/-1;
+
+max-width:700px;
+
+}
+
+}
+
+@media (max-width:768px){
+
+.footer-top{
+
+padding:70px 0 45px;
+
+}
+
+.footer-grid{
+
+grid-template-columns:1fr;
+
+gap:40px;
+
+}
+
+.footer-logo img{
+
+height:64px;
+
+}
+
+.footer-brand{
+
+max-width:100%;
+
+}
+
+.footer-bottom-inner{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.footer-bottom-links{
+
+justify-content:center;
+
+}
+
+}
+
+@media (max-width:480px){
+
+.footer-top{
+
+padding:60px 0 40px;
+
+}
+
+.footer-logo img{
+
+height:56px;
+
+}
+
+.footer-badges{
+
+gap:10px;
+
+}
+
+.footer-badges div{
+
+padding:8px 12px;
+
+font-size:.72rem;
+
+}
+
+.footer h3{
+
+font-size:1.1rem;
+
+}
+
+.footer-bottom{
+
+padding:22px 0;
+
+}
+
+.footer-bottom p,
+
+.footer-bottom-links a{
+
+font-size:.88rem;
+
+}
+
+}
+
+</style>

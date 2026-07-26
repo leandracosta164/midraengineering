@@ -1,0 +1,623 @@
+---
+const features = [
+  {
+    number: "01",
+    title: "Technical Excellence",
+    description:
+      "Every project is designed with precision, practical engineering judgment, and strict attention to local, state, and NJDEP requirements."
+  },
+  {
+    number: "02",
+    title: "Responsive Communication",
+    description:
+      "We believe clients deserve timely updates, honest guidance, and direct communication throughout every stage of the project."
+  },
+  {
+    number: "03",
+    title: "Efficient Approvals",
+    description:
+      "Our permitting experience helps reduce unnecessary delays by preparing complete, coordinated engineering packages."
+  },
+  {
+    number: "04",
+    title: "Long-Term Partnerships",
+    description:
+      "We build lasting relationships with homeowners, architects, contractors, developers, and municipalities by consistently delivering dependable results."
+  }
+];
+---
+
+<section class="why-section">
+
+<div class="background-grid"></div>
+<div class="background-glow"></div>
+
+<div class="container">
+
+<div class="why-grid">
+
+<div class="why-left">
+
+<span class="section-tag">
+
+WHY MIDRA
+
+</span>
+
+<h2>
+
+Engineering That
+Builds Confidence.
+
+</h2>
+
+<p>
+
+Successful projects begin long before construction.
+They begin with thoughtful engineering, proactive
+planning, and a team committed to finding practical
+solutions before problems arise.
+
+</p>
+
+<p>
+
+From residential developments to commercial and
+municipal projects, MIDRA Engineering delivers
+technical expertise combined with responsive service,
+helping clients move confidently from concept to
+construction.
+
+</p>
+
+<a
+href="/about"
+class="why-button"
+>
+
+Learn About MIDRA
+
+</a>
+
+</div>
+
+<div class="why-right">
+
+{
+features.map((feature)=>(
+
+<div class="feature-card">
+
+<div class="feature-number">
+
+{feature.number}
+
+</div>
+
+<div class="feature-content">
+
+<h3>
+
+{feature.title}
+
+</h3>
+
+<p>
+
+{feature.description}
+
+</p>
+
+</div>
+
+</div>
+
+))
+}
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.why-section{
+
+position:relative;
+
+overflow:hidden;
+
+padding:140px 0;
+
+background:
+
+linear-gradient(
+180deg,
+#F8FAFC 0%,
+#ffffff 100%
+);
+
+}
+
+.background-grid{
+
+position:absolute;
+
+inset:0;
+
+opacity:.18;
+
+background-image:
+
+linear-gradient(
+rgba(14,58,93,.05) 1px,
+transparent 1px
+),
+
+linear-gradient(
+90deg,
+rgba(14,58,93,.05) 1px,
+transparent 1px
+);
+
+background-size:60px 60px;
+
+mask-image:
+
+linear-gradient(
+180deg,
+rgba(0,0,0,.95),
+transparent
+);
+
+pointer-events:none;
+
+}
+
+.background-glow{
+
+position:absolute;
+
+left:-250px;
+
+top:-250px;
+
+width:650px;
+
+height:650px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(
+circle,
+rgba(198,161,91,.10),
+transparent 72%
+);
+
+pointer-events:none;
+
+}
+
+.why-grid{
+
+position:relative;
+
+z-index:2;
+
+display:grid;
+
+grid-template-columns:
+
+.95fr
+1.05fr;
+
+gap:90px;
+
+align-items:center;
+
+}
+
+.why-left{
+
+max-width:560px;
+
+animation:fadeUp .8s ease;
+
+}
+
+.section-tag{
+
+display:inline-flex;
+
+align-items:center;
+
+padding:10px 18px;
+
+background:#ffffff;
+
+border:1px solid rgba(14,58,93,.08);
+
+border-radius:999px;
+
+box-shadow:
+
+0 14px 35px rgba(0,0,0,.06);
+
+font-size:.78rem;
+
+font-weight:800;
+
+letter-spacing:.14em;
+
+color:#0E3A5D;
+
+margin-bottom:28px;
+
+text-transform:uppercase;
+
+}
+.why-left h2{
+
+font-size:clamp(
+2.8rem,
+5vw,
+4.2rem
+);
+
+line-height:1.05;
+
+letter-spacing:-.03em;
+
+font-weight:800;
+
+color:#16324A;
+
+margin:0 0 28px;
+
+text-wrap:balance;
+
+}
+
+.why-left p{
+
+font-size:1.08rem;
+
+line-height:1.95;
+
+color:#66707C;
+
+margin:0 0 24px;
+
+}
+
+.why-button{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:18px 36px;
+
+margin-top:18px;
+
+border-radius:999px;
+
+background:#0E3A5D;
+
+color:#fff;
+
+text-decoration:none;
+
+font-weight:700;
+
+transition:
+
+transform .35s ease,
+background .35s ease,
+box-shadow .35s ease;
+
+box-shadow:
+
+0 22px 55px
+rgba(14,58,93,.18);
+
+}
+
+.why-button:hover{
+
+background:#184e79;
+
+transform:translateY(-4px);
+
+box-shadow:
+
+0 30px 70px
+rgba(14,58,93,.24);
+
+}
+
+.why-right{
+
+display:grid;
+
+gap:26px;
+
+animation:fadeUp .95s ease;
+
+}
+
+.feature-card{
+
+display:flex;
+
+align-items:flex-start;
+
+gap:28px;
+
+padding:36px;
+
+background:rgba(255,255,255,.92);
+
+backdrop-filter:blur(10px);
+
+border-radius:24px;
+
+border:1px solid rgba(14,58,93,.06);
+
+box-shadow:
+
+0 22px 60px
+rgba(0,0,0,.06);
+
+transition:
+
+transform .35s ease,
+box-shadow .35s ease,
+border-color .35s ease;
+
+}
+
+.feature-card:hover{
+
+transform:translateY(-8px);
+
+border-color:rgba(198,161,91,.28);
+
+box-shadow:
+
+0 35px 80px
+rgba(14,58,93,.12);
+
+}
+
+.feature-number{
+
+flex-shrink:0;
+
+width:74px;
+
+height:74px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:20px;
+
+background:
+
+linear-gradient(
+135deg,
+#0E3A5D,
+#1B5B8C
+);
+
+color:#fff;
+
+font-size:1.25rem;
+
+font-weight:800;
+
+letter-spacing:.05em;
+
+box-shadow:
+
+0 18px 40px
+rgba(14,58,93,.20);
+
+}
+
+.feature-content{
+
+flex:1;
+
+}
+
+.feature-content h3{
+
+font-size:1.45rem;
+
+font-weight:800;
+
+line-height:1.3;
+
+color:#16324A;
+
+margin:0 0 14px;
+
+}
+
+.feature-content p{
+
+margin:0;
+
+font-size:1rem;
+
+line-height:1.85;
+
+color:#66707C;
+
+}
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(28px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@media (max-width:1100px){
+
+.why-section{
+
+padding:110px 0;
+
+}
+
+.why-grid{
+
+grid-template-columns:1fr;
+
+gap:70px;
+
+}
+
+.why-left{
+
+max-width:760px;
+
+margin:0 auto;
+
+text-align:center;
+
+}
+
+.why-right{
+
+max-width:760px;
+
+margin:0 auto;
+
+}
+
+}
+
+@media (max-width:768px){
+
+.why-section{
+
+padding:90px 0;
+
+}
+
+.why-grid{
+
+gap:55px;
+
+}
+
+.why-left h2{
+
+font-size:2.55rem;
+
+}
+
+.why-left p{
+
+font-size:1rem;
+
+}
+
+.feature-card{
+
+padding:28px;
+
+gap:22px;
+
+}
+
+.feature-number{
+
+width:62px;
+
+height:62px;
+
+border-radius:18px;
+
+font-size:1.05rem;
+
+}
+
+.feature-content h3{
+
+font-size:1.28rem;
+
+}
+
+}
+
+@media (max-width:480px){
+
+.why-section{
+
+padding:80px 0;
+
+}
+
+.section-tag{
+
+font-size:.68rem;
+
+padding:8px 14px;
+
+}
+
+.feature-card{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+padding:24px;
+
+}
+
+.feature-number{
+
+width:56px;
+
+height:56px;
+
+}
+
+.feature-content h3{
+
+font-size:1.18rem;
+
+}
+
+}
+
+</style>

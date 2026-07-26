@@ -1,0 +1,833 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/PageHero.astro";
+
+const contactInfo = [
+  {
+    title: "Email",
+    value: "info@midraengineering.com",
+    href: "mailto:info@midraengineering.com"
+  },
+  {
+    title: "Phone",
+    value: "(732) 555-5555",
+    href: "tel:+17325555555"
+  },
+  {
+    title: "Location",
+    value: "New Jersey",
+    href: null
+  }
+];
+---
+
+<Layout
+  title="Contact MIDRA Engineering | Civil Engineering in New Jersey"
+  description="Contact MIDRA Engineering to discuss residential, commercial, municipal, stormwater, and land development engineering projects throughout New Jersey."
+>
+
+<PageHero
+  title="Contact Us"
+  subtitle="Let's discuss your project and determine the best engineering solution."
+/>
+
+<section class="contact-page">
+
+<div class="background-grid"></div>
+<div class="background-glow"></div>
+
+<div class="container">
+
+<div class="contact-grid">
+
+<div class="contact-content">
+
+<span class="section-tag">
+
+GET IN TOUCH
+
+</span>
+
+<h2>
+
+Let's Talk About
+Your Project
+
+</h2>
+
+<p>
+
+Whether you're planning a custom home,
+commercial development, subdivision,
+stormwater improvements, or municipal
+infrastructure, we'd be happy to discuss
+your project and recommend the right
+engineering solution.
+
+</p>
+
+<div class="contact-cards">
+
+{
+
+contactInfo.map(item => (
+
+<div class="contact-card">
+
+<h3>
+
+{item.title}
+
+</h3>
+
+{
+
+item.href ? (
+
+<a href={item.href}>
+
+{item.value}
+
+</a>
+
+) : (
+
+<p>
+
+{item.value}
+
+</p>
+
+)
+
+}
+
+</div>
+
+))
+
+}
+
+</div>
+
+</div>
+
+<div class="contact-form-card">
+
+<h3>
+
+Request a Proposal
+
+</h3>
+
+<form
+id="contact-form"
+action="https://formspree.io/f/mykrlepz"
+method="POST"
+>
+
+<input
+type="hidden"
+name="_subject"
+value="New MIDRA Engineering Website Inquiry"
+/>
+
+<input
+type="text"
+name="_gotcha"
+tabindex="-1"
+autocomplete="off"
+style="display:none"
+/>
+
+<div class="form-grid">
+
+<input
+type="text"
+name="name"
+placeholder="Full Name"
+autocomplete="name"
+required
+/>
+
+<input
+type="email"
+name="email"
+placeholder="Email Address"
+autocomplete="email"
+required
+/>
+
+<input
+type="tel"
+name="phone"
+placeholder="Phone Number"
+autocomplete="tel"
+/>
+
+<input
+type="text"
+name="location"
+placeholder="Project Location"
+autocomplete="address-level2"
+/>
+
+<textarea
+name="message"
+rows="6"
+placeholder="Tell us about your project..."
+required
+></textarea>
+
+<button
+id="submit-button"
+type="submit"
+>
+
+Send Message
+
+</button>
+
+<p
+id="form-success"
+class="form-message success"
+hidden
+>
+
+✅ Thank you! Your message has been sent successfully. We'll get back to you as soon as possible.
+
+</p>
+
+<p
+id="form-error"
+class="form-message error"
+hidden
+>
+
+Sorry, something went wrong. Please try again.
+
+</p>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+const form = document.getElementById("contact-form");
+const submitButton = document.getElementById("submit-button");
+const successMessage = document.getElementById("form-success");
+const errorMessage = document.getElementById("form-error");
+
+if (!form) return;
+
+form.addEventListener("submit", async (event) => {
+
+event.preventDefault();
+
+successMessage.hidden = true;
+errorMessage.hidden = true;
+
+submitButton.disabled = true;
+submitButton.textContent = "Sending...";
+
+const formData = new FormData(form);
+
+try {
+
+const response = await fetch(form.action, {
+
+method: "POST",
+
+body: formData,
+
+headers: {
+
+Accept: "application/json"
+
+}
+
+});
+
+if (response.ok) {
+
+form.reset();
+
+successMessage.hidden = false;
+
+submitButton.disabled = false;
+submitButton.textContent = "Send Message";
+
+} else {
+
+errorMessage.hidden = false;
+
+submitButton.disabled = false;
+submitButton.textContent = "Send Message";
+
+}
+
+} catch (error) {
+
+errorMessage.hidden = false;
+
+submitButton.disabled = false;
+submitButton.textContent = "Send Message";
+
+}
+
+});
+
+});
+</script>
+
+<style>
+
+.contact-page{
+
+position:relative;
+
+overflow:hidden;
+
+padding:130px 0;
+
+background:
+
+linear-gradient(
+180deg,
+#F8FAFC,
+#FFFFFF
+);
+
+}
+
+.background-grid{
+
+position:absolute;
+
+inset:0;
+
+opacity:.18;
+
+background-image:
+
+linear-gradient(
+rgba(14,58,93,.05) 1px,
+transparent 1px
+),
+
+linear-gradient(
+90deg,
+rgba(14,58,93,.05) 1px,
+transparent 1px
+);
+
+background-size:60px 60px;
+
+pointer-events:none;
+
+}
+
+.background-glow{
+
+position:absolute;
+
+left:-250px;
+
+bottom:-220px;
+
+width:650px;
+
+height:650px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(
+circle,
+rgba(198,161,91,.10),
+transparent 72%
+);
+
+pointer-events:none;
+
+}
+
+.contact-grid{
+
+position:relative;
+
+z-index:2;
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:70px;
+
+align-items:start;
+
+}
+
+.section-tag{
+
+display:inline-flex;
+
+align-items:center;
+
+padding:10px 18px;
+
+background:white;
+
+border:1px solid rgba(14,58,93,.08);
+
+border-radius:999px;
+
+font-size:.78rem;
+
+font-weight:800;
+
+letter-spacing:.14em;
+
+text-transform:uppercase;
+
+color:#0E3A5D;
+
+margin-bottom:24px;
+
+box-shadow:
+
+0 14px 35px rgba(0,0,0,.05);
+
+}
+
+.contact-content h2{
+
+font-size:clamp(
+2.8rem,
+5vw,
+4.2rem
+);
+
+font-weight:800;
+
+line-height:1.06;
+
+letter-spacing:-.03em;
+
+color:#16324A;
+
+margin:0 0 24px;
+
+text-wrap:balance;
+
+}
+
+.contact-content p{
+
+font-size:1.08rem;
+
+line-height:1.95;
+
+color:#66707C;
+
+margin-bottom:42px;
+
+max-width:620px;
+
+}
+
+.contact-cards{
+
+display:grid;
+
+gap:24px;
+
+}
+
+.contact-card{
+
+background:white;
+
+padding:30px;
+
+border-radius:22px;
+
+border:1px solid #EEF2F6;
+
+box-shadow:
+
+0 16px 40px rgba(15,58,93,.06);
+
+transition:
+
+transform .35s ease,
+box-shadow .35s ease,
+border-color .35s ease;
+
+}
+
+.contact-card:hover{
+
+transform:translateY(-6px);
+
+border-color:
+
+rgba(198,161,91,.30);
+
+box-shadow:
+
+0 26px 60px rgba(15,58,93,.12);
+
+}
+
+.contact-card h3{
+
+margin:0 0 10px;
+
+font-size:1.15rem;
+
+font-weight:800;
+
+color:#16324A;
+
+}
+
+.contact-card a,
+
+.contact-card p{
+
+margin:0;
+
+font-size:1rem;
+
+line-height:1.8;
+
+color:#66707C;
+
+text-decoration:none;
+
+transition:
+
+color .3s ease;
+
+}
+
+.contact-card a:hover{
+
+color:#0E3A5D;
+
+}
+
+.contact-form-card{
+
+background:white;
+
+padding:42px;
+
+border-radius:28px;
+
+border:1px solid #EEF2F6;
+
+box-shadow:
+
+0 22px 60px rgba(15,58,93,.08);
+
+}
+
+.contact-form-card h3{
+
+margin:0 0 30px;
+
+font-size:2rem;
+
+font-weight:800;
+
+color:#16324A;
+
+}
+.form-grid{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:20px;
+
+}
+
+.form-grid input,
+
+.form-grid textarea{
+
+width:100%;
+
+padding:16px 18px;
+
+border:1px solid #DCE7F0;
+
+border-radius:14px;
+
+background:#FBFCFD;
+
+font-size:1rem;
+
+font-family:inherit;
+
+box-sizing:border-box;
+
+transition:
+
+border-color .3s ease,
+box-shadow .3s ease,
+background .3s ease;
+
+}
+
+.form-grid textarea{
+
+grid-column:1 / -1;
+
+min-height:180px;
+
+resize:vertical;
+
+}
+
+.form-grid input:focus,
+
+.form-grid textarea:focus{
+
+outline:none;
+
+background:white;
+
+border-color:#0E3A5D;
+
+box-shadow:
+
+0 0 0 4px rgba(14,58,93,.08);
+
+}
+
+.form-grid button{
+
+grid-column:1 / -1;
+
+display:inline-flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:18px;
+
+border:none;
+
+border-radius:999px;
+
+background:#0E3A5D;
+
+color:white;
+
+font-size:1rem;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:
+
+background .3s ease,
+transform .3s ease,
+box-shadow .3s ease;
+
+}
+
+.form-grid button:hover{
+
+background:#174D79;
+
+transform:translateY(-3px);
+
+box-shadow:
+
+0 18px 40px rgba(14,58,93,.18);
+
+}
+
+.form-grid button:disabled{
+
+cursor:not-allowed;
+
+opacity:.75;
+
+transform:none;
+
+box-shadow:none;
+
+}
+
+.form-message{
+
+grid-column:1 / -1;
+
+margin:0;
+
+padding:16px 20px;
+
+border-radius:14px;
+
+font-size:.95rem;
+
+font-weight:600;
+
+line-height:1.6;
+
+}
+
+.success{
+
+background:#ECFDF3;
+
+border:1px solid #BBF7D0;
+
+color:#166534;
+
+}
+
+.error{
+
+background:#FEF2F2;
+
+border:1px solid #FECACA;
+
+color:#B91C1C;
+
+}
+
+@media (max-width:1100px){
+
+.contact-page{
+
+padding:110px 0;
+
+}
+
+.contact-grid{
+
+grid-template-columns:1fr;
+
+gap:60px;
+
+}
+
+}
+@media (max-width:768px){
+
+.contact-page{
+
+padding:90px 0;
+
+}
+
+.contact-content h2{
+
+font-size:2.5rem;
+
+}
+
+.contact-content p{
+
+font-size:1rem;
+
+}
+
+.contact-form-card{
+
+padding:32px;
+
+}
+
+.form-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.form-grid textarea,
+
+.form-grid button,
+
+.form-message{
+
+grid-column:auto;
+
+}
+
+}
+
+@media (max-width:480px){
+
+.contact-page{
+
+padding:80px 0;
+
+}
+
+.section-tag{
+
+font-size:.68rem;
+
+padding:8px 14px;
+
+}
+
+.contact-content h2{
+
+font-size:2rem;
+
+}
+
+.contact-card{
+
+padding:24px;
+
+}
+
+.contact-form-card{
+
+padding:24px;
+
+border-radius:22px;
+
+}
+
+.contact-form-card h3{
+
+font-size:1.75rem;
+
+}
+
+.form-grid input,
+
+.form-grid textarea{
+
+padding:14px 16px;
+
+}
+
+}
+
+</style>
+
+</Layout>

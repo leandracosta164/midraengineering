@@ -1,0 +1,633 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonical?: string;
+  noindex?: boolean;
+}
+
+const {
+  title = "MIDRA Engineering | Civil Engineering Consultants in New Jersey",
+  description = "MIDRA Engineering provides professional civil engineering services for residential, commercial, municipal, and land development projects throughout New Jersey.",
+  image = "/og-image.jpg",
+  canonical = Astro.url.pathname,
+  noindex = false
+} = Astro.props;
+
+const siteUrl = "https://midraengineering.com";
+
+const canonicalUrl = new URL(canonical, siteUrl).toString();
+
+const ogImage = new URL(image, siteUrl).toString();
+
+const robots = noindex
+  ? "noindex,nofollow"
+  : "index,follow,max-image-preview:large";
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": `${siteUrl}/#organization`,
+  name: "MIDRA Engineering",
+  alternateName: "MIDRA Engineering LLC",
+  url: siteUrl,
+  logo: `${siteUrl}/Final_Midra_Logo_Transparent.png`,
+  image: ogImage,
+  description,
+  telephone: "+1-732-555-5555",
+  email: "info@midraengineering.com",
+
+  address: {
+    "@type": "PostalAddress",
+    addressRegion: "NJ",
+    addressCountry: "US"
+  },
+
+  areaServed: {
+    "@type": "State",
+    name: "New Jersey"
+  },
+
+  priceRange: "$$",
+
+  serviceType: [
+    "Civil Engineering",
+    "Residential Engineering",
+    "Commercial Engineering",
+    "Municipal Engineering",
+    "Stormwater Management",
+    "Land Development",
+    "Site Planning",
+    "Construction Support"
+  ],
+
+  sameAs: []
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${siteUrl}/#website`,
+  url: siteUrl,
+  name: "MIDRA Engineering",
+  description,
+  publisher: {
+    "@id": `${siteUrl}/#organization`
+  }
+};
+---
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8" />
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1"
+/>
+
+<meta
+http-equiv="X-UA-Compatible"
+content="IE=edge"
+/>
+
+<meta
+name="format-detection"
+content="telephone=no"
+/>
+
+<meta
+name="theme-color"
+content="#0E3A5D"
+/>
+
+<meta
+name="robots"
+content={robots}
+/>
+
+<meta
+name="author"
+content="MIDRA Engineering"
+/>
+
+<meta
+name="generator"
+content={Astro.generator}
+/>
+
+<title>{title}</title>
+
+<meta
+name="description"
+content={description}
+/>
+
+<link
+rel="canonical"
+href={canonicalUrl}
+/>
+
+<link
+rel="icon"
+href="/favicon.ico"
+sizes="any"
+/>
+
+<link
+rel="icon"
+type="image/svg+xml"
+href="/favicon.svg"
+/>
+
+<link
+rel="icon"
+type="image/png"
+sizes="96x96"
+href="/favicon-96x96.png"
+/>
+
+<link
+rel="apple-touch-icon"
+href="/apple-touch-icon.png"
+/>
+
+<link
+rel="manifest"
+href="/site.webmanifest"
+/>
+
+<meta
+name="apple-mobile-web-app-capable"
+content="yes"
+/>
+
+<meta
+name="apple-mobile-web-app-status-bar-style"
+content="default"
+/>
+
+<meta
+name="apple-mobile-web-app-title"
+content="MIDRA Engineering"
+/>
+
+<link
+rel="preconnect"
+href="https://fonts.googleapis.com"
+/>
+
+<link
+rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin
+/>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet"
+/>
+
+<link
+rel="preload"
+as="image"
+href="/Final_Midra_Logo_Transparent.png"
+fetchpriority="high"
+/>
+
+<meta
+property="og:locale"
+content="en_US"
+/>
+
+<meta
+property="og:type"
+content="website"
+/>
+
+<meta
+property="og:site_name"
+content="MIDRA Engineering"
+/>
+
+<meta
+property="og:title"
+content={title}
+/>
+
+<meta
+property="og:description"
+content={description}
+/>
+
+<meta
+property="og:url"
+content={canonicalUrl}
+/>
+
+<meta
+property="og:image"
+content={ogImage}
+/>
+
+<meta
+property="og:image:alt"
+content="MIDRA Engineering"
+/>
+
+<meta
+property="og:image:width"
+content="1200"
+/>
+
+<meta
+property="og:image:height"
+content="630"
+/>
+
+<meta
+name="twitter:card"
+content="summary_large_image"
+/>
+
+<meta
+name="twitter:title"
+content={title}
+/>
+
+<meta
+name="twitter:description"
+content={description}
+/>
+
+<meta
+name="twitter:image"
+content={ogImage}
+/>
+
+<meta
+name="twitter:image:alt"
+content="MIDRA Engineering"
+/>
+
+<script
+type="application/ld+json"
+set:html={JSON.stringify(organizationSchema)}
+/>
+
+<script
+type="application/ld+json"
+set:html={JSON.stringify(websiteSchema)}
+/>
+</head>
+
+<body>
+
+<a
+  href="#main-content"
+  class="skip-link"
+>
+  Skip to content
+</a>
+
+<Header />
+
+<main
+  id="main-content"
+  tabindex="-1"
+>
+
+  <slot />
+
+</main>
+
+<Footer />
+
+</body>
+
+</html>
+
+<style is:global>
+
+:root{
+
+--primary:#0E3A5D;
+
+--primary-light:#174D79;
+
+--secondary:#C6A15B;
+
+--dark:#16324A;
+
+--text:#66707C;
+
+--background:#F8FAFC;
+
+--white:#FFFFFF;
+
+--border:#E8EDF2;
+
+--container:1280px;
+
+--radius:24px;
+
+--transition:.35s ease;
+
+--shadow-sm:0 8px 24px rgba(14,58,93,.06);
+
+--shadow-md:0 18px 45px rgba(14,58,93,.10);
+
+--shadow-lg:0 32px 80px rgba(14,58,93,.16);
+
+}
+
+*,
+*::before,
+*::after{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+scroll-padding-top:104px;
+
+-webkit-text-size-adjust:100%;
+
+}
+
+body{
+
+font-family:"Inter",sans-serif;
+
+font-size:16px;
+
+line-height:1.6;
+
+color:var(--dark);
+
+background:var(--white);
+
+text-rendering:optimizeLegibility;
+
+-webkit-font-smoothing:antialiased;
+
+-moz-osx-font-smoothing:grayscale;
+
+overflow-x:hidden;
+
+min-height:100vh;
+
+}
+
+main{
+
+display:block;
+
+min-height:60vh;
+
+}
+
+img{
+
+display:block;
+
+max-width:100%;
+
+height:auto;
+
+border:0;
+
+user-select:none;
+
+-webkit-user-drag:none;
+
+}
+
+picture{
+
+display:block;
+
+}
+
+svg{
+
+display:block;
+
+}
+
+a{
+
+color:inherit;
+
+text-decoration:none;
+
+}
+
+button,
+input,
+textarea,
+select{
+
+font:inherit;
+
+}
+
+button{
+
+cursor:pointer;
+
+border:none;
+
+background:none;
+
+}
+
+.container{
+
+width:min(100% - 48px,var(--container));
+
+margin-inline:auto;
+
+}
+
+section{
+
+position:relative;
+
+}
+
+::selection{
+
+background:var(--primary);
+
+color:#fff;
+
+}
+
+:focus-visible{
+
+outline:3px solid var(--secondary);
+
+outline-offset:3px;
+
+border-radius:6px;
+
+}
+
+.skip-link{
+
+position:absolute;
+
+left:-9999px;
+
+top:12px;
+
+z-index:99999;
+
+padding:12px 18px;
+
+background:var(--primary);
+
+color:#fff;
+
+font-weight:700;
+
+border-radius:10px;
+
+}
+
+.skip-link:focus{
+
+left:12px;
+
+}
+.skip-link:focus{
+
+left:12px;
+
+}
+
+html:focus-within{
+
+scroll-behavior:smooth;
+
+}
+
+body,
+main,
+header,
+footer{
+
+position:relative;
+
+}
+
+/* Improve rendering consistency */
+
+img,
+svg{
+
+backface-visibility:hidden;
+
+transform:translateZ(0);
+
+}
+
+/* Prevent horizontal overflow */
+
+body{
+
+overflow-x:hidden;
+
+}
+
+/* Better tap targets on touch devices */
+
+@media (pointer:coarse){
+
+button,
+a{
+
+min-height:44px;
+
+}
+
+}
+
+@media (prefers-reduced-motion:reduce){
+
+html{
+
+scroll-behavior:auto;
+
+}
+
+*,
+*::before,
+*::after{
+
+animation:none !important;
+
+transition:none !important;
+
+scroll-behavior:auto !important;
+
+}
+
+}
+
+@media (max-width:768px){
+
+.container{
+
+width:min(100% - 32px,var(--container));
+
+}
+
+html{
+
+scroll-padding-top:88px;
+
+}
+
+body{
+
+font-size:15px;
+
+}
+
+}
+
+@media (max-width:480px){
+
+.container{
+
+width:min(100% - 24px,var(--container));
+
+}
+
+html{
+
+scroll-padding-top:80px;
+
+}
+
+}
+
+</style>
