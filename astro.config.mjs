@@ -4,7 +4,7 @@ import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
 
-  site: "https://midraengineering.com",
+  site: "https://www.midraengineering.com",
 
   trailingSlash: "never",
 
