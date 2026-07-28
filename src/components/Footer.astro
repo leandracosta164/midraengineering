@@ -3,9 +3,9 @@ const services = [
   "Residential Engineering",
   "Commercial Development",
   "Stormwater Management",
-  "Site Planning",
-  "Permitting",
-  "Construction Support"
+  "Subdivision & Land Development",
+  "Municipal Infrastructure",
+  "Construction Phase Services"
 ];
 
 const company = [
@@ -33,11 +33,12 @@ const company = [
 <a
 href="/"
 class="footer-logo"
+aria-label="MIDRA Engineering Home"
 >
 
 <img
-  src="/Final_Midra_Logo_White.png"
-  alt="MIDRA Engineering"
+src="/Final_Midra_Logo_White.png"
+alt="MIDRA Engineering"
 />
 
 </a>
@@ -217,7 +218,7 @@ All Rights Reserved.
 
 <div class="footer-bottom-links">
 
-<a href="/privacy">
+<a href="/privacy-policy">
 
 Privacy Policy
 
@@ -263,7 +264,7 @@ position:absolute;
 
 inset:0;
 
-opacity:.10;
+opacity:.08;
 
 background-image:
 
@@ -278,7 +279,7 @@ rgba(255,255,255,.08) 1px,
 transparent 1px
 );
 
-background-size:60px 60px;
+background-size:56px 56px;
 
 pointer-events:none;
 
@@ -288,13 +289,13 @@ pointer-events:none;
 
 position:absolute;
 
-right:-250px;
+right:-240px;
 
-top:-250px;
+top:-240px;
 
-width:650px;
+width:620px;
 
-height:650px;
+height:620px;
 
 border-radius:50%;
 
@@ -302,7 +303,7 @@ background:
 
 radial-gradient(
 circle,
-rgba(198,161,91,.16),
+rgba(198,161,91,.18),
 transparent 72%
 );
 
@@ -314,7 +315,7 @@ pointer-events:none;
 
 position:relative;
 
-padding:95px 0 60px;
+padding:72px 0 48px;
 
 }
 
@@ -328,9 +329,11 @@ display:grid;
 
 grid-template-columns:
 
-1.5fr 1fr 1fr 1.2fr;
+1.6fr 1fr 1fr 1.2fr;
 
-gap:60px;
+gap:46px;
+
+align-items:start;
 
 }
 
@@ -338,30 +341,46 @@ gap:60px;
 
 display:inline-flex;
 
-margin-bottom:26px;
+margin-bottom:18px;
+
+text-decoration:none;
 
 }
 
 .footer-logo img{
 
-height:72px;
+height:158px;
 
 width:auto;
 
 display:block;
 
+transition:
+
+transform .35s ease,
+
+filter .35s ease;
+
 }
+.footer-logo:hover img{
+
+transform:scale(1.05);
+
+filter:drop-shadow(0 10px 28px rgba(198,161,91,.24));
+
+}
+
 .footer-brand p{
 
-max-width:360px;
+max-width:370px;
 
-margin:0 0 32px;
+margin:0 0 26px;
 
 font-size:1rem;
 
-line-height:1.9;
+line-height:1.85;
 
-color:rgba(255,255,255,.74);
+color:rgba(255,255,255,.76);
 
 }
 
@@ -371,41 +390,61 @@ display:flex;
 
 flex-wrap:wrap;
 
-gap:12px;
+gap:10px;
 
 }
 
 .footer-badges div{
 
-padding:10px 16px;
+padding:9px 16px;
 
 border-radius:999px;
 
-background:
-
-rgba(255,255,255,.08);
+background:rgba(255,255,255,.08);
 
 border:1px solid rgba(255,255,255,.08);
 
 backdrop-filter:blur(10px);
 
-font-size:.8rem;
+font-size:.78rem;
 
 font-weight:700;
 
-color:white;
+letter-spacing:.02em;
+
+color:#fff;
+
+transition:
+
+background .30s ease,
+
+border-color .30s ease,
+
+transform .30s ease;
+
+}
+
+.footer-badges div:hover{
+
+background:rgba(198,161,91,.16);
+
+border-color:rgba(198,161,91,.34);
+
+transform:translateY(-2px);
 
 }
 
 .footer h3{
 
-margin:0 0 26px;
+margin:0 0 20px;
 
-font-size:1.2rem;
+font-size:1.15rem;
 
 font-weight:800;
 
-color:white;
+letter-spacing:.02em;
+
+color:#fff;
 
 }
 
@@ -415,7 +454,7 @@ display:flex;
 
 flex-direction:column;
 
-gap:16px;
+gap:14px;
 
 }
 
@@ -427,8 +466,9 @@ text-decoration:none;
 
 transition:
 
-color .3s ease,
-transform .3s ease;
+color .25s ease,
+
+transform .25s ease;
 
 }
 
@@ -452,7 +492,7 @@ display:flex;
 
 flex-direction:column;
 
-gap:16px;
+gap:14px;
 
 }
 
@@ -476,7 +516,7 @@ position:absolute;
 
 left:0;
 
-top:10px;
+top:11px;
 
 width:6px;
 
@@ -487,16 +527,15 @@ border-radius:50%;
 background:#C6A15B;
 
 }
-
 .footer-contact{
 
 display:flex;
 
 flex-direction:column;
 
-gap:26px;
+gap:22px;
 
-margin-bottom:34px;
+margin-bottom:26px;
 
 }
 
@@ -504,9 +543,9 @@ margin-bottom:34px;
 
 display:block;
 
-margin-bottom:8px;
+margin-bottom:7px;
 
-font-size:.75rem;
+font-size:.74rem;
 
 font-weight:800;
 
@@ -520,15 +559,13 @@ color:#C6A15B;
 
 .footer-contact a{
 
-color:white;
+color:#fff;
 
 font-weight:600;
 
 text-decoration:none;
 
-transition:
-
-color .3s ease;
+transition:color .25s ease;
 
 }
 
@@ -570,14 +607,15 @@ font-weight:800;
 
 transition:
 
-transform .35s ease,
-background .35s ease,
-box-shadow .35s ease;
+transform .30s ease,
+
+background .30s ease,
+
+box-shadow .30s ease;
 
 box-shadow:
 
-0 20px 50px
-rgba(0,0,0,.24);
+0 16px 40px rgba(0,0,0,.24);
 
 }
 
@@ -585,12 +623,11 @@ rgba(0,0,0,.24);
 
 background:#D6B06A;
 
-transform:translateY(-4px);
+transform:translateY(-3px);
 
 box-shadow:
 
-0 28px 65px
-rgba(0,0,0,.30);
+0 22px 52px rgba(0,0,0,.28);
 
 }
 
@@ -598,7 +635,9 @@ rgba(0,0,0,.30);
 
 border-top:1px solid rgba(255,255,255,.08);
 
-padding:28px 0;
+padding:22px 0;
+
+backdrop-filter:blur(8px);
 
 }
 
@@ -618,7 +657,9 @@ gap:24px;
 
 margin:0;
 
-font-size:.95rem;
+font-size:.92rem;
+
+letter-spacing:.02em;
 
 color:rgba(255,255,255,.60);
 
@@ -628,7 +669,9 @@ color:rgba(255,255,255,.60);
 
 display:flex;
 
-gap:24px;
+align-items:center;
+
+gap:22px;
 
 flex-wrap:wrap;
 
@@ -638,19 +681,39 @@ flex-wrap:wrap;
 
 text-decoration:none;
 
-font-size:.95rem;
+font-size:.92rem;
 
-color:rgba(255,255,255,.60);
+font-weight:600;
+
+color:rgba(255,255,255,.62);
 
 transition:
 
-color .3s ease;
+color .25s ease,
+
+transform .25s ease;
 
 }
 
 .footer-bottom-links a:hover{
 
 color:#C6A15B;
+
+transform:translateY(-1px);
+
+}
+
+.footer-bottom-links a:focus-visible,
+
+.footer-links a:focus-visible,
+
+.footer-button:focus-visible{
+
+outline:2px solid #C6A15B;
+
+outline-offset:4px;
+
+border-radius:6px;
 
 }
 @media (max-width:1100px){
@@ -661,7 +724,7 @@ grid-template-columns:
 
 repeat(2,1fr);
 
-gap:50px;
+gap:40px;
 
 }
 
@@ -673,13 +736,19 @@ max-width:700px;
 
 }
 
+.footer-logo img{
+
+height:140px;
+
+}
+
 }
 
 @media (max-width:768px){
 
 .footer-top{
 
-padding:70px 0 45px;
+padding:60px 0 40px;
 
 }
 
@@ -687,13 +756,7 @@ padding:70px 0 45px;
 
 grid-template-columns:1fr;
 
-gap:40px;
-
-}
-
-.footer-logo img{
-
-height:64px;
+gap:34px;
 
 }
 
@@ -703,11 +766,37 @@ max-width:100%;
 
 }
 
+.footer-logo{
+
+margin-bottom:16px;
+
+}
+
+.footer-logo img{
+
+height:108px;
+
+}
+
+.footer-brand p{
+
+margin-bottom:22px;
+
+}
+
+.footer-contact{
+
+margin-bottom:22px;
+
+}
+
 .footer-bottom-inner{
 
 flex-direction:column;
 
 text-align:center;
+
+gap:16px;
 
 }
 
@@ -723,19 +812,33 @@ justify-content:center;
 
 .footer-top{
 
-padding:60px 0 40px;
+padding:52px 0 34px;
+
+}
+
+.footer-grid{
+
+gap:28px;
 
 }
 
 .footer-logo img{
 
-height:56px;
+height:92px;
+
+}
+
+.footer-brand p{
+
+font-size:.94rem;
+
+line-height:1.75;
 
 }
 
 .footer-badges{
 
-gap:10px;
+gap:8px;
 
 }
 
@@ -743,19 +846,51 @@ gap:10px;
 
 padding:8px 12px;
 
-font-size:.72rem;
+font-size:.70rem;
 
 }
 
 .footer h3{
 
-font-size:1.1rem;
+margin-bottom:16px;
+
+font-size:1.05rem;
+
+}
+
+.footer-links{
+
+gap:12px;
+
+}
+
+.footer-services{
+
+gap:12px;
+
+}
+
+.footer-contact{
+
+gap:18px;
+
+margin-bottom:20px;
+
+}
+
+.footer-button{
+
+width:100%;
+
+max-width:270px;
+
+padding:14px 24px;
 
 }
 
 .footer-bottom{
 
-padding:22px 0;
+padding:20px 0;
 
 }
 
@@ -763,7 +898,59 @@ padding:22px 0;
 
 .footer-bottom-links a{
 
-font-size:.88rem;
+font-size:.85rem;
+
+}
+
+.footer-bottom-links{
+
+gap:16px;
+
+}
+
+}
+
+/* ---------- Rendering Improvements ---------- */
+
+.footer,
+.footer *{
+
+-webkit-font-smoothing:antialiased;
+
+-moz-osx-font-smoothing:grayscale;
+
+}
+
+.footer-logo img{
+
+image-rendering:auto;
+
+backface-visibility:hidden;
+
+transform:translateZ(0);
+
+}
+
+.footer-button,
+.footer-links a,
+.footer-bottom-links a,
+.footer-badges div{
+
+will-change:transform;
+
+}
+
+/* ---------- Reduced Motion ---------- */
+
+@media (prefers-reduced-motion:reduce){
+
+.footer *{
+
+animation:none !important;
+
+transition:none !important;
+
+scroll-behavior:auto !important;
 
 }
 

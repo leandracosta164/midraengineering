@@ -5,217 +5,290 @@ import CTA from "../components/CTA.astro";
 
 const values = [
   {
+    icon: "🎯",
     title: "Technical Excellence",
-    text: "Every project is developed using sound engineering principles, attention to detail, and current industry standards."
+    text: "Every project is developed using proven engineering principles, attention to detail, and current industry standards."
   },
+
   {
+    icon: "🤝",
     title: "Client Partnership",
-    text: "We believe successful projects begin with communication, transparency, and responsiveness."
+    text: "Strong communication, transparency, and responsiveness are the foundation of every successful project."
   },
+
   {
+    icon: "📐",
     title: "Practical Design",
-    text: "Our solutions are designed to be efficient, buildable, and cost-conscious while meeting regulatory requirements."
+    text: "Efficient engineering solutions designed to be buildable, cost-effective, and fully code compliant."
   },
+
   {
+    icon: "✔️",
     title: "Integrity",
-    text: "We approach every project with professionalism, honesty, and accountability."
+    text: "We approach every project with professionalism, accountability, honesty, and long-term commitment."
+  }
+];
+
+const stats = [
+  {
+    number: "Residential",
+    label: "Engineering"
+  },
+
+  {
+    number: "Commercial",
+    label: "Development"
+  },
+
+  {
+    number: "Municipal",
+    label: "Infrastructure"
+  },
+
+  {
+    number: "Stormwater",
+    label: "Management"
   }
 ];
 ---
-
 <Layout
-title="About MIDRA Engineering"
-description="Learn about MIDRA Engineering and our commitment to delivering responsive civil engineering solutions throughout New Jersey."
+  title="About MIDRA Engineering"
+  description="Learn about MIDRA Engineering and our commitment to delivering responsive civil engineering solutions throughout New Jersey."
 >
 
 <PageHero
-title="About MIDRA Engineering"
-subtitle="Professional Civil Engineering Solutions Built on Experience, Communication, and Practical Design."
+  title="About MIDRA Engineering"
+  subtitle="Professional Civil Engineering Solutions Built on Experience, Communication, and Practical Design."
 />
 
 <section class="about-story">
 
-<div class="background-grid"></div>
-<div class="background-glow"></div>
+  <div class="background-grid"></div>
 
-<div class="container">
+  <div class="background-glow"></div>
 
-<div class="about-grid">
+  <div class="container">
 
-<div class="about-content">
+    <div class="about-grid">
 
-<span class="section-tag">
+      <div class="about-content">
 
-WHO WE ARE
+        <span class="section-tag">
 
-</span>
+          WHO WE ARE
 
-<h2>
+        </span>
 
-Engineering That
-Puts Clients First.
+        <h2>
 
-</h2>
+          Engineering
+          Relationships Built
+          on Trust.
 
-<p>
+        </h2>
 
-MIDRA Engineering is a civil engineering consulting
-firm dedicated to delivering dependable engineering
-solutions for residential, commercial, and municipal
-projects throughout New Jersey.
+        <p>
 
-</p>
+          MIDRA Engineering is a New Jersey civil engineering consulting
+          firm providing practical engineering solutions for residential,
+          commercial, municipal, and land development projects.
 
-<p>
+        </p>
 
-We understand that every project represents an
-investment. Whether planning a custom residence,
-developing commercial property, or improving public
-infrastructure, our objective is to simplify the
-engineering process while providing accurate,
-practical, and efficient solutions.
+        <p>
 
-</p>
+          Every project begins with understanding our client's goals.
+          We combine technical expertise, responsive communication,
+          and practical engineering to create solutions that are
+          efficient, buildable, and fully compliant with applicable
+          regulations.
 
-<p>
+        </p>
 
-From initial planning and permitting through final
-construction support, we work closely with clients,
-architects, surveyors, contractors, and municipalities
-to keep projects moving forward with confidence.
+        <p>
 
-</p>
+          From planning and permitting through construction support,
+          we work closely with owners, architects, surveyors,
+          contractors, and municipal agencies to keep projects moving
+          forward with confidence.
 
-</div>
+        </p>
 
-<div class="about-card">
+        <div class="stats-grid">
 
-<div class="card-top">
+          {
 
-<h3>
+            stats.map((stat) => (
 
-Our Mission
+              <div class="stat-card">
 
-</h3>
+                <strong>
 
-<p>
+                  {stat.number}
 
-Deliver engineering solutions that balance
-technical excellence with responsive client
-service.
+                </strong>
 
-</p>
+                <span>
 
-</div>
+                  {stat.label}
 
-<div class="mission-list">
+                </span>
 
-<div>
+              </div>
 
-<strong>
+            ))
 
-✔ Practical Engineering
+          }
 
-</strong>
+        </div>
 
-<span>
+      </div>
 
-Efficient designs that work in the field.
+      <div class="about-card">
 
-</span>
+        <div class="card-top">
 
-</div>
+          <h3>
 
-<div>
+            Our Mission
 
-<strong>
+          </h3>
 
-✔ Clear Communication
+          <p>
 
-</strong>
+            Deliver practical engineering solutions that combine
+            technical excellence, responsive communication,
+            and dependable client service.
 
-<span>
+          </p>
 
-Keeping clients informed from start to finish.
+        </div>
 
-</span>
+        <div class="mission-list">
 
-</div>
+          <div>
 
-<div>
+            <strong>
 
-<strong>
+              Practical Engineering
 
-✔ Reliable Delivery
+            </strong>
 
-</strong>
+            <span>
 
-<span>
+              Efficient designs that perform in the field.
 
-Meeting schedules while maintaining quality.
+            </span>
 
-</span>
+          </div>
 
-</div>
+          <div>
 
-</div>
+            <strong>
 
-</div>
+              Responsive Communication
 
-</div>
+            </strong>
 
-</div>
+            <span>
+
+              Keeping clients informed throughout every phase.
+
+            </span>
+
+          </div>
+
+          <div>
+
+            <strong>
+
+              Dependable Delivery
+
+            </strong>
+
+            <span>
+
+              Reliable engineering focused on schedules,
+              quality, and successful project outcomes.
+
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
-
 <section class="values">
 
-<div class="container">
+  <div class="container">
 
-<div class="section-header">
+    <div class="section-header">
 
-<span>
+      <span>
 
-OUR VALUES
+        OUR VALUES
 
-</span>
+      </span>
 
-<h2>
+      <h2>
 
-The Principles That
-Guide Every Project
+        The Principles
+        That Guide
+        Every Project
 
-</h2>
+      </h2>
 
-</div>
+      <p>
 
-<div class="values-grid">
+        Our work is built on professionalism, technical expertise,
+        and a commitment to delivering practical engineering
+        solutions for every client.
 
-{
-values.map(value => (
+      </p>
 
-<div class="value-card">
+    </div>
 
-<h3>
+    <div class="values-grid">
 
-{value.title}
+      {
 
-</h3>
+        values.map((value) => (
 
-<p>
+          <article class="value-card">
 
-{value.text}
+            <div class="value-icon">
 
-</p>
+              {value.icon}
 
-</div>
+            </div>
 
-))
-}
+            <h3>
 
-</div>
+              {value.title}
 
-</div>
+            </h3>
+
+            <p>
+
+              {value.text}
+
+            </p>
+
+          </article>
+
+        ))
+
+      }
+
+    </div>
+
+  </div>
 
 </section>
 
@@ -225,549 +298,658 @@ values.map(value => (
 
 .about-story{
 
-position:relative;
+  position:relative;
 
-overflow:hidden;
+  overflow:hidden;
 
-padding:130px 0;
+  padding:130px 0;
 
-background:white;
+  background:#FFFFFF;
 
 }
 
 .background-grid{
 
-position:absolute;
+  position:absolute;
 
-inset:0;
+  inset:0;
 
-opacity:.18;
+  opacity:.18;
 
-background-image:
+  background-image:
 
-linear-gradient(
-rgba(14,58,93,.05) 1px,
-transparent 1px
-),
+    linear-gradient(
+      rgba(14,58,93,.05) 1px,
+      transparent 1px
+    ),
 
-linear-gradient(
-90deg,
-rgba(14,58,93,.05) 1px,
-transparent 1px
-);
+    linear-gradient(
+      90deg,
+      rgba(14,58,93,.05) 1px,
+      transparent 1px
+    );
 
-background-size:60px 60px;
+  background-size:60px 60px;
 
-pointer-events:none;
+  pointer-events:none;
 
 }
 
 .background-glow{
 
-position:absolute;
+  position:absolute;
 
-right:-240px;
+  right:-240px;
 
-top:-220px;
+  top:-220px;
 
-width:620px;
+  width:620px;
 
-height:620px;
+  height:620px;
 
-border-radius:50%;
+  border-radius:50%;
 
-background:
+  background:
+    radial-gradient(
+      circle,
+      rgba(198,161,91,.10),
+      transparent 72%
+    );
 
-radial-gradient(
-circle,
-rgba(198,161,91,.10),
-transparent 72%
-);
-
-pointer-events:none;
+  pointer-events:none;
 
 }
 
 .about-grid{
 
-position:relative;
+  position:relative;
 
-z-index:2;
+  z-index:2;
 
-display:grid;
+  display:grid;
 
-grid-template-columns:
+  grid-template-columns:1.15fr .85fr;
 
-1.15fr .85fr;
+  gap:80px;
 
-gap:80px;
-
-align-items:center;
+  align-items:center;
 
 }
 
 .about-content{
 
-max-width:700px;
+  max-width:720px;
 
 }
 
 .section-tag{
 
-display:inline-flex;
+  display:inline-flex;
 
-align-items:center;
+  align-items:center;
 
-padding:10px 18px;
+  padding:10px 18px;
 
-background:white;
+  border-radius:999px;
 
-border:1px solid rgba(14,58,93,.08);
+  background:#FFFFFF;
 
-border-radius:999px;
+  border:1px solid rgba(14,58,93,.08);
 
-font-size:.78rem;
+  box-shadow:0 14px 35px rgba(0,0,0,.05);
 
-font-weight:800;
+  font-size:.78rem;
 
-letter-spacing:.14em;
+  font-weight:800;
 
-text-transform:uppercase;
+  letter-spacing:.14em;
 
-color:#0E3A5D;
+  text-transform:uppercase;
 
-margin-bottom:26px;
+  color:#0E3A5D;
 
-box-shadow:
-
-0 14px 35px rgba(0,0,0,.06);
+  margin-bottom:24px;
 
 }
+
 .about-content h2{
 
-font-size:clamp(
-2.8rem,
-5vw,
-4.2rem
-);
+  font-size:clamp(2.8rem,5vw,4.2rem);
 
-line-height:1.06;
+  line-height:1.08;
 
-font-weight:800;
+  font-weight:800;
 
-letter-spacing:-.03em;
+  color:#16324A;
 
-color:#16324A;
-
-margin:0 0 28px;
-
-text-wrap:balance;
+  margin-bottom:28px;
 
 }
 
 .about-content p{
 
-margin:0 0 22px;
+  margin-bottom:22px;
 
-font-size:1.08rem;
+  font-size:1.08rem;
 
-line-height:1.95;
+  line-height:1.95;
 
-color:#66707C;
+  color:#66707C;
+
+}
+
+.stats-grid{
+
+  display:grid;
+
+  grid-template-columns:repeat(2,1fr);
+
+  gap:18px;
+
+  margin-top:42px;
+
+}
+
+.stat-card{
+
+  padding:28px;
+
+  border-radius:22px;
+
+  background:#F8FAFC;
+
+  border:1px solid rgba(14,58,93,.08);
+
+}
+
+.stat-card strong{
+
+  display:block;
+
+  margin-bottom:8px;
+
+  font-size:1.4rem;
+
+  font-weight:800;
+
+  color:#0E3A5D;
+
+}
+
+.stat-card span{
+
+  color:#66707C;
+
+  font-weight:600;
 
 }
 
 .about-card{
 
-position:relative;
+  position:relative;
 
-overflow:hidden;
+  overflow:hidden;
 
-padding:44px;
+  padding:44px;
 
-border-radius:30px;
+  border-radius:30px;
 
-background:
+  background:
+    linear-gradient(
+      135deg,
+      #0E3A5D,
+      #184F7C
+    );
 
-linear-gradient(
-135deg,
-#0E3A5D,
-#184F7C
-);
+  color:#FFFFFF;
 
-color:white;
-
-box-shadow:
-
-0 35px 90px
-rgba(14,58,93,.18);
+  box-shadow:0 35px 90px rgba(14,58,93,.18);
 
 }
 
 .about-card::before{
 
-content:"";
+  content:"";
 
-position:absolute;
+  position:absolute;
 
-top:-120px;
+  top:-120px;
 
-right:-120px;
+  right:-120px;
 
-width:280px;
+  width:280px;
 
-height:280px;
+  height:280px;
 
-border-radius:50%;
+  border-radius:50%;
 
-background:
-
-radial-gradient(
-circle,
-rgba(255,255,255,.10),
-transparent 72%
-);
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,.10),
+      transparent 72%
+    );
 
 }
 
-.card-top{
+.card-top,
+.mission-list{
 
-position:relative;
+  position:relative;
 
-z-index:2;
+  z-index:2;
 
 }
 
 .card-top h3{
 
-margin:0 0 16px;
+  margin-bottom:18px;
 
-font-size:2rem;
+  font-size:2rem;
 
-font-weight:800;
+  font-weight:800;
 
 }
 
 .card-top p{
 
-margin:0 0 34px;
+  margin-bottom:34px;
 
-line-height:1.9;
+  line-height:1.9;
 
-color:rgba(255,255,255,.84);
+  color:rgba(255,255,255,.84);
 
 }
 
 .mission-list{
 
-position:relative;
+  display:grid;
 
-z-index:2;
-
-display:grid;
-
-gap:26px;
+  gap:26px;
 
 }
 
 .mission-list div{
 
-padding:22px 0;
+  padding-top:24px;
 
-border-top:1px solid rgba(255,255,255,.16);
+  border-top:1px solid rgba(255,255,255,.16);
 
 }
 
 .mission-list div:first-child{
 
-border-top:none;
+  border-top:none;
 
-padding-top:0;
+  padding-top:0;
 
 }
 
 .mission-list strong{
 
-display:block;
+  display:block;
 
-margin-bottom:8px;
+  margin-bottom:8px;
 
-font-size:1.15rem;
-
-font-weight:800;
-
-color:white;
+  font-size:1.15rem;
 
 }
 
 .mission-list span{
 
-display:block;
+  line-height:1.8;
 
-line-height:1.8;
-
-color:rgba(255,255,255,.80);
+  color:rgba(255,255,255,.80);
 
 }
 
 .values{
 
-position:relative;
+  padding:130px 0;
 
-padding:130px 0;
-
-background:
-
-linear-gradient(
-180deg,
-#F8FAFC,
-#FFFFFF
-);
+  background:linear-gradient(
+    180deg,
+    #F8FAFC,
+    #FFFFFF
+  );
 
 }
 
 .section-header{
 
-max-width:760px;
+  max-width:760px;
 
-margin:0 auto 70px;
+  margin:0 auto 80px;
 
-text-align:center;
+  text-align:center;
 
 }
 
 .section-header span{
 
-display:inline-flex;
+  display:inline-flex;
 
-align-items:center;
+  align-items:center;
 
-padding:10px 18px;
+  padding:10px 18px;
 
-background:white;
+  border-radius:999px;
 
-border:1px solid rgba(14,58,93,.08);
+  background:#FFFFFF;
 
-border-radius:999px;
+  border:1px solid rgba(14,58,93,.08);
 
-font-size:.78rem;
+  font-size:.78rem;
 
-font-weight:800;
+  font-weight:800;
 
-letter-spacing:.14em;
+  letter-spacing:.14em;
 
-text-transform:uppercase;
+  text-transform:uppercase;
 
-color:#0E3A5D;
+  color:#0E3A5D;
 
-margin-bottom:22px;
-
-box-shadow:
-
-0 14px 35px rgba(0,0,0,.05);
+  margin-bottom:24px;
 
 }
 
 .section-header h2{
 
-font-size:clamp(
-2.7rem,
-5vw,
-3.9rem
-);
+  font-size:clamp(2.7rem,5vw,4rem);
 
-line-height:1.1;
+  line-height:1.08;
 
-font-weight:800;
+  font-weight:800;
 
-letter-spacing:-.03em;
+  color:#16324A;
 
-color:#16324A;
+  margin-bottom:24px;
 
-margin:0;
+}
+
+.section-header p{
+
+  max-width:680px;
+
+  margin:0 auto;
+
+  color:#66707C;
+
+  line-height:1.9;
 
 }
 
 .values-grid{
 
-display:grid;
+  display:grid;
 
-grid-template-columns:
+  grid-template-columns:repeat(2,1fr);
 
-repeat(2,1fr);
+  gap:30px;
 
-gap:30px;
+}
+.value-card{
+
+  position:relative;
+
+  overflow:hidden;
+
+  padding:38px;
+
+  background:#FFFFFF;
+
+  border-radius:24px;
+
+  border:1px solid rgba(14,58,93,.08);
+
+  box-shadow:0 18px 45px rgba(14,58,93,.06);
+
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    border-color .35s ease;
 
 }
 
-.value-card{
+.value-card::before{
 
-padding:38px;
+  content:"";
 
-background:white;
+  position:absolute;
 
-border-radius:24px;
+  left:0;
 
-border:1px solid #EEF2F6;
+  top:0;
 
-box-shadow:
+  width:100%;
 
-0 18px 45px rgba(15,58,93,.06);
+  height:5px;
 
-transition:
-
-transform .35s ease,
-box-shadow .35s ease,
-border-color .35s ease;
+  background:linear-gradient(
+    90deg,
+    #0E3A5D,
+    #C6A15B
+  );
 
 }
 
 .value-card:hover{
 
-transform:translateY(-8px);
+  transform:translateY(-10px);
 
-border-color:
+  border-color:rgba(198,161,91,.30);
 
-rgba(198,161,91,.28);
+  box-shadow:0 34px 80px rgba(14,58,93,.14);
 
-box-shadow:
+}
 
-0 30px 70px rgba(15,58,93,.12);
+.value-icon{
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  width:72px;
+
+  height:72px;
+
+  margin-bottom:24px;
+
+  border-radius:20px;
+
+  background:linear-gradient(
+    135deg,
+    #0E3A5D,
+    #1B5B8C
+  );
+
+  color:#FFFFFF;
+
+  font-size:2rem;
+
+  box-shadow:0 18px 45px rgba(14,58,93,.22);
 
 }
 
 .value-card h3{
 
-margin:0 0 18px;
+  margin-bottom:18px;
 
-font-size:1.45rem;
+  font-size:1.45rem;
 
-font-weight:800;
+  font-weight:800;
 
-color:#16324A;
+  line-height:1.3;
+
+  color:#16324A;
 
 }
 
 .value-card p{
 
-margin:0;
+  margin:0;
 
-font-size:1rem;
+  line-height:1.9;
 
-line-height:1.9;
-
-color:#66707C;
+  color:#66707C;
 
 }
+
 @media (max-width:1100px){
 
-.about-grid{
+  .about-grid{
 
-grid-template-columns:1fr;
+    grid-template-columns:1fr;
 
-gap:60px;
+    gap:60px;
 
-}
+  }
 
-.about-content{
+  .about-content{
 
-max-width:100%;
+    max-width:100%;
 
-}
+  }
 
-.about-card{
+  .about-card{
 
-max-width:760px;
+    max-width:760px;
 
-margin:0 auto;
+    margin:0 auto;
 
-}
+  }
 
 }
 
 @media (max-width:768px){
 
-.about-story,
+  .about-story,
 
-.values{
+  .values{
 
-padding:90px 0;
+    padding:90px 0;
 
-}
+  }
 
-.about-content h2,
+  .about-content h2,
 
-.section-header h2{
+  .section-header h2{
 
-font-size:2.5rem;
+    font-size:2.5rem;
 
-}
+  }
 
-.about-content p{
+  .about-content p,
 
-font-size:1rem;
+  .section-header p{
 
-}
+    font-size:1rem;
 
-.values-grid{
+  }
 
-grid-template-columns:1fr;
+  .stats-grid{
 
-}
+    grid-template-columns:1fr;
 
-.about-card{
+  }
 
-padding:34px;
+  .values-grid{
 
-}
+    grid-template-columns:1fr;
+
+    gap:24px;
+
+  }
+
+  .about-card{
+
+    padding:34px;
+
+  }
+
+  .value-card{
+
+    padding:32px;
+
+  }
 
 }
 
 @media (max-width:480px){
 
-.about-story,
+  .about-story,
 
-.values{
+  .values{
 
-padding:80px 0;
+    padding:80px 0;
 
-}
+  }
 
-.section-tag,
+  .section-tag,
 
-.section-header span{
+  .section-header span{
 
-font-size:.68rem;
+    font-size:.68rem;
 
-padding:8px 14px;
+    padding:8px 14px;
 
-}
+  }
 
-.about-card{
+  .about-content h2,
 
-padding:28px;
+  .section-header h2{
 
-border-radius:24px;
+    font-size:2rem;
 
-}
+  }
 
-.card-top h3{
+  .about-card{
 
-font-size:1.7rem;
+    padding:28px;
 
-}
+    border-radius:24px;
 
-.value-card{
+  }
 
-padding:28px;
+  .card-top h3{
 
-}
+    font-size:1.7rem;
 
-.value-card h3{
+  }
 
-font-size:1.3rem;
+  .stat-card{
 
-}
+    padding:22px;
+
+  }
+
+  .value-card{
+
+    padding:28px;
+
+    border-radius:20px;
+
+  }
+
+  .value-icon{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:18px;
+
+    font-size:1.7rem;
+
+  }
+
+  .value-card h3{
+
+    font-size:1.3rem;
+
+  }
 
 }
 

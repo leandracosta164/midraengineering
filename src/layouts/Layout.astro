@@ -80,7 +80,6 @@ const websiteSchema = {
   }
 };
 ---
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -90,202 +89,202 @@ const websiteSchema = {
 <meta charset="utf-8" />
 
 <meta
-name="viewport"
-content="width=device-width, initial-scale=1"
+  name="viewport"
+  content="width=device-width, initial-scale=1"
 />
 
 <meta
-http-equiv="X-UA-Compatible"
-content="IE=edge"
+  http-equiv="X-UA-Compatible"
+  content="IE=edge"
 />
 
 <meta
-name="format-detection"
-content="telephone=no"
+  name="format-detection"
+  content="telephone=no"
 />
 
 <meta
-name="theme-color"
-content="#0E3A5D"
+  name="theme-color"
+  content="#0E3A5D"
 />
 
 <meta
-name="robots"
-content={robots}
+  name="robots"
+  content={robots}
 />
 
 <meta
-name="author"
-content="MIDRA Engineering"
+  name="author"
+  content="MIDRA Engineering"
 />
 
 <meta
-name="generator"
-content={Astro.generator}
+  name="generator"
+  content={Astro.generator}
 />
 
 <title>{title}</title>
 
 <meta
-name="description"
-content={description}
+  name="description"
+  content={description}
 />
 
 <link
-rel="canonical"
-href={canonicalUrl}
+  rel="canonical"
+  href={canonicalUrl}
 />
 
 <link
-rel="icon"
-href="/favicon.ico"
-sizes="any"
+  rel="icon"
+  href="/favicon.ico"
+  sizes="any"
 />
 
 <link
-rel="icon"
-type="image/svg+xml"
-href="/favicon.svg"
+  rel="icon"
+  type="image/svg+xml"
+  href="/favicon.svg"
 />
 
 <link
-rel="icon"
-type="image/png"
-sizes="96x96"
-href="/favicon-96x96.png"
+  rel="icon"
+  type="image/png"
+  sizes="96x96"
+  href="/favicon-96x96.png"
 />
 
 <link
-rel="apple-touch-icon"
-href="/apple-touch-icon.png"
+  rel="apple-touch-icon"
+  href="/apple-touch-icon.png"
 />
 
 <link
-rel="manifest"
-href="/site.webmanifest"
+  rel="manifest"
+  href="/site.webmanifest"
 />
 
 <meta
-name="apple-mobile-web-app-capable"
-content="yes"
+  name="apple-mobile-web-app-capable"
+  content="yes"
 />
 
 <meta
-name="apple-mobile-web-app-status-bar-style"
-content="default"
+  name="apple-mobile-web-app-status-bar-style"
+  content="default"
 />
 
 <meta
-name="apple-mobile-web-app-title"
-content="MIDRA Engineering"
+  name="apple-mobile-web-app-title"
+  content="MIDRA Engineering"
 />
 
 <link
-rel="preconnect"
-href="https://fonts.googleapis.com"
+  rel="preconnect"
+  href="https://fonts.googleapis.com"
 />
 
 <link
-rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin
+  rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin
 />
 
 <link
-href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+  rel="stylesheet"
 />
 
 <link
-rel="preload"
-as="image"
-href="/Final_Midra_Logo_Transparent.png"
-fetchpriority="high"
+  rel="preload"
+  as="image"
+  href="/Final_Midra_Logo_Transparent.png"
+  fetchpriority="high"
 />
 
 <meta
-property="og:locale"
-content="en_US"
+  property="og:locale"
+  content="en_US"
 />
 
 <meta
-property="og:type"
-content="website"
+  property="og:type"
+  content="website"
 />
 
 <meta
-property="og:site_name"
-content="MIDRA Engineering"
+  property="og:site_name"
+  content="MIDRA Engineering"
 />
 
 <meta
-property="og:title"
-content={title}
+  property="og:title"
+  content={title}
 />
 
 <meta
-property="og:description"
-content={description}
+  property="og:description"
+  content={description}
 />
 
 <meta
-property="og:url"
-content={canonicalUrl}
+  property="og:url"
+  content={canonicalUrl}
 />
 
 <meta
-property="og:image"
-content={ogImage}
+  property="og:image"
+  content={ogImage}
 />
 
 <meta
-property="og:image:alt"
-content="MIDRA Engineering"
+  property="og:image:alt"
+  content="MIDRA Engineering"
 />
 
 <meta
-property="og:image:width"
-content="1200"
+  property="og:image:width"
+  content="1200"
 />
 
 <meta
-property="og:image:height"
-content="630"
+  property="og:image:height"
+  content="630"
 />
 
 <meta
-name="twitter:card"
-content="summary_large_image"
+  name="twitter:card"
+  content="summary_large_image"
 />
 
 <meta
-name="twitter:title"
-content={title}
+  name="twitter:title"
+  content={title}
 />
 
 <meta
-name="twitter:description"
-content={description}
+  name="twitter:description"
+  content={description}
 />
 
 <meta
-name="twitter:image"
-content={ogImage}
+  name="twitter:image"
+  content={ogImage}
 />
 
 <meta
-name="twitter:image:alt"
-content="MIDRA Engineering"
+  name="twitter:image:alt"
+  content="MIDRA Engineering"
 />
 
 <script
-type="application/ld+json"
-set:html={JSON.stringify(organizationSchema)}
+  type="application/ld+json"
+  set:html={JSON.stringify(organizationSchema)}
 />
 
 <script
-type="application/ld+json"
-set:html={JSON.stringify(websiteSchema)}
+  type="application/ld+json"
+  set:html={JSON.stringify(websiteSchema)}
 />
 
 <!-- Google tag (gtag.js) -->
@@ -296,14 +295,15 @@ set:html={JSON.stringify(websiteSchema)}
 
 <script is:inline>
   window.dataLayer = window.dataLayer || [];
+
   function gtag() {
     dataLayer.push(arguments);
   }
 
   gtag("js", new Date());
+
   gtag("config", "G-5F86LXP7V2");
 </script>
-
 </head>
 
 <body>
@@ -336,33 +336,33 @@ set:html={JSON.stringify(websiteSchema)}
 
 :root{
 
---primary:#0E3A5D;
+  --primary:#0E3A5D;
 
---primary-light:#174D79;
+  --primary-light:#174D79;
 
---secondary:#C6A15B;
+  --secondary:#C6A15B;
 
---dark:#16324A;
+  --dark:#16324A;
 
---text:#66707C;
+  --text:#66707C;
 
---background:#F8FAFC;
+  --background:#F8FAFC;
 
---white:#FFFFFF;
+  --white:#FFFFFF;
 
---border:#E8EDF2;
+  --border:#E8EDF2;
 
---container:1280px;
+  --container:1280px;
 
---radius:24px;
+  --radius:24px;
 
---transition:.35s ease;
+  --transition:.35s ease;
 
---shadow-sm:0 8px 24px rgba(14,58,93,.06);
+  --shadow-sm:0 8px 24px rgba(14,58,93,.06);
 
---shadow-md:0 18px 45px rgba(14,58,93,.10);
+  --shadow-md:0 18px 45px rgba(14,58,93,.10);
 
---shadow-lg:0 32px 80px rgba(14,58,93,.16);
+  --shadow-lg:0 32px 80px rgba(14,58,93,.16);
 
 }
 
@@ -370,89 +370,89 @@ set:html={JSON.stringify(websiteSchema)}
 *::before,
 *::after{
 
-margin:0;
+  margin:0;
 
-padding:0;
+  padding:0;
 
-box-sizing:border-box;
+  box-sizing:border-box;
 
 }
 
 html{
 
-scroll-behavior:smooth;
+  scroll-behavior:smooth;
 
-scroll-padding-top:104px;
+  scroll-padding-top:104px;
 
--webkit-text-size-adjust:100%;
+  -webkit-text-size-adjust:100%;
 
 }
 
 body{
 
-font-family:"Inter",sans-serif;
+  font-family:"Inter",sans-serif;
 
-font-size:16px;
+  font-size:16px;
 
-line-height:1.6;
+  line-height:1.6;
 
-color:var(--dark);
+  color:var(--dark);
 
-background:var(--white);
+  background:var(--white);
 
-text-rendering:optimizeLegibility;
+  text-rendering:optimizeLegibility;
 
--webkit-font-smoothing:antialiased;
+  -webkit-font-smoothing:antialiased;
 
--moz-osx-font-smoothing:grayscale;
+  -moz-osx-font-smoothing:grayscale;
 
-overflow-x:hidden;
+  overflow-x:hidden;
 
-min-height:100vh;
+  min-height:100vh;
 
 }
 
 main{
 
-display:block;
+  display:block;
 
-min-height:60vh;
+  min-height:60vh;
 
 }
 
 img{
 
-display:block;
+  display:block;
 
-max-width:100%;
+  max-width:100%;
 
-height:auto;
+  height:auto;
 
-border:0;
+  border:0;
 
-user-select:none;
+  user-select:none;
 
--webkit-user-drag:none;
+  -webkit-user-drag:none;
 
 }
 
 picture{
 
-display:block;
+  display:block;
 
 }
 
 svg{
 
-display:block;
+  display:block;
 
 }
 
 a{
 
-color:inherit;
+  color:inherit;
 
-text-decoration:none;
+  text-decoration:none;
 
 }
 
@@ -461,88 +461,82 @@ input,
 textarea,
 select{
 
-font:inherit;
+  font:inherit;
 
 }
 
 button{
 
-cursor:pointer;
+  cursor:pointer;
 
-border:none;
+  border:none;
 
-background:none;
+  background:none;
 
 }
 
 .container{
 
-width:min(100% - 48px,var(--container));
+  width:min(100% - 48px,var(--container));
 
-margin-inline:auto;
+  margin-inline:auto;
 
 }
 
 section{
 
-position:relative;
+  position:relative;
 
 }
 
 ::selection{
 
-background:var(--primary);
+  background:var(--primary);
 
-color:#fff;
+  color:#fff;
 
 }
 
 :focus-visible{
 
-outline:3px solid var(--secondary);
+  outline:3px solid var(--secondary);
 
-outline-offset:3px;
+  outline-offset:3px;
 
-border-radius:6px;
+  border-radius:6px;
 
 }
 
 .skip-link{
 
-position:absolute;
+  position:absolute;
 
-left:-9999px;
+  left:-9999px;
 
-top:12px;
+  top:12px;
 
-z-index:99999;
+  z-index:99999;
 
-padding:12px 18px;
+  padding:12px 18px;
 
-background:var(--primary);
+  background:var(--primary);
 
-color:#fff;
+  color:#fff;
 
-font-weight:700;
+  font-weight:700;
 
-border-radius:10px;
+  border-radius:10px;
 
 }
 
 .skip-link:focus{
 
-left:12px;
+  left:12px;
 
 }
-.skip-link:focus{
-
-left:12px;
-
-}
-
 html:focus-within{
 
-scroll-behavior:smooth;
+  scroll-behavior:smooth;
 
 }
 
@@ -551,7 +545,7 @@ main,
 header,
 footer{
 
-position:relative;
+  position:relative;
 
 }
 
@@ -560,9 +554,9 @@ position:relative;
 img,
 svg{
 
-backface-visibility:hidden;
+  backface-visibility:hidden;
 
-transform:translateZ(0);
+  transform:translateZ(0);
 
 }
 
@@ -570,7 +564,7 @@ transform:translateZ(0);
 
 body{
 
-overflow-x:hidden;
+  overflow-x:hidden;
 
 }
 
@@ -578,72 +572,72 @@ overflow-x:hidden;
 
 @media (pointer:coarse){
 
-button,
-a{
+  button,
+  a{
 
-min-height:44px;
+    min-height:44px;
 
-}
+  }
 
 }
 
 @media (prefers-reduced-motion:reduce){
 
-html{
+  html{
 
-scroll-behavior:auto;
+    scroll-behavior:auto;
 
-}
+  }
 
-*,
-*::before,
-*::after{
+  *,
+  *::before,
+  *::after{
 
-animation:none !important;
+    animation:none !important;
 
-transition:none !important;
+    transition:none !important;
 
-scroll-behavior:auto !important;
+    scroll-behavior:auto !important;
 
-}
+  }
 
 }
 
 @media (max-width:768px){
 
-.container{
+  .container{
 
-width:min(100% - 32px,var(--container));
+    width:min(100% - 32px,var(--container));
 
-}
+  }
 
-html{
+  html{
 
-scroll-padding-top:88px;
+    scroll-padding-top:88px;
 
-}
+  }
 
-body{
+  body{
 
-font-size:15px;
+    font-size:15px;
 
-}
+  }
 
 }
 
 @media (max-width:480px){
 
-.container{
+  .container{
 
-width:min(100% - 24px,var(--container));
+    width:min(100% - 24px,var(--container));
 
-}
+  }
 
-html{
+  html{
 
-scroll-padding-top:80px;
+    scroll-padding-top:80px;
 
-}
+  }
 
 }
 

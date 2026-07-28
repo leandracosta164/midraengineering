@@ -3,24 +3,30 @@ import Layout from "../layouts/Layout.astro";
 import PageHero from "../components/PageHero.astro";
 
 const contactInfo = [
+
   {
+    icon: "✉️",
     title: "Email",
     value: "info@midraengineering.com",
     href: "mailto:info@midraengineering.com"
   },
+
   {
+    icon: "📞",
     title: "Phone",
     value: "(732) 555-5555",
     href: "tel:+17325555555"
   },
+
   {
+    icon: "📍",
     title: "Location",
     value: "New Jersey",
     href: null
   }
+
 ];
 ---
-
 <Layout
   title="Contact MIDRA Engineering | Civil Engineering in New Jersey"
   description="Contact MIDRA Engineering to discuss residential, commercial, municipal, stormwater, and land development engineering projects throughout New Jersey."
@@ -33,472 +39,446 @@ const contactInfo = [
 
 <section class="contact-page">
 
-<div class="background-grid"></div>
-<div class="background-glow"></div>
+  <div class="background-grid"></div>
 
-<div class="container">
+  <div class="background-glow"></div>
 
-<div class="contact-grid">
+  <div class="container">
 
-<div class="contact-content">
+    <div class="contact-grid">
 
-<span class="section-tag">
+      <div class="contact-content">
 
-GET IN TOUCH
+        <span class="section-tag">
 
-</span>
+          GET IN TOUCH
 
-<h2>
+        </span>
 
-Let's Talk About
-Your Project
+        <h2>
 
-</h2>
+          Let's Build
+          Something Great
+          Together.
 
-<p>
+        </h2>
 
-Whether you're planning a custom home,
-commercial development, subdivision,
-stormwater improvements, or municipal
-infrastructure, we'd be happy to discuss
-your project and recommend the right
-engineering solution.
+        <p>
 
-</p>
+          Whether you're planning a residential development,
+          commercial property, subdivision, stormwater
+          improvements, or municipal infrastructure project,
+          our experienced engineering team is ready to help
+          bring your vision to life.
 
-<div class="contact-cards">
+        </p>
 
-{
+        <div class="contact-cards">
 
-contactInfo.map(item => (
+          {
 
-<div class="contact-card">
+            contactInfo.map((item) => (
 
-<h3>
+              <div class="contact-card">
 
-{item.title}
+                <div class="contact-icon">
 
-</h3>
+                  {item.icon}
 
-{
+                </div>
 
-item.href ? (
+                <div>
 
-<a href={item.href}>
+                  <h3>
 
-{item.value}
+                    {item.title}
 
-</a>
+                  </h3>
 
-) : (
+                  {
 
-<p>
+                    item.href ? (
 
-{item.value}
+                      <a href={item.href}>
 
-</p>
+                        {item.value}
 
-)
+                      </a>
 
-}
+                    ) : (
 
-</div>
+                      <p>
 
-))
+                        {item.value}
 
-}
+                      </p>
 
-</div>
+                    )
 
-</div>
+                  }
 
-<div class="contact-form-card">
+                </div>
 
-<h3>
+              </div>
 
-Request a Proposal
+            ))
 
-</h3>
+          }
 
-<form
-id="contact-form"
-action="https://formspree.io/f/mykrlepz"
-method="POST"
->
+        </div>
 
-<input
-type="hidden"
-name="_subject"
-value="New MIDRA Engineering Website Inquiry"
-/>
+      </div>
 
-<input
-type="text"
-name="_gotcha"
-tabindex="-1"
-autocomplete="off"
-style="display:none"
-/>
+      <div class="contact-form-card">
 
-<div class="form-grid">
+        <h3>
 
-<input
-type="text"
-name="name"
-placeholder="Full Name"
-autocomplete="name"
-required
-/>
+          Request a Proposal
 
-<input
-type="email"
-name="email"
-placeholder="Email Address"
-autocomplete="email"
-required
-/>
+        </h3>
 
-<input
-type="tel"
-name="phone"
-placeholder="Phone Number"
-autocomplete="tel"
-/>
+        <p class="form-intro">
 
-<input
-type="text"
-name="location"
-placeholder="Project Location"
-autocomplete="address-level2"
-/>
+          Tell us a little about your project and we'll
+          get back to you as soon as possible.
 
-<textarea
-name="message"
-rows="6"
-placeholder="Tell us about your project..."
-required
-></textarea>
+        </p>
 
-<button
-id="submit-button"
-type="submit"
->
+        <form
+          id="contact-form"
+          action="https://formspree.io/f/mykrlepz"
+          method="POST"
+        >
 
-Send Message
+          <input
+            type="hidden"
+            name="_subject"
+            value="New MIDRA Engineering Website Inquiry"
+          />
 
-</button>
+          <input
+            type="text"
+            name="_gotcha"
+            tabindex="-1"
+            autocomplete="off"
+            style="display:none"
+          />
 
-<p
-id="form-success"
-class="form-message success"
-hidden
->
+          <div class="form-grid">
 
-✅ Thank you! Your message has been sent successfully. We'll get back to you as soon as possible.
+            <input
+              type="text"
+              name="name"
+              placeholder="Full Name"
+              autocomplete="name"
+              required
+            />
 
-</p>
+            <input
+              type="email"
+              name="email"
+              placeholder="Email Address"
+              autocomplete="email"
+              required
+            />
 
-<p
-id="form-error"
-class="form-message error"
-hidden
->
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone Number"
+              autocomplete="tel"
+            />
 
-Sorry, something went wrong. Please try again.
+            <input
+              type="text"
+              name="location"
+              placeholder="Project Location"
+              autocomplete="address-level2"
+            />
 
-</p>
+            <textarea
+              name="message"
+              rows="6"
+              placeholder="Tell us about your project..."
+              required
+            ></textarea>
 
-</div>
+            <button
+              id="submit-button"
+              type="submit"
+            >
 
-</form>
+              Send Message
 
-</div>
+            </button>
 
-</div>
+            <p
+              id="form-success"
+              class="form-message success"
+              hidden
+            >
 
-</div>
+              ✅ Thank you! Your message has been sent successfully. We'll get back to you as soon as possible.
+
+            </p>
+
+            <p
+              id="form-error"
+              class="form-message error"
+              hidden
+            >
+
+              Sorry, something went wrong. Please try again.
+
+            </p>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-
-const form = document.getElementById("contact-form");
-const submitButton = document.getElementById("submit-button");
-const successMessage = document.getElementById("form-success");
-const errorMessage = document.getElementById("form-error");
-
-if (!form) return;
-
-form.addEventListener("submit", async (event) => {
-
-event.preventDefault();
-
-successMessage.hidden = true;
-errorMessage.hidden = true;
-
-submitButton.disabled = true;
-submitButton.textContent = "Sending...";
-
-const formData = new FormData(form);
-
-try {
-
-const response = await fetch(form.action, {
-
-method: "POST",
-
-body: formData,
-
-headers: {
-
-Accept: "application/json"
-
-}
-
-});
-
-if (response.ok) {
-
-form.reset();
-
-successMessage.hidden = false;
-
-submitButton.disabled = false;
-submitButton.textContent = "Send Message";
-
-} else {
-
-errorMessage.hidden = false;
-
-submitButton.disabled = false;
-submitButton.textContent = "Send Message";
-
-}
-
-} catch (error) {
-
-errorMessage.hidden = false;
-
-submitButton.disabled = false;
-submitButton.textContent = "Send Message";
-
-}
-
-});
-
-});
-</script>
-
-<style>
-
 .contact-page{
 
-position:relative;
+  position:relative;
 
-overflow:hidden;
+  overflow:hidden;
 
-padding:130px 0;
+  padding:130px 0;
 
-background:
+  background:
 
-linear-gradient(
-180deg,
-#F8FAFC,
-#FFFFFF
-);
+    linear-gradient(
+      180deg,
+      #F8FAFC,
+      #FFFFFF
+    );
 
 }
 
 .background-grid{
 
-position:absolute;
+  position:absolute;
 
-inset:0;
+  inset:0;
 
-opacity:.18;
+  opacity:.18;
 
-background-image:
+  background-image:
 
-linear-gradient(
-rgba(14,58,93,.05) 1px,
-transparent 1px
-),
+    linear-gradient(
+      rgba(14,58,93,.05) 1px,
+      transparent 1px
+    ),
 
-linear-gradient(
-90deg,
-rgba(14,58,93,.05) 1px,
-transparent 1px
-);
+    linear-gradient(
+      90deg,
+      rgba(14,58,93,.05) 1px,
+      transparent 1px
+    );
 
-background-size:60px 60px;
+  background-size:60px 60px;
 
-pointer-events:none;
+  pointer-events:none;
 
 }
 
 .background-glow{
 
-position:absolute;
+  position:absolute;
 
-left:-250px;
+  left:-250px;
 
-bottom:-220px;
+  bottom:-220px;
 
-width:650px;
+  width:650px;
 
-height:650px;
+  height:650px;
 
-border-radius:50%;
+  border-radius:50%;
 
-background:
+  background:
 
-radial-gradient(
-circle,
-rgba(198,161,91,.10),
-transparent 72%
-);
+    radial-gradient(
+      circle,
+      rgba(198,161,91,.10),
+      transparent 72%
+    );
 
-pointer-events:none;
+  pointer-events:none;
 
 }
 
 .contact-grid{
 
-position:relative;
+  position:relative;
 
-z-index:2;
+  z-index:2;
 
-display:grid;
+  display:grid;
 
-grid-template-columns:1fr 1fr;
+  grid-template-columns:1fr 1fr;
 
-gap:70px;
+  gap:70px;
 
-align-items:start;
+  align-items:start;
 
 }
 
 .section-tag{
 
-display:inline-flex;
+  display:inline-flex;
 
-align-items:center;
+  align-items:center;
 
-padding:10px 18px;
+  padding:10px 18px;
 
-background:white;
+  background:#FFFFFF;
 
-border:1px solid rgba(14,58,93,.08);
+  border:1px solid rgba(14,58,93,.08);
 
-border-radius:999px;
+  border-radius:999px;
 
-font-size:.78rem;
+  font-size:.78rem;
 
-font-weight:800;
+  font-weight:800;
 
-letter-spacing:.14em;
+  letter-spacing:.14em;
 
-text-transform:uppercase;
+  text-transform:uppercase;
 
-color:#0E3A5D;
+  color:#0E3A5D;
 
-margin-bottom:24px;
+  margin-bottom:24px;
 
-box-shadow:
+  box-shadow:
 
-0 14px 35px rgba(0,0,0,.05);
+    0 14px 35px rgba(0,0,0,.05);
 
 }
 
 .contact-content h2{
 
-font-size:clamp(
-2.8rem,
-5vw,
-4.2rem
-);
+  margin:0 0 24px;
 
-font-weight:800;
+  font-size:clamp(2.8rem,5vw,4.2rem);
 
-line-height:1.06;
+  line-height:1.06;
 
-letter-spacing:-.03em;
+  font-weight:800;
 
-color:#16324A;
+  letter-spacing:-.03em;
 
-margin:0 0 24px;
+  color:#16324A;
 
-text-wrap:balance;
+  text-wrap:balance;
 
 }
 
 .contact-content p{
 
-font-size:1.08rem;
+  margin:0 0 42px;
 
-line-height:1.95;
+  max-width:620px;
 
-color:#66707C;
+  font-size:1.08rem;
 
-margin-bottom:42px;
+  line-height:1.95;
 
-max-width:620px;
+  color:#66707C;
 
 }
 
 .contact-cards{
 
-display:grid;
+  display:grid;
 
-gap:24px;
+  gap:22px;
 
 }
 
 .contact-card{
 
-background:white;
+  display:flex;
 
-padding:30px;
+  align-items:flex-start;
 
-border-radius:22px;
+  gap:20px;
 
-border:1px solid #EEF2F6;
+  padding:30px;
 
-box-shadow:
+  background:#FFFFFF;
 
-0 16px 40px rgba(15,58,93,.06);
+  border-radius:22px;
 
-transition:
+  border:1px solid #EEF2F6;
 
-transform .35s ease,
-box-shadow .35s ease,
-border-color .35s ease;
+  box-shadow:
+
+    0 16px 40px rgba(15,58,93,.06);
+
+  transition:
+
+    transform .35s ease,
+    border-color .35s ease,
+    box-shadow .35s ease;
 
 }
 
 .contact-card:hover{
 
-transform:translateY(-6px);
+  transform:translateY(-6px);
 
-border-color:
+  border-color:rgba(198,161,91,.30);
 
-rgba(198,161,91,.30);
+  box-shadow:
 
-box-shadow:
+    0 26px 60px rgba(15,58,93,.12);
 
-0 26px 60px rgba(15,58,93,.12);
+}
+
+.contact-icon{
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  width:58px;
+
+  height:58px;
+
+  flex-shrink:0;
+
+  border-radius:16px;
+
+  background:
+
+    linear-gradient(
+      135deg,
+      rgba(14,58,93,.08),
+      rgba(198,161,91,.12)
+    );
+
+  font-size:1.5rem;
 
 }
 
 .contact-card h3{
 
-margin:0 0 10px;
+  margin:0 0 10px;
 
-font-size:1.15rem;
+  font-size:1.15rem;
 
-font-weight:800;
+  font-weight:800;
 
-color:#16324A;
+  color:#16324A;
 
 }
 
@@ -506,62 +486,97 @@ color:#16324A;
 
 .contact-card p{
 
-margin:0;
+  margin:0;
 
-font-size:1rem;
+  color:#66707C;
 
-line-height:1.8;
+  text-decoration:none;
 
-color:#66707C;
+  line-height:1.8;
 
-text-decoration:none;
-
-transition:
-
-color .3s ease;
+  transition:color .3s ease;
 
 }
 
 .contact-card a:hover{
 
-color:#0E3A5D;
+  color:#0E3A5D;
 
 }
 
 .contact-form-card{
 
-background:white;
+  position:relative;
 
-padding:42px;
+  overflow:hidden;
 
-border-radius:28px;
+  padding:42px;
 
-border:1px solid #EEF2F6;
+  background:#FFFFFF;
 
-box-shadow:
+  border-radius:28px;
 
-0 22px 60px rgba(15,58,93,.08);
+  border:1px solid #EEF2F6;
+
+  box-shadow:
+
+    0 22px 60px rgba(15,58,93,.08);
+
+}
+
+.contact-form-card::before{
+
+  content:"";
+
+  position:absolute;
+
+  top:0;
+
+  left:0;
+
+  width:100%;
+
+  height:5px;
+
+  background:
+
+    linear-gradient(
+      90deg,
+      #0E3A5D,
+      #C6A15B
+    );
 
 }
 
 .contact-form-card h3{
 
-margin:0 0 30px;
+  margin:0 0 12px;
 
-font-size:2rem;
+  font-size:2rem;
 
-font-weight:800;
+  font-weight:800;
 
-color:#16324A;
+  color:#16324A;
 
 }
+
+.form-intro{
+
+  margin:0 0 30px !important;
+
+  color:#66707C;
+
+  line-height:1.8;
+
+}
+
 .form-grid{
 
-display:grid;
+  display:grid;
 
-grid-template-columns:1fr 1fr;
+  grid-template-columns:1fr 1fr;
 
-gap:20px;
+  gap:20px;
 
 }
 
@@ -569,37 +584,35 @@ gap:20px;
 
 .form-grid textarea{
 
-width:100%;
+  width:100%;
 
-padding:16px 18px;
+  padding:16px 18px;
 
-border:1px solid #DCE7F0;
+  border:1px solid #DCE7F0;
 
-border-radius:14px;
+  border-radius:14px;
 
-background:#FBFCFD;
+  background:#FBFCFD;
 
-font-size:1rem;
+  font:inherit;
 
-font-family:inherit;
+  box-sizing:border-box;
 
-box-sizing:border-box;
+  transition:
 
-transition:
-
-border-color .3s ease,
-box-shadow .3s ease,
-background .3s ease;
+    border-color .3s ease,
+    background .3s ease,
+    box-shadow .3s ease;
 
 }
 
 .form-grid textarea{
 
-grid-column:1 / -1;
+  grid-column:1 / -1;
 
-min-height:180px;
+  min-height:180px;
 
-resize:vertical;
+  resize:vertical;
 
 }
 
@@ -607,227 +620,242 @@ resize:vertical;
 
 .form-grid textarea:focus{
 
-outline:none;
+  outline:none;
 
-background:white;
+  background:#FFFFFF;
 
-border-color:#0E3A5D;
+  border-color:#0E3A5D;
 
-box-shadow:
+  box-shadow:
 
-0 0 0 4px rgba(14,58,93,.08);
+    0 0 0 4px rgba(14,58,93,.08);
 
 }
 
 .form-grid button{
 
-grid-column:1 / -1;
+  grid-column:1 / -1;
 
-display:inline-flex;
+  display:inline-flex;
 
-justify-content:center;
+  justify-content:center;
 
-align-items:center;
+  align-items:center;
 
-padding:18px;
+  padding:18px;
 
-border:none;
+  border:none;
 
-border-radius:999px;
+  border-radius:999px;
 
-background:#0E3A5D;
+  background:#0E3A5D;
 
-color:white;
+  color:#FFFFFF;
 
-font-size:1rem;
+  font-size:1rem;
 
-font-weight:700;
+  font-weight:700;
 
-cursor:pointer;
+  cursor:pointer;
 
-transition:
+  transition:
 
-background .3s ease,
-transform .3s ease,
-box-shadow .3s ease;
+    transform .3s ease,
+    background .3s ease,
+    box-shadow .3s ease;
 
 }
 
 .form-grid button:hover{
 
-background:#174D79;
+  background:#174D79;
 
-transform:translateY(-3px);
+  transform:translateY(-3px);
 
-box-shadow:
+  box-shadow:
 
-0 18px 40px rgba(14,58,93,.18);
+    0 18px 40px rgba(14,58,93,.18);
 
 }
 
 .form-grid button:disabled{
 
-cursor:not-allowed;
+  opacity:.75;
 
-opacity:.75;
+  cursor:not-allowed;
 
-transform:none;
+  transform:none;
 
-box-shadow:none;
+  box-shadow:none;
 
 }
 
 .form-message{
 
-grid-column:1 / -1;
+  grid-column:1 / -1;
 
-margin:0;
+  margin:0;
 
-padding:16px 20px;
+  padding:16px 20px;
 
-border-radius:14px;
+  border-radius:14px;
 
-font-size:.95rem;
+  font-size:.95rem;
 
-font-weight:600;
+  font-weight:600;
 
-line-height:1.6;
+  line-height:1.6;
 
 }
 
 .success{
 
-background:#ECFDF3;
+  background:#ECFDF3;
 
-border:1px solid #BBF7D0;
+  border:1px solid #BBF7D0;
 
-color:#166534;
+  color:#166534;
 
 }
 
 .error{
 
-background:#FEF2F2;
+  background:#FEF2F2;
 
-border:1px solid #FECACA;
+  border:1px solid #FECACA;
 
-color:#B91C1C;
+  color:#B91C1C;
 
 }
-
 @media (max-width:1100px){
 
-.contact-page{
+  .contact-page{
 
-padding:110px 0;
+    padding:110px 0;
+
+  }
+
+  .contact-grid{
+
+    grid-template-columns:1fr;
+
+    gap:60px;
+
+  }
 
 }
 
-.contact-grid{
-
-grid-template-columns:1fr;
-
-gap:60px;
-
-}
-
-}
 @media (max-width:768px){
 
-.contact-page{
+  .contact-page{
 
-padding:90px 0;
+    padding:90px 0;
 
-}
+  }
 
-.contact-content h2{
+  .contact-content h2{
 
-font-size:2.5rem;
+    font-size:2.5rem;
 
-}
+  }
 
-.contact-content p{
+  .contact-content p{
 
-font-size:1rem;
+    font-size:1rem;
 
-}
+  }
 
-.contact-form-card{
+  .contact-form-card{
 
-padding:32px;
+    padding:32px;
 
-}
+    border-radius:24px;
 
-.form-grid{
+  }
 
-grid-template-columns:1fr;
+  .form-grid{
 
-}
+    grid-template-columns:1fr;
 
-.form-grid textarea,
+  }
 
-.form-grid button,
+  .form-grid textarea,
 
-.form-message{
+  .form-grid button,
 
-grid-column:auto;
+  .form-message{
 
-}
+    grid-column:auto;
+
+  }
 
 }
 
 @media (max-width:480px){
 
-.contact-page{
+  .contact-page{
 
-padding:80px 0;
+    padding:80px 0;
+
+  }
+
+  .section-tag{
+
+    font-size:.68rem;
+
+    padding:8px 14px;
+
+  }
+
+  .contact-content h2{
+
+    font-size:2rem;
+
+  }
+
+  .contact-card{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    padding:24px;
+
+  }
+
+  .contact-icon{
+
+    width:52px;
+
+    height:52px;
+
+    font-size:1.35rem;
+
+  }
+
+  .contact-form-card{
+
+    padding:24px;
+
+    border-radius:22px;
+
+  }
+
+  .contact-form-card h3{
+
+    font-size:1.75rem;
+
+  }
+
+  .form-grid input,
+
+  .form-grid textarea{
+
+    padding:14px 16px;
+
+  }
 
 }
-
-.section-tag{
-
-font-size:.68rem;
-
-padding:8px 14px;
-
-}
-
-.contact-content h2{
-
-font-size:2rem;
-
-}
-
-.contact-card{
-
-padding:24px;
-
-}
-
-.contact-form-card{
-
-padding:24px;
-
-border-radius:22px;
-
-}
-
-.contact-form-card h3{
-
-font-size:1.75rem;
-
-}
-
-.form-grid input,
-
-.form-grid textarea{
-
-padding:14px 16px;
-
-}
-
-}
-
 </style>
 
 </Layout>

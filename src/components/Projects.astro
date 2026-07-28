@@ -5,721 +5,746 @@ const projects = [
     category: "Residential",
     image: "/project-residential.png",
     description:
-      "Complete engineering design for custom homes, grading, drainage, utilities, and permitting."
+      "Complete civil engineering design for custom homes, grading, drainage, utility coordination, and permitting.",
+    link: "/projects"
   },
+
   {
     title: "Commercial Engineering",
     category: "Commercial",
     image: "/project-commercial.png",
     description:
-      "Site planning, stormwater management, utility coordination and municipal approvals."
+      "Comprehensive site engineering including stormwater management, utility design, and municipal approvals.",
+    link: "/projects"
   },
+
   {
     title: "Stormwater Management",
     category: "Infrastructure",
     image: "/project-stormwater.png",
     description:
-      "NJDEP-compliant drainage analysis, detention basin design and hydraulic calculations."
+      "NJDEP-compliant stormwater analysis, detention basin design, hydraulic modeling, and drainage improvements.",
+    link: "/projects"
   }
 ];
 ---
-
 <section class="projects-section">
 
-<div class="background-grid"></div>
-<div class="background-glow"></div>
+  <div class="background-grid"></div>
 
-<div class="container">
+  <div class="background-glow"></div>
 
-<div class="projects-header">
+  <div class="container">
 
-<span>
+    <div class="projects-header">
 
-FEATURED PROJECTS
+      <span>
 
-</span>
+        FEATURED PROJECTS
 
-<h2>
+      </span>
 
-Engineering Solutions
-Designed to Last.
+      <h2>
 
-</h2>
+        Engineering
+        Solutions Designed
+        to Last.
 
-<p>
+      </h2>
 
-Every successful project begins with careful planning,
-sound engineering principles, and a commitment to
-quality. From residential developments to commercial
-sites and municipal infrastructure, MIDRA Engineering
-delivers solutions that balance functionality,
-constructability, and long-term performance.
+      <p>
 
-</p>
+        Every successful project begins with thoughtful
+        planning, sound engineering, and practical design.
+        From residential developments to commercial sites
+        and stormwater infrastructure, MIDRA Engineering
+        delivers solutions built for long-term performance.
 
-</div>
+      </p>
 
-<div class="projects-grid">
+    </div>
 
-{
-projects.map((project)=>(
+    <div class="projects-grid">
 
-<article class="project-card">
+      {
 
-<div class="project-image">
+        projects.map((project) => (
 
-<img
-src={project.image}
-alt={project.title}
-loading="lazy"
-decoding="async"
-/>
+          <article class="project-card">
 
-<div class="image-overlay"></div>
+            <div class="project-image">
 
-<div class="project-category">
+              <img
+                src={project.image}
+                alt={project.title}
+                loading="lazy"
+                decoding="async"
+              />
 
-{project.category}
+              <div class="image-overlay"></div>
 
-</div>
+              <div class="project-category">
 
-</div>
+                {project.category}
 
-<div class="project-content">
+              </div>
 
-<h3>
+            </div>
 
-{project.title}
+            <div class="project-content">
 
-</h3>
+              <h3>
 
-<p>
+                {project.title}
 
-{project.description}
+              </h3>
 
-</p>
+              <p>
 
-<a
-href="/projects"
-class="project-link"
->
+                {project.description}
 
-View Project
+              </p>
 
-<span>
+              <a
+                href={project.link}
+                class="project-link"
+              >
 
-→
+                View Project
 
-</span>
+                <span>
 
-</a>
+                  →
 
-</div>
+                </span>
 
-</article>
+              </a>
 
-))
-}
+            </div>
 
-</div>
+          </article>
 
-<div class="projects-footer">
+        ))
 
-<a
-href="/projects"
-class="projects-button"
->
+      }
 
-View All Projects
+    </div>
 
-</a>
+    <div class="projects-footer">
 
-</div>
+      <a
+        href="/projects"
+        class="projects-button"
+      >
 
-</div>
+        View All Projects
+
+        <span>
+
+          →
+
+        </span>
+
+      </a>
+
+    </div>
+
+  </div>
 
 </section>
 
 <style>
-
 .projects-section{
 
-position:relative;
+  position:relative;
 
-overflow:hidden;
+  overflow:hidden;
 
-padding:140px 0;
+  padding:140px 0;
 
-background:
+  background:
 
-linear-gradient(
-180deg,
-#ffffff 0%,
-#f8fafc 100%
-);
+    linear-gradient(
+      180deg,
+      #FFFFFF 0%,
+      #F8FAFC 100%
+    );
 
 }
 
 .background-grid{
 
-position:absolute;
+  position:absolute;
 
-inset:0;
+  inset:0;
 
-opacity:.18;
+  opacity:.18;
 
-background-image:
+  background-image:
 
-linear-gradient(
-rgba(14,58,93,.05) 1px,
-transparent 1px
-),
+    linear-gradient(
+      rgba(14,58,93,.05) 1px,
+      transparent 1px
+    ),
 
-linear-gradient(
-90deg,
-rgba(14,58,93,.05) 1px,
-transparent 1px
-);
+    linear-gradient(
+      90deg,
+      rgba(14,58,93,.05) 1px,
+      transparent 1px
+    );
 
-background-size:60px 60px;
+  background-size:60px 60px;
 
-mask-image:
+  mask-image:
 
-linear-gradient(
-180deg,
-rgba(0,0,0,.95),
-transparent
-);
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,.95),
+      transparent
+    );
 
-pointer-events:none;
+  pointer-events:none;
 
 }
 
 .background-glow{
 
-position:absolute;
+  position:absolute;
 
-right:-250px;
+  right:-250px;
 
-bottom:-250px;
+  bottom:-250px;
 
-width:700px;
+  width:700px;
 
-height:700px;
+  height:700px;
 
-border-radius:50%;
+  border-radius:50%;
 
-background:
+  background:
 
-radial-gradient(
-circle,
-rgba(198,161,91,.10),
-transparent 72%
-);
+    radial-gradient(
+      circle,
+      rgba(198,161,91,.10),
+      transparent 72%
+    );
 
-pointer-events:none;
+  pointer-events:none;
 
 }
 
 .projects-header{
 
-position:relative;
+  position:relative;
 
-z-index:2;
+  z-index:2;
 
-max-width:760px;
+  max-width:760px;
 
-margin:0 auto 75px;
+  margin:0 auto 75px;
 
-text-align:center;
+  text-align:center;
 
 }
 
 .projects-header span{
 
-display:inline-flex;
+  display:inline-flex;
 
-align-items:center;
+  align-items:center;
 
-padding:10px 18px;
+  padding:10px 18px;
 
-background:white;
+  background:#FFFFFF;
 
-border:1px solid rgba(14,58,93,.08);
+  border:1px solid rgba(14,58,93,.08);
 
-border-radius:999px;
+  border-radius:999px;
 
-font-size:.78rem;
+  font-size:.78rem;
 
-font-weight:800;
+  font-weight:800;
 
-letter-spacing:.14em;
+  letter-spacing:.14em;
 
-color:#0E3A5D;
+  text-transform:uppercase;
 
-text-transform:uppercase;
+  color:#0E3A5D;
 
-margin-bottom:24px;
+  margin-bottom:24px;
 
-box-shadow:
+  box-shadow:
 
-0 14px 35px rgba(0,0,0,.06);
+    0 14px 35px rgba(0,0,0,.06);
 
 }
+
 .projects-header h2{
 
-font-size:clamp(
-2.8rem,
-5vw,
-4.2rem
-);
+  margin:0 0 24px;
 
-line-height:1.06;
+  font-size:clamp(2.8rem,5vw,4.2rem);
 
-letter-spacing:-.03em;
+  line-height:1.06;
 
-font-weight:800;
+  font-weight:800;
 
-color:#16324A;
+  letter-spacing:-.03em;
 
-margin:0 0 24px;
+  color:#16324A;
 
-text-wrap:balance;
+  text-wrap:balance;
 
 }
 
 .projects-header p{
 
-font-size:1.08rem;
+  margin:0;
 
-line-height:1.95;
+  font-size:1.08rem;
 
-color:#66707C;
+  line-height:1.95;
 
-margin:0;
+  color:#66707C;
 
 }
 
 .projects-grid{
 
-position:relative;
+  position:relative;
 
-z-index:2;
+  z-index:2;
 
-display:grid;
+  display:grid;
 
-grid-template-columns:
+  grid-template-columns:repeat(3,1fr);
 
-repeat(3,1fr);
-
-gap:34px;
+  gap:34px;
 
 }
 
 .project-card{
 
-display:flex;
+  position:relative;
 
-flex-direction:column;
+  overflow:hidden;
 
-height:100%;
+  display:flex;
 
-overflow:hidden;
+  flex-direction:column;
 
-background:white;
+  height:100%;
 
-border-radius:28px;
+  background:#FFFFFF;
 
-border:1px solid rgba(14,58,93,.06);
+  border-radius:28px;
 
-box-shadow:
+  border:1px solid rgba(14,58,93,.06);
 
-0 22px 60px rgba(0,0,0,.06);
+  box-shadow:
 
-transition:
+    0 22px 60px rgba(0,0,0,.06);
 
-transform .35s ease,
-box-shadow .35s ease,
-border-color .35s ease;
+  transition:
+    transform .35s ease,
+    border-color .35s ease,
+    box-shadow .35s ease;
+
+}
+
+.project-card::before{
+
+  content:"";
+
+  position:absolute;
+
+  top:0;
+
+  left:0;
+
+  width:100%;
+
+  height:4px;
+
+  background:
+
+    linear-gradient(
+      90deg,
+      #0E3A5D,
+      #C6A15B
+    );
+
+  z-index:5;
 
 }
 
 .project-card:hover{
 
-transform:translateY(-10px);
+  transform:translateY(-10px);
 
-border-color:rgba(198,161,91,.28);
+  border-color:rgba(198,161,91,.28);
 
-box-shadow:
+  box-shadow:
 
-0 35px 80px rgba(14,58,93,.12);
+    0 35px 80px rgba(14,58,93,.12);
 
 }
 
 .project-image{
 
-position:relative;
+  position:relative;
 
-overflow:hidden;
+  overflow:hidden;
 
-height:270px;
+  height:270px;
 
 }
 
 .project-image img{
 
-display:block;
+  display:block;
 
-width:100%;
+  width:100%;
 
-height:100%;
+  height:100%;
 
-object-fit:cover;
+  object-fit:cover;
 
-transition:
-
-transform .7s ease;
+  transition:transform .7s ease;
 
 }
 
 .project-card:hover img{
 
-transform:scale(1.08);
+  transform:scale(1.08);
 
 }
 
 .image-overlay{
 
-position:absolute;
+  position:absolute;
 
-inset:0;
+  inset:0;
 
-background:
+  background:
 
-linear-gradient(
-180deg,
-transparent 35%,
-rgba(0,0,0,.28)
-);
-
-pointer-events:none;
+    linear-gradient(
+      180deg,
+      transparent 35%,
+      rgba(0,0,0,.28)
+    );
 
 }
 
 .project-category{
 
-position:absolute;
+  position:absolute;
 
-top:22px;
+  top:22px;
 
-left:22px;
+  left:22px;
 
-padding:10px 16px;
+  padding:10px 16px;
 
-background:rgba(255,255,255,.95);
+  border-radius:999px;
 
-backdrop-filter:blur(8px);
+  background:rgba(255,255,255,.95);
 
-border-radius:999px;
+  backdrop-filter:blur(8px);
 
-font-size:.72rem;
+  font-size:.72rem;
 
-font-weight:800;
+  font-weight:800;
 
-letter-spacing:.14em;
+  letter-spacing:.14em;
 
-text-transform:uppercase;
+  text-transform:uppercase;
 
-color:#0E3A5D;
+  color:#0E3A5D;
 
-box-shadow:
+  box-shadow:
 
-0 14px 35px rgba(0,0,0,.08);
+    0 14px 35px rgba(0,0,0,.08);
 
 }
 
 .project-content{
 
-display:flex;
+  display:flex;
 
-flex-direction:column;
+  flex-direction:column;
 
-flex:1;
+  flex:1;
 
-padding:38px;
+  padding:38px;
 
 }
 
 .project-content h3{
 
-font-size:1.55rem;
+  margin:0 0 18px;
 
-font-weight:800;
+  font-size:1.55rem;
 
-line-height:1.3;
+  font-weight:800;
 
-color:#16324A;
+  line-height:1.3;
 
-margin:0 0 18px;
+  color:#16324A;
 
 }
 
 .project-content p{
 
-flex:1;
+  flex:1;
 
-margin:0 0 34px;
+  margin:0 0 34px;
 
-font-size:1rem;
+  line-height:1.9;
 
-line-height:1.9;
-
-color:#66707C;
+  color:#66707C;
 
 }
 
 .project-link{
 
-display:inline-flex;
+  display:inline-flex;
 
-align-items:center;
+  align-items:center;
 
-gap:12px;
+  gap:12px;
 
-font-weight:700;
+  font-weight:700;
 
-text-decoration:none;
+  text-decoration:none;
 
-color:#0E3A5D;
+  color:#0E3A5D;
 
-transition:
-
-color .3s ease;
+  transition:color .3s ease;
 
 }
 
 .project-link span{
 
-font-size:1.15rem;
+  font-size:1.15rem;
 
-transition:
-
-transform .3s ease;
+  transition:transform .3s ease;
 
 }
 
 .project-link:hover{
 
-color:#C6A15B;
+  color:#C6A15B;
 
 }
 
 .project-link:hover span{
 
-transform:translateX(8px);
+  transform:translateX(8px);
 
 }
+
 .projects-footer{
 
-display:flex;
+  position:relative;
 
-justify-content:center;
+  z-index:2;
 
-margin-top:70px;
+  display:flex;
 
-position:relative;
+  justify-content:center;
 
-z-index:2;
+  margin-top:70px;
 
 }
 
 .projects-button{
 
-display:inline-flex;
+  display:inline-flex;
 
-align-items:center;
+  align-items:center;
 
-justify-content:center;
+  justify-content:center;
 
-padding:20px 40px;
+  gap:10px;
 
-border-radius:999px;
+  padding:20px 40px;
 
-background:#0E3A5D;
+  border-radius:999px;
 
-color:white;
+  background:#0E3A5D;
 
-text-decoration:none;
+  color:#FFFFFF;
 
-font-weight:700;
+  text-decoration:none;
 
-letter-spacing:.02em;
+  font-weight:700;
 
-transition:
+  transition:
+    transform .35s ease,
+    background .35s ease,
+    box-shadow .35s ease;
 
-transform .35s ease,
-background .35s ease,
-box-shadow .35s ease;
+  box-shadow:
 
-box-shadow:
-
-0 22px 55px
-rgba(14,58,93,.18);
+    0 22px 55px rgba(14,58,93,.18);
 
 }
 
 .projects-button:hover{
 
-background:#184e79;
+  background:#184E79;
 
-transform:translateY(-4px);
+  transform:translateY(-4px);
 
-box-shadow:
+  box-shadow:
 
-0 30px 70px
-rgba(14,58,93,.24);
-
-}
-
-@keyframes fadeUp{
-
-from{
-
-opacity:0;
-
-transform:translateY(28px);
+    0 30px 70px rgba(14,58,93,.24);
 
 }
 
-to{
+.projects-button span{
 
-opacity:1;
-
-transform:translateY(0);
+  transition:transform .3s ease;
 
 }
 
-}
+.projects-button:hover span{
 
+  transform:translateX(6px);
+
+}
 @media (max-width:1100px){
 
-.projects-section{
+  .projects-section{
 
-padding:110px 0;
+    padding:110px 0;
 
-}
+  }
 
-.projects-grid{
+  .projects-grid{
 
-grid-template-columns:
+    grid-template-columns:repeat(2,1fr);
 
-repeat(2,1fr);
+    gap:30px;
 
-}
+  }
 
 }
 
 @media (max-width:768px){
 
-.projects-section{
+  .projects-section{
 
-padding:90px 0;
+    padding:90px 0;
 
-}
+  }
 
-.projects-header{
+  .projects-header{
 
-margin-bottom:55px;
+    margin-bottom:55px;
 
-}
+  }
 
-.projects-header h2{
+  .projects-header h2{
 
-font-size:2.5rem;
+    font-size:2.5rem;
 
-}
+  }
 
-.projects-header p{
+  .projects-header p{
 
-font-size:1rem;
+    font-size:1rem;
 
-}
+  }
 
-.projects-grid{
+  .projects-grid{
 
-grid-template-columns:1fr;
+    grid-template-columns:1fr;
 
-gap:26px;
+    gap:26px;
 
-}
+  }
 
-.project-image{
+  .project-image{
 
-height:240px;
+    height:240px;
 
-}
+  }
 
-.project-content{
+  .project-content{
 
-padding:32px;
+    padding:32px;
 
-}
+  }
 
-.projects-footer{
+  .projects-footer{
 
-margin-top:55px;
+    margin-top:55px;
 
-}
+  }
 
-.projects-button{
+  .projects-button{
 
-width:100%;
+    width:100%;
 
-max-width:340px;
+    max-width:340px;
 
-}
+  }
 
 }
 
 @media (max-width:480px){
 
-.projects-section{
+  .projects-section{
 
-padding:80px 0;
+    padding:80px 0;
 
-}
+  }
 
-.projects-header span{
+  .projects-header span{
 
-font-size:.68rem;
+    font-size:.68rem;
 
-padding:8px 14px;
+    padding:8px 14px;
 
-}
+  }
 
-.project-card{
+  .projects-header h2{
 
-border-radius:22px;
+    font-size:2rem;
 
-}
+  }
 
-.project-image{
+  .project-card{
 
-height:220px;
+    border-radius:22px;
 
-}
+  }
 
-.project-content{
+  .project-image{
 
-padding:28px;
+    height:220px;
 
-}
+  }
 
-.project-content h3{
+  .project-content{
 
-font-size:1.35rem;
+    padding:28px;
 
-}
+  }
+
+  .project-content h3{
+
+    font-size:1.35rem;
+
+  }
+
+  .projects-button{
+
+    width:100%;
+
+  }
 
 }
 

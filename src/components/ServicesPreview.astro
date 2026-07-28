@@ -2,148 +2,126 @@
 const services = [
   {
     title: "Residential Engineering",
+    image: "/projects/residential-engineering.jpg",
     description:
-      "Complete engineering solutions for new homes, additions, subdivisions, grading, drainage and permitting throughout New Jersey.",
+      "Civil engineering services for custom homes, additions, grading, drainage, subdivisions, and permitting throughout New Jersey.",
     href: "/services"
   },
   {
     title: "Commercial Development",
+    image: "/projects/commercial-development.jpg",
     description:
-      "Site engineering for commercial, retail, industrial and mixed-use developments from concept through municipal approval.",
+      "Comprehensive engineering for retail, industrial, office, and mixed-use developments from concept through municipal approval.",
     href: "/services"
   },
   {
     title: "Stormwater Management",
+    image: "/projects/stormwater-management.jpg",
     description:
-      "NJDEP-compliant stormwater design including detention basins, infiltration systems, drainage analysis and hydraulic calculations.",
+      "NJDEP-compliant stormwater management design including detention basins, infiltration systems, drainage analysis, and hydraulic calculations.",
     href: "/services"
   },
   {
-    title: "Site Planning",
+    title: "Subdivision & Land Development",
+    image: "/projects/subdivision-land-development.jpg",
     description:
-      "Thoughtful site layouts that maximize functionality while satisfying zoning, environmental and engineering requirements.",
+      "Complete subdivision and land development engineering, including site layout, grading, utilities, and municipal approvals.",
     href: "/services"
   },
   {
-    title: "Permitting & Approvals",
+    title: "Municipal Infrastructure",
+    image: "/projects/municipal-infrastructure.jpg",
     description:
-      "Coordination with municipalities and regulatory agencies to streamline approvals and keep projects moving.",
+      "Engineering solutions for roadway improvements, public utilities, drainage systems, and municipal capital improvement projects.",
     href: "/services"
   },
   {
-    title: "Construction Support",
+    title: "Construction Phase Services",
+    image: "/projects/construction-phase-services.jpg",
     description:
-      "Engineering assistance throughout construction including revisions, field coordination and technical support.",
+      "Construction administration, field coordination, engineering revisions, inspections, and technical support throughout every phase of construction.",
     href: "/services"
   }
 ];
 ---
 
 <section class="services-preview">
+  <div class="container">
 
-<div class="container">
+    <div class="section-heading">
 
-<div class="section-heading">
+      <span>OUR SERVICES</span>
 
-<span>
+      <h2>
+        Engineering Services Built Around Your Project
+      </h2>
 
-OUR SERVICES
+      <p>
+        Whether you're planning a custom home,
+        commercial development, or municipal infrastructure,
+        MIDRA Engineering delivers responsive civil engineering
+        solutions from the earliest concept through final approval.
+      </p>
 
-</span>
+    </div>
 
-<h2>
+    <div class="services-grid">
 
-Engineering Services
-Built Around Your Project
+      {
+        services.map(service => (
 
-</h2>
+          <article class="service-card">
 
-<p>
+            <div class="service-image">
 
-Whether you're planning a custom home,
-commercial development or municipal
-improvement, MIDRA Engineering provides
-responsive engineering solutions from
-the first sketch through final approval.
+              <img
+                src={service.image}
+                alt={service.title}
+                loading="lazy"
+              />
 
-</p>
+            </div>
 
-</div>
+            <div class="service-content">
+                          <h3>{service.title}</h3>
 
-<div class="services-grid">
+              <p>
+                {service.description}
+              </p>
 
-{
-services.map(service => (
+              <a
+                href={service.href}
+                class="learn-more"
+              >
+                Explore Service
 
-<article class="service-card">
+                <span>
+                  →
+                </span>
 
-<div class="service-icon">
+              </a>
 
-<svg
-viewBox="0 0 24 24"
-fill="none"
-stroke="currentColor"
-stroke-width="1.8"
-stroke-linecap="round"
-stroke-linejoin="round"
->
+            </div>
 
-<path d="M5 12h14"/>
+          </article>
 
-<path d="M12 5v14"/>
+        ))
+      }
 
-</svg>
+    </div>
 
-</div>
+    <div class="services-footer">
 
-<h3>
+      <a
+        href="/services"
+        class="services-button"
+      >
+        Explore All Services
+      </a>
 
-{service.title}
+    </div>
 
-</h3>
-
-<p>
-
-{service.description}
-
-</p>
-
-<a
-href={service.href}
-class="learn-more"
->
-
-Learn More
-
-<span>
-
-→
-
-</span>
-
-</a>
-
-</article>
-
-))
-}
-
-</div>
-
-<div class="services-footer">
-
-<a
-href="/services"
-class="services-button"
->
-
-Explore All Services
-
-</a>
-
-</div>
-
-</div>
+  </div>
 
 </section>
 
@@ -151,9 +129,9 @@ Explore All Services
 
 .services-preview{
 
-padding:120px 0;
+padding:96px 0;
 
-background:white;
+background:#fff;
 
 position:relative;
 
@@ -174,7 +152,6 @@ height:700px;
 border-radius:50%;
 
 background:
-
 radial-gradient(
 circle,
 rgba(198,161,91,.08),
@@ -193,7 +170,7 @@ pointer-events:none;
 
 max-width:760px;
 
-margin:0 auto 70px;
+margin:0 auto 60px;
 
 text-align:center;
 
@@ -207,7 +184,7 @@ z-index:2;
 
 display:inline-block;
 
-padding:10px 18px;
+padding:9px 18px;
 
 background:#F8FAFC;
 
@@ -221,21 +198,21 @@ font-weight:700;
 
 letter-spacing:.14em;
 
-margin-bottom:26px;
+margin-bottom:22px;
 
 }
 
 .section-heading h2{
 
-font-size:clamp(2.5rem,5vw,3.7rem);
+font-size:clamp(2.5rem,5vw,3.6rem);
 
 line-height:1.15;
 
 color:#16324A;
 
-margin-bottom:24px;
-
 font-weight:800;
+
+margin-bottom:22px;
 
 }
 
@@ -243,7 +220,7 @@ font-weight:800;
 
 font-size:1.08rem;
 
-line-height:1.9;
+line-height:1.85;
 
 color:#66707C;
 
@@ -253,11 +230,9 @@ color:#66707C;
 
 display:grid;
 
-grid-template-columns:
+grid-template-columns:repeat(3,1fr);
 
-repeat(3,1fr);
-
-gap:34px;
+gap:28px;
 
 position:relative;
 
@@ -267,78 +242,110 @@ z-index:2;
 
 .service-card{
 
-background:white;
+background:#fff;
 
-border-radius:26px;
+border-radius:24px;
 
-padding:42px;
-
-border:1px solid rgba(0,0,0,.05);
-
-box-shadow:
-
-0 20px 55px rgba(0,0,0,.05);
-
-transition:.4s ease;
+overflow:hidden;
 
 display:flex;
 
 flex-direction:column;
 
+border:1px solid rgba(0,0,0,.05);
+
+box-shadow:0 18px 45px rgba(0,0,0,.05);
+
+transition:.35s ease;
+
 height:100%;
 
 }
-
 .service-card:hover{
 
 transform:translateY(-10px);
 
-box-shadow:
+box-shadow:0 30px 70px rgba(14,58,93,.14);
 
-0 30px 70px rgba(14,58,93,.12);
-
-border-color:rgba(198,161,91,.25);
+border-color:rgba(198,161,91,.28);
 
 }
 
-.service-icon{
+.service-image{
 
-width:72px;
+position:relative;
 
-height:72px;
+height:250px;
 
-border-radius:20px;
+overflow:hidden;
+
+}
+
+.service-image::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
 
 background:
-
 linear-gradient(
-135deg,
-#0E3A5D,
-#1B5B8C
+180deg,
+rgba(14,58,93,.08),
+rgba(14,58,93,.18)
 );
+
+transition:.35s ease;
+
+}
+
+.service-card:hover .service-image::after{
+
+background:
+linear-gradient(
+180deg,
+rgba(14,58,93,.02),
+rgba(14,58,93,.12)
+);
+
+}
+
+.service-image img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+display:block;
+
+transition:transform .7s ease;
+
+}
+
+.service-card:hover .service-image img{
+
+transform:scale(1.08);
+
+}
+
+.service-content{
+
+padding:30px;
 
 display:flex;
 
-align-items:center;
+flex-direction:column;
 
-justify-content:center;
-
-margin-bottom:30px;
-
-color:white;
+flex:1;
 
 }
 
-.service-icon svg{
+.service-content h3{
 
-width:30px;
-
-height:30px;
-
-}
-.service-card h3{
-
-font-size:1.55rem;
+font-size:1.5rem;
 
 font-weight:800;
 
@@ -346,19 +353,27 @@ line-height:1.3;
 
 color:#16324A;
 
-margin-bottom:18px;
+margin-bottom:16px;
+
+transition:.3s ease;
 
 }
 
-.service-card p{
+.service-card:hover h3{
 
-color:#66707C;
+color:#C6A15B;
 
-line-height:1.9;
+}
+
+.service-content p{
 
 font-size:1rem;
 
-margin-bottom:34px;
+line-height:1.85;
+
+color:#66707C;
+
+margin-bottom:30px;
 
 flex:1;
 
@@ -370,23 +385,23 @@ display:inline-flex;
 
 align-items:center;
 
-gap:12px;
-
-text-decoration:none;
+gap:10px;
 
 font-weight:700;
 
+text-decoration:none;
+
 color:#0E3A5D;
 
-transition:.3s;
+transition:.3s ease;
 
 }
 
 .learn-more span{
 
-transition:.3s;
-
 font-size:1.15rem;
+
+transition:.3s ease;
 
 }
 
@@ -401,14 +416,13 @@ color:#C6A15B;
 transform:translateX(8px);
 
 }
-
 .services-footer{
 
 display:flex;
 
 justify-content:center;
 
-margin-top:70px;
+margin-top:60px;
 
 position:relative;
 
@@ -424,13 +438,13 @@ align-items:center;
 
 justify-content:center;
 
-padding:20px 38px;
+padding:18px 38px;
 
 border-radius:999px;
 
 background:#0E3A5D;
 
-color:white;
+color:#fff;
 
 text-decoration:none;
 
@@ -438,11 +452,9 @@ font-weight:700;
 
 letter-spacing:.02em;
 
-transition:.35s;
+transition:.35s ease;
 
-box-shadow:
-
-0 18px 45px rgba(14,58,93,.18);
+box-shadow:0 18px 45px rgba(14,58,93,.18);
 
 }
 
@@ -452,9 +464,7 @@ background:#174d79;
 
 transform:translateY(-4px);
 
-box-shadow:
-
-0 28px 60px rgba(14,58,93,.24);
+box-shadow:0 28px 60px rgba(14,58,93,.24);
 
 }
 
@@ -462,9 +472,15 @@ box-shadow:
 
 .services-grid{
 
-grid-template-columns:
+grid-template-columns:repeat(2,1fr);
 
-repeat(2,1fr);
+gap:26px;
+
+}
+
+.service-image{
+
+height:230px;
 
 }
 
@@ -474,19 +490,19 @@ repeat(2,1fr);
 
 .services-preview{
 
-padding:90px 0;
+padding:80px 0;
 
 }
 
 .section-heading{
 
-margin-bottom:55px;
+margin-bottom:48px;
 
 }
 
 .section-heading h2{
 
-font-size:2.4rem;
+font-size:2.3rem;
 
 }
 
@@ -504,33 +520,27 @@ gap:24px;
 
 }
 
-.service-card{
+.service-image{
 
-padding:34px;
-
-}
-
-.service-icon{
-
-width:64px;
-
-height:64px;
-
-margin-bottom:24px;
+height:240px;
 
 }
 
-.service-icon svg{
+.service-content{
 
-width:26px;
+padding:28px;
 
-height:26px;
+}
+
+.service-content h3{
+
+font-size:1.4rem;
 
 }
 
 .services-footer{
 
-margin-top:50px;
+margin-top:48px;
 
 }
 
@@ -548,7 +558,7 @@ max-width:340px;
 
 .services-preview{
 
-padding:80px 0;
+padding:72px 0;
 
 }
 
@@ -560,17 +570,43 @@ padding:8px 14px;
 
 }
 
-.service-card{
+.section-heading h2{
 
-padding:28px;
-
-border-radius:22px;
+font-size:2rem;
 
 }
 
-.service-card h3{
+.service-image{
 
-font-size:1.35rem;
+height:220px;
+
+}
+
+.service-content{
+
+padding:24px;
+
+}
+
+.service-content h3{
+
+font-size:1.3rem;
+
+}
+
+.service-content p{
+
+font-size:.97rem;
+
+line-height:1.75;
+
+}
+
+.services-button{
+
+padding:17px 30px;
+
+font-size:.95rem;
 
 }
 

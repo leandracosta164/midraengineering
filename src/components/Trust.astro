@@ -4,805 +4,834 @@ const stats = [
     value: "100%",
     label: "Client Focused"
   },
+
   {
     value: "NJDEP",
     label: "Compliant Designs"
   },
+
   {
     value: "Residential",
     label: "Commercial & Municipal"
   },
+
   {
-    value: "From Concept",
+    value: "Concept",
     label: "Through Construction"
   }
 ];
 ---
-
 <section class="trust-section">
 
-<div class="background-pattern"></div>
-<div class="background-glow"></div>
+  <div class="background-pattern"></div>
 
-<div class="container">
+  <div class="background-glow"></div>
 
-<div class="trust-grid">
+  <div class="container">
 
-<div class="trust-content">
+    <div class="trust-grid">
 
-<span class="trust-tag">
+      <div class="trust-content">
 
-WHY CLIENTS TRUST MIDRA
+        <span class="trust-tag">
 
-</span>
+          WHY CLIENTS TRUST MIDRA
 
-<h2>
+        </span>
 
-Building Long-Term
-Relationships Through
-Quality Engineering.
+        <h2>
 
-</h2>
+          Building
+          Long-Term Relationships
+          Through Engineering Excellence.
 
-<p>
+        </h2>
 
-At MIDRA Engineering, every project is approached
-with the same objective: provide practical engineering
-solutions while making the entire process as smooth
-and predictable as possible for our clients.
+        <p>
 
-</p>
+          At MIDRA Engineering, every project is approached
+          with one goal: delivering practical engineering
+          solutions while making the entire process as
+          efficient, transparent, and predictable as possible.
 
-<p>
+        </p>
 
-We understand that engineering is more than drawings
-and calculations. It is communication, responsiveness,
-problem solving, and helping clients confidently move
-their projects from the earliest planning stages
-through construction.
+        <p>
 
-</p>
+          Engineering is more than plans and calculations.
+          It is communication, responsiveness, problem
+          solving, and helping clients confidently move
+          their projects from planning through construction.
 
-<div class="trust-highlights">
+        </p>
 
-<div class="highlight">
+        <div class="trust-highlights">
 
-<div class="highlight-icon">
+          <div class="highlight">
 
-✓
+            <div class="highlight-icon">
 
-</div>
+              💬
 
-<div>
+            </div>
 
-<strong>
+            <div>
 
-Clear Communication
+              <strong>
 
-</strong>
+                Clear Communication
 
-<span>
+              </strong>
 
-Keeping clients informed throughout every phase.
+              <span>
 
-</span>
+                Keeping clients informed throughout every stage of the project.
 
-</div>
+              </span>
 
-</div>
+            </div>
 
-<div class="highlight">
+          </div>
 
-<div class="highlight-icon">
+          <div class="highlight">
 
-✓
+            <div class="highlight-icon">
 
-</div>
+              📐
 
-<div>
+            </div>
 
-<strong>
+            <div>
 
-Practical Solutions
+              <strong>
 
-</strong>
+                Practical Engineering
 
-<span>
+              </strong>
 
-Engineering decisions focused on real-world construction.
+              <span>
 
-</span>
+                Efficient solutions designed for real-world construction.
 
-</div>
+              </span>
 
-</div>
+            </div>
 
-<div class="highlight">
+          </div>
 
-<div class="highlight-icon">
+          <div class="highlight">
 
-✓
+            <div class="highlight-icon">
 
-</div>
+              🤝
 
-<div>
+            </div>
 
-<strong>
+            <div>
 
-Reliable Service
+              <strong>
 
-</strong>
+                Reliable Partnership
 
-<span>
+              </strong>
 
-Responsive support from concept through completion.
+              <span>
 
-</span>
+                Responsive support from concept through project completion.
 
-</div>
+              </span>
 
-</div>
+            </div>
 
-</div>
+          </div>
 
-</div>
+        </div>
 
-<div class="trust-panel">
+      </div>
 
-<div class="panel-header">
+      <div class="trust-panel">
 
-<h3>
+        <div class="panel-header">
 
-Our Commitment
+          <h3>
 
-</h3>
+            Our Commitment
 
-<p>
+          </h3>
 
-Every project receives the same level of attention,
-precision and professionalism regardless of size.
+          <p>
 
-</p>
+            Every client receives the same level of
+            professionalism, technical precision,
+            and personal attention regardless of
+            project size.
 
-</div>
+          </p>
 
-<div class="stats-grid">
+        </div>
 
-{
-stats.map((stat)=>(
+        <div class="stats-grid">
 
-<div class="stat-card">
+          {
 
-<strong>
+            stats.map((stat) => (
 
-{stat.value}
+              <div class="stat-card">
 
-</strong>
+                <strong>
 
-<span>
+                  {stat.value}
 
-{stat.label}
+                </strong>
 
-</span>
+                <span>
 
-</div>
+                  {stat.label}
 
-))
-}
+                </span>
 
-</div>
+              </div>
 
-<div class="panel-footer">
+            ))
 
-<a
-href="/contact"
-class="trust-button"
->
+          }
 
-Start Your Project
+        </div>
 
-</a>
+        <div class="panel-footer">
 
-</div>
+          <a
+            href="/contact"
+            class="trust-button"
+          >
 
-</div>
+            Start Your Project
 
-</div>
+            <span>
 
-</div>
+              →
+
+            </span>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
 
 <style>
-
 .trust-section{
 
-position:relative;
+  position:relative;
 
-overflow:hidden;
+  overflow:hidden;
 
-padding:140px 0;
+  padding:140px 0;
 
-background:
+  background:
 
-linear-gradient(
-135deg,
-#0E3A5D 0%,
-#123F66 50%,
-#194D76 100%
-);
+    linear-gradient(
+      135deg,
+      #0E3A5D 0%,
+      #123F66 50%,
+      #194D76 100%
+    );
 
 }
 
 .background-pattern{
 
-position:absolute;
+  position:absolute;
 
-inset:0;
+  inset:0;
 
-opacity:.12;
+  opacity:.12;
 
-background-image:
+  background-image:
 
-linear-gradient(
-rgba(255,255,255,.08) 1px,
-transparent 1px
-),
+    linear-gradient(
+      rgba(255,255,255,.08) 1px,
+      transparent 1px
+    ),
 
-linear-gradient(
-90deg,
-rgba(255,255,255,.08) 1px,
-transparent 1px
-);
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.08) 1px,
+      transparent 1px
+    );
 
-background-size:60px 60px;
+  background-size:60px 60px;
 
-pointer-events:none;
+  pointer-events:none;
 
 }
 
 .background-glow{
 
-position:absolute;
+  position:absolute;
 
-top:-240px;
+  top:-240px;
 
-right:-220px;
+  right:-220px;
 
-width:650px;
+  width:650px;
 
-height:650px;
+  height:650px;
 
-border-radius:50%;
+  border-radius:50%;
 
-background:
+  background:
 
-radial-gradient(
-circle,
-rgba(198,161,91,.18),
-transparent 72%
-);
+    radial-gradient(
+      circle,
+      rgba(198,161,91,.18),
+      transparent 72%
+    );
 
-pointer-events:none;
+  pointer-events:none;
 
 }
 
 .trust-grid{
 
-position:relative;
+  position:relative;
 
-z-index:2;
+  z-index:2;
 
-display:grid;
+  display:grid;
 
-grid-template-columns:
+  grid-template-columns:1fr .9fr;
 
-1fr .9fr;
+  gap:80px;
 
-gap:80px;
-
-align-items:center;
+  align-items:center;
 
 }
 
 .trust-content{
 
-max-width:620px;
+  max-width:620px;
 
-color:white;
+  color:#FFFFFF;
 
 }
 
 .trust-tag{
 
-display:inline-flex;
+  display:inline-flex;
 
-align-items:center;
+  align-items:center;
 
-padding:10px 18px;
+  padding:10px 18px;
 
-border-radius:999px;
+  border-radius:999px;
 
-background:
+  background:rgba(255,255,255,.12);
 
-rgba(255,255,255,.12);
+  backdrop-filter:blur(10px);
 
-backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.12);
 
-border:1px solid rgba(255,255,255,.12);
+  font-size:.78rem;
 
-font-size:.78rem;
+  font-weight:800;
 
-font-weight:800;
+  letter-spacing:.14em;
 
-letter-spacing:.14em;
+  text-transform:uppercase;
 
-text-transform:uppercase;
-
-margin-bottom:28px;
+  margin-bottom:28px;
 
 }
+
 .trust-content h2{
 
-font-size:clamp(
-2.8rem,
-5vw,
-4.3rem
-);
+  font-size:clamp(2.8rem,5vw,4.3rem);
 
-font-weight:800;
+  font-weight:800;
 
-line-height:1.06;
+  line-height:1.06;
 
-letter-spacing:-.03em;
+  letter-spacing:-.03em;
 
-margin:0 0 28px;
+  margin:0 0 28px;
 
-text-wrap:balance;
+  text-wrap:balance;
 
 }
 
 .trust-content p{
 
-font-size:1.08rem;
+  margin:0 0 24px;
 
-line-height:1.95;
+  font-size:1.08rem;
 
-color:rgba(255,255,255,.82);
+  line-height:1.95;
 
-margin:0 0 24px;
+  color:rgba(255,255,255,.82);
 
 }
 
 .trust-highlights{
 
-display:grid;
+  display:grid;
 
-gap:24px;
+  gap:24px;
 
-margin-top:46px;
+  margin-top:46px;
 
 }
 
 .highlight{
 
-display:flex;
+  display:flex;
 
-align-items:flex-start;
+  align-items:flex-start;
 
-gap:20px;
+  gap:20px;
 
-padding:20px;
+  padding:20px;
 
-border-radius:22px;
+  border-radius:22px;
 
-background:
+  background:rgba(255,255,255,.05);
 
-rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.06);
 
-border:1px solid rgba(255,255,255,.06);
+  backdrop-filter:blur(8px);
 
-backdrop-filter:blur(8px);
-
-transition:
-
-transform .35s ease,
-background .35s ease,
-border-color .35s ease;
+  transition:
+    transform .35s ease,
+    background .35s ease,
+    border-color .35s ease;
 
 }
 
 .highlight:hover{
 
-transform:translateX(8px);
+  transform:translateX(8px);
 
-background:
+  background:rgba(255,255,255,.08);
 
-rgba(255,255,255,.08);
-
-border-color:
-
-rgba(198,161,91,.35);
+  border-color:rgba(198,161,91,.35);
 
 }
 
 .highlight-icon{
 
-display:flex;
+  display:flex;
 
-align-items:center;
+  align-items:center;
 
-justify-content:center;
+  justify-content:center;
 
-width:54px;
+  width:58px;
 
-height:54px;
+  height:58px;
 
-flex-shrink:0;
+  flex-shrink:0;
 
-border-radius:16px;
+  border-radius:18px;
 
-background:
+  background:
 
-linear-gradient(
-135deg,
-#C6A15B,
-#D8B775
-);
+    linear-gradient(
+      135deg,
+      #C6A15B,
+      #D8B775
+    );
 
-color:white;
+  color:#FFFFFF;
 
-font-weight:800;
+  font-size:1.5rem;
 
-font-size:1.15rem;
-
-box-shadow:
-
-0 16px 35px
-rgba(198,161,91,.35);
+  box-shadow:
+    0 16px 35px rgba(198,161,91,.35);
 
 }
 
 .highlight strong{
 
-display:block;
+  display:block;
 
-margin-bottom:8px;
+  margin-bottom:8px;
 
-font-size:1.15rem;
+  font-size:1.15rem;
 
-font-weight:800;
+  font-weight:800;
 
-color:white;
+  color:#FFFFFF;
 
 }
 
 .highlight span{
 
-display:block;
+  display:block;
 
-font-size:1rem;
+  line-height:1.8;
 
-line-height:1.8;
-
-color:rgba(255,255,255,.74);
+  color:rgba(255,255,255,.74);
 
 }
 
 .trust-panel{
 
-background:white;
+  position:relative;
 
-border-radius:32px;
+  overflow:hidden;
 
-padding:42px;
+  padding:42px;
 
-box-shadow:
+  background:#FFFFFF;
 
-0 35px 90px
-rgba(0,0,0,.22);
+  border-radius:32px;
+
+  box-shadow:
+    0 35px 90px rgba(0,0,0,.22);
+
+}
+
+.trust-panel::before{
+
+  content:"";
+
+  position:absolute;
+
+  top:0;
+
+  left:0;
+
+  width:100%;
+
+  height:5px;
+
+  background:
+
+    linear-gradient(
+      90deg,
+      #0E3A5D,
+      #C6A15B
+    );
 
 }
 
 .panel-header{
 
-margin-bottom:36px;
+  position:relative;
+
+  z-index:2;
+
+  margin-bottom:36px;
 
 }
 
 .panel-header h3{
 
-font-size:2rem;
+  margin:0 0 14px;
 
-font-weight:800;
+  font-size:2rem;
 
-color:#16324A;
+  font-weight:800;
 
-margin:0 0 14px;
+  color:#16324A;
 
 }
 
 .panel-header p{
 
-font-size:1rem;
+  margin:0;
 
-line-height:1.8;
+  line-height:1.8;
 
-color:#66707C;
-
-margin:0;
+  color:#66707C;
 
 }
 
 .stats-grid{
 
-display:grid;
+  display:grid;
 
-grid-template-columns:
+  grid-template-columns:repeat(2,1fr);
 
-repeat(2,1fr);
-
-gap:22px;
+  gap:22px;
 
 }
 
 .stat-card{
 
-padding:28px;
+  padding:28px;
 
-border-radius:22px;
+  border-radius:22px;
 
-background:#F8FAFC;
+  background:#F8FAFC;
 
-border:1px solid transparent;
+  border:1px solid transparent;
 
-transition:
-
-transform .35s ease,
-box-shadow .35s ease,
-border-color .35s ease;
+  transition:
+    transform .35s ease,
+    border-color .35s ease,
+    box-shadow .35s ease;
 
 }
 
 .stat-card:hover{
 
-transform:translateY(-6px);
+  transform:translateY(-6px);
 
-background:white;
+  background:#FFFFFF;
 
-border-color:
+  border-color:rgba(198,161,91,.28);
 
-rgba(198,161,91,.28);
-
-box-shadow:
-
-0 20px 50px
-rgba(14,58,93,.10);
+  box-shadow:
+    0 20px 50px rgba(14,58,93,.10);
 
 }
 
 .stat-card strong{
 
-display:block;
+  display:block;
 
-margin-bottom:10px;
+  margin-bottom:10px;
 
-font-size:1.45rem;
+  font-size:1.45rem;
 
-font-weight:800;
+  font-weight:800;
 
-color:#0E3A5D;
-
-line-height:1.3;
+  color:#0E3A5D;
 
 }
 
 .stat-card span{
 
-display:block;
+  display:block;
 
-font-size:.96rem;
+  line-height:1.7;
 
-line-height:1.7;
-
-color:#66707C;
+  color:#66707C;
 
 }
 
 .panel-footer{
 
-display:flex;
+  display:flex;
 
-justify-content:center;
+  justify-content:center;
 
-margin-top:40px;
+  margin-top:40px;
 
 }
+
 .trust-button{
 
-display:inline-flex;
+  display:inline-flex;
 
-align-items:center;
+  align-items:center;
 
-justify-content:center;
+  justify-content:center;
 
-padding:18px 38px;
+  gap:10px;
 
-border-radius:999px;
+  padding:18px 38px;
 
-background:#0E3A5D;
+  border-radius:999px;
 
-color:white;
+  background:#0E3A5D;
 
-text-decoration:none;
+  color:#FFFFFF;
 
-font-weight:700;
+  text-decoration:none;
 
-letter-spacing:.02em;
+  font-weight:700;
 
-transition:
+  transition:
+    background .35s ease,
+    transform .35s ease,
+    box-shadow .35s ease;
 
-background .35s ease,
-transform .35s ease,
-box-shadow .35s ease;
-
-box-shadow:
-
-0 22px 55px
-rgba(14,58,93,.20);
+  box-shadow:
+    0 22px 55px rgba(14,58,93,.20);
 
 }
 
 .trust-button:hover{
 
-background:#184E79;
+  background:#184E79;
 
-transform:translateY(-4px);
+  transform:translateY(-4px);
 
-box-shadow:
-
-0 30px 70px
-rgba(14,58,93,.28);
+  box-shadow:
+    0 30px 70px rgba(14,58,93,.28);
 
 }
 
+.trust-button span{
+
+  transition:transform .3s ease;
+
+}
+
+.trust-button:hover span{
+
+  transform:translateX(6px);
+
+}
 @media (max-width:1100px){
 
-.trust-section{
+  .trust-section{
 
-padding:110px 0;
+    padding:110px 0;
 
-}
+  }
 
-.trust-grid{
+  .trust-grid{
 
-grid-template-columns:1fr;
+    grid-template-columns:1fr;
 
-gap:70px;
+    gap:70px;
 
-}
+  }
 
-.trust-content{
+  .trust-content{
 
-max-width:760px;
+    max-width:760px;
 
-margin:0 auto;
+    margin:0 auto;
 
-text-align:center;
+    text-align:center;
 
-}
+  }
 
-.trust-highlights{
+  .trust-highlights{
 
-max-width:650px;
+    max-width:650px;
 
-margin:46px auto 0;
+    margin:46px auto 0;
 
-}
+  }
 
-.highlight{
+  .highlight{
 
-text-align:left;
+    text-align:left;
 
-}
+  }
 
-.trust-panel{
+  .trust-panel{
 
-max-width:760px;
+    max-width:760px;
 
-margin:0 auto;
+    margin:0 auto;
 
-}
+  }
 
 }
 
 @media (max-width:768px){
 
-.trust-section{
+  .trust-section{
 
-padding:90px 0;
+    padding:90px 0;
 
-}
+  }
 
-.trust-content h2{
+  .trust-content h2{
 
-font-size:2.5rem;
+    font-size:2.5rem;
 
-}
+  }
 
-.trust-content p{
+  .trust-content p{
 
-font-size:1rem;
+    font-size:1rem;
 
-}
+  }
 
-.stats-grid{
+  .stats-grid{
 
-grid-template-columns:1fr;
+    grid-template-columns:1fr;
 
-}
+  }
 
-.trust-panel{
+  .trust-panel{
 
-padding:34px;
+    padding:34px;
 
-}
+  }
 
-.highlight{
+  .highlight{
 
-gap:16px;
+    gap:16px;
 
-padding:18px;
+    padding:18px;
 
-}
+  }
 
-.highlight-icon{
+  .highlight-icon{
 
-width:46px;
+    width:50px;
 
-height:46px;
+    height:50px;
 
-border-radius:14px;
+    border-radius:16px;
 
-}
+    font-size:1.3rem;
+
+  }
 
 }
 
 @media (max-width:480px){
 
-.trust-section{
+  .trust-section{
 
-padding:80px 0;
+    padding:80px 0;
 
-}
+  }
 
-.trust-tag{
+  .trust-tag{
 
-font-size:.68rem;
+    font-size:.68rem;
 
-padding:8px 14px;
+    padding:8px 14px;
 
-}
+  }
 
-.trust-panel{
+  .trust-content h2{
 
-padding:28px;
+    font-size:2rem;
 
-border-radius:24px;
+  }
 
-}
+  .trust-panel{
 
-.panel-header h3{
+    padding:28px;
 
-font-size:1.7rem;
+    border-radius:24px;
 
-}
+  }
 
-.stat-card{
+  .panel-header h3{
 
-padding:22px;
+    font-size:1.7rem;
 
-}
+  }
+
+  .stat-card{
+
+    padding:22px;
+
+  }
+
+  .trust-button{
+
+    width:100%;
+
+  }
 
 }
 

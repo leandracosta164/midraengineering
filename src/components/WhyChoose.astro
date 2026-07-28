@@ -1,622 +1,673 @@
 ---
 const features = [
   {
-    number: "01",
+    icon: "📐",
     title: "Technical Excellence",
     description:
-      "Every project is designed with precision, practical engineering judgment, and strict attention to local, state, and NJDEP requirements."
+      "Every project is developed using proven engineering principles, practical design experience, and strict compliance with local, state, and NJDEP requirements."
   },
+
   {
-    number: "02",
+    icon: "⚡",
     title: "Responsive Communication",
     description:
-      "We believe clients deserve timely updates, honest guidance, and direct communication throughout every stage of the project."
+      "We believe clients deserve prompt updates, honest guidance, and clear communication throughout every stage of the engineering process."
   },
+
   {
-    number: "03",
+    icon: "✔️",
     title: "Efficient Approvals",
     description:
-      "Our permitting experience helps reduce unnecessary delays by preparing complete, coordinated engineering packages."
+      "Our experience with permitting and municipal review helps streamline approvals by delivering coordinated, complete engineering packages."
   },
+
   {
-    number: "04",
+    icon: "🤝",
     title: "Long-Term Partnerships",
     description:
-      "We build lasting relationships with homeowners, architects, contractors, developers, and municipalities by consistently delivering dependable results."
+      "We build lasting relationships with homeowners, architects, contractors, developers, and municipalities through dependable service and consistent results."
   }
 ];
 ---
-
 <section class="why-section">
 
-<div class="background-grid"></div>
-<div class="background-glow"></div>
+  <div class="background-grid"></div>
 
-<div class="container">
+  <div class="background-glow"></div>
 
-<div class="why-grid">
+  <div class="container">
 
-<div class="why-left">
+    <div class="why-grid">
 
-<span class="section-tag">
+      <div class="why-left">
 
-WHY MIDRA
+        <span class="section-tag">
 
-</span>
+          WHY MIDRA
 
-<h2>
+        </span>
 
-Engineering That
-Builds Confidence.
+        <h2>
 
-</h2>
+          Engineering
+          Solutions That
+          Deliver Confidence.
 
-<p>
+        </h2>
 
-Successful projects begin long before construction.
-They begin with thoughtful engineering, proactive
-planning, and a team committed to finding practical
-solutions before problems arise.
+        <p>
 
-</p>
+          Successful projects begin long before construction.
+          They begin with thoughtful planning, proactive
+          engineering, and a team committed to solving
+          challenges before they become costly problems.
 
-<p>
+        </p>
 
-From residential developments to commercial and
-municipal projects, MIDRA Engineering delivers
-technical expertise combined with responsive service,
-helping clients move confidently from concept to
-construction.
+        <p>
 
-</p>
+          Whether serving homeowners, developers,
+          architects, contractors, or municipalities,
+          MIDRA Engineering provides practical engineering
+          solutions that keep projects moving from concept
+          through construction with confidence.
 
-<a
-href="/about"
-class="why-button"
->
+        </p>
 
-Learn About MIDRA
+        <a
+          href="/about"
+          class="why-button"
+        >
 
-</a>
+          Discover Our Story
 
-</div>
+          <span>
 
-<div class="why-right">
+            →
 
-{
-features.map((feature)=>(
+          </span>
 
-<div class="feature-card">
+        </a>
 
-<div class="feature-number">
+      </div>
 
-{feature.number}
+      <div class="why-right">
 
-</div>
+        {
 
-<div class="feature-content">
+          features.map((feature) => (
 
-<h3>
+            <article class="feature-card">
 
-{feature.title}
+              <div class="feature-icon">
 
-</h3>
+                {feature.icon}
 
-<p>
+              </div>
 
-{feature.description}
+              <div class="feature-content">
 
-</p>
+                <h3>
 
-</div>
+                  {feature.title}
 
-</div>
+                </h3>
 
-))
-}
+                <p>
 
-</div>
+                  {feature.description}
 
-</div>
+                </p>
 
-</div>
+              </div>
+
+            </article>
+
+          ))
+
+        }
+
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
 
 <style>
-
 .why-section{
 
-position:relative;
+  position:relative;
 
-overflow:hidden;
+  overflow:hidden;
 
-padding:140px 0;
+  padding:140px 0;
 
-background:
+  background:
 
-linear-gradient(
-180deg,
-#F8FAFC 0%,
-#ffffff 100%
-);
+    linear-gradient(
+      180deg,
+      #F8FAFC 0%,
+      #FFFFFF 100%
+    );
 
 }
 
 .background-grid{
 
-position:absolute;
+  position:absolute;
 
-inset:0;
+  inset:0;
 
-opacity:.18;
+  opacity:.18;
 
-background-image:
+  background-image:
 
-linear-gradient(
-rgba(14,58,93,.05) 1px,
-transparent 1px
-),
+    linear-gradient(
+      rgba(14,58,93,.05) 1px,
+      transparent 1px
+    ),
 
-linear-gradient(
-90deg,
-rgba(14,58,93,.05) 1px,
-transparent 1px
-);
+    linear-gradient(
+      90deg,
+      rgba(14,58,93,.05) 1px,
+      transparent 1px
+    );
 
-background-size:60px 60px;
+  background-size:60px 60px;
 
-mask-image:
+  mask-image:
 
-linear-gradient(
-180deg,
-rgba(0,0,0,.95),
-transparent
-);
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,.95),
+      transparent
+    );
 
-pointer-events:none;
+  pointer-events:none;
 
 }
 
 .background-glow{
 
-position:absolute;
+  position:absolute;
 
-left:-250px;
+  left:-250px;
 
-top:-250px;
+  top:-250px;
 
-width:650px;
+  width:650px;
 
-height:650px;
+  height:650px;
 
-border-radius:50%;
+  border-radius:50%;
 
-background:
+  background:
 
-radial-gradient(
-circle,
-rgba(198,161,91,.10),
-transparent 72%
-);
+    radial-gradient(
+      circle,
+      rgba(198,161,91,.10),
+      transparent 72%
+    );
 
-pointer-events:none;
+  pointer-events:none;
 
 }
 
 .why-grid{
 
-position:relative;
+  position:relative;
 
-z-index:2;
+  z-index:2;
 
-display:grid;
+  display:grid;
 
-grid-template-columns:
+  grid-template-columns:.95fr 1.05fr;
 
-.95fr
-1.05fr;
+  gap:90px;
 
-gap:90px;
-
-align-items:center;
+  align-items:center;
 
 }
 
 .why-left{
 
-max-width:560px;
+  max-width:560px;
 
-animation:fadeUp .8s ease;
+  animation:fadeUp .8s ease;
 
 }
 
 .section-tag{
 
-display:inline-flex;
+  display:inline-flex;
 
-align-items:center;
+  align-items:center;
 
-padding:10px 18px;
+  padding:10px 18px;
 
-background:#ffffff;
+  background:#FFFFFF;
 
-border:1px solid rgba(14,58,93,.08);
+  border:1px solid rgba(14,58,93,.08);
 
-border-radius:999px;
+  border-radius:999px;
 
-box-shadow:
+  box-shadow:0 14px 35px rgba(0,0,0,.06);
 
-0 14px 35px rgba(0,0,0,.06);
+  font-size:.78rem;
 
-font-size:.78rem;
+  font-weight:800;
 
-font-weight:800;
+  letter-spacing:.14em;
 
-letter-spacing:.14em;
+  color:#0E3A5D;
 
-color:#0E3A5D;
+  margin-bottom:28px;
 
-margin-bottom:28px;
-
-text-transform:uppercase;
+  text-transform:uppercase;
 
 }
+
 .why-left h2{
 
-font-size:clamp(
-2.8rem,
-5vw,
-4.2rem
-);
+  font-size:clamp(2.8rem,5vw,4.2rem);
 
-line-height:1.05;
+  line-height:1.05;
 
-letter-spacing:-.03em;
+  letter-spacing:-.03em;
 
-font-weight:800;
+  font-weight:800;
 
-color:#16324A;
+  color:#16324A;
 
-margin:0 0 28px;
+  margin:0 0 28px;
 
-text-wrap:balance;
+  text-wrap:balance;
 
 }
 
 .why-left p{
 
-font-size:1.08rem;
+  margin:0 0 24px;
 
-line-height:1.95;
+  font-size:1.08rem;
 
-color:#66707C;
+  line-height:1.95;
 
-margin:0 0 24px;
+  color:#66707C;
 
 }
 
 .why-button{
 
-display:inline-flex;
+  display:inline-flex;
 
-align-items:center;
+  align-items:center;
 
-justify-content:center;
+  justify-content:center;
 
-padding:18px 36px;
+  gap:10px;
 
-margin-top:18px;
+  padding:18px 36px;
 
-border-radius:999px;
+  margin-top:18px;
 
-background:#0E3A5D;
+  border-radius:999px;
 
-color:#fff;
+  background:#0E3A5D;
 
-text-decoration:none;
+  color:#FFFFFF;
 
-font-weight:700;
+  text-decoration:none;
 
-transition:
+  font-weight:700;
 
-transform .35s ease,
-background .35s ease,
-box-shadow .35s ease;
+  transition:
+    transform .35s ease,
+    background .35s ease,
+    box-shadow .35s ease;
 
-box-shadow:
-
-0 22px 55px
-rgba(14,58,93,.18);
+  box-shadow:
+    0 22px 55px rgba(14,58,93,.18);
 
 }
 
 .why-button:hover{
 
-background:#184e79;
+  background:#184E79;
 
-transform:translateY(-4px);
+  transform:translateY(-4px);
 
-box-shadow:
+  box-shadow:
+    0 30px 70px rgba(14,58,93,.24);
 
-0 30px 70px
-rgba(14,58,93,.24);
+}
+
+.why-button span{
+
+  transition:transform .3s ease;
+
+}
+
+.why-button:hover span{
+
+  transform:translateX(6px);
 
 }
 
 .why-right{
 
-display:grid;
+  display:grid;
 
-gap:26px;
+  gap:26px;
 
-animation:fadeUp .95s ease;
+  animation:fadeUp .95s ease;
 
 }
 
 .feature-card{
 
-display:flex;
+  position:relative;
 
-align-items:flex-start;
+  overflow:hidden;
 
-gap:28px;
+  display:flex;
 
-padding:36px;
+  align-items:flex-start;
 
-background:rgba(255,255,255,.92);
+  gap:28px;
 
-backdrop-filter:blur(10px);
+  padding:36px;
 
-border-radius:24px;
+  background:rgba(255,255,255,.92);
 
-border:1px solid rgba(14,58,93,.06);
+  backdrop-filter:blur(10px);
 
-box-shadow:
+  border-radius:24px;
 
-0 22px 60px
-rgba(0,0,0,.06);
+  border:1px solid rgba(14,58,93,.06);
 
-transition:
+  box-shadow:
+    0 22px 60px rgba(0,0,0,.06);
 
-transform .35s ease,
-box-shadow .35s ease,
-border-color .35s ease;
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    border-color .35s ease;
+
+}
+
+.feature-card::before{
+
+  content:"";
+
+  position:absolute;
+
+  top:0;
+
+  left:0;
+
+  width:100%;
+
+  height:4px;
+
+  background:
+
+    linear-gradient(
+      90deg,
+      #0E3A5D,
+      #C6A15B
+    );
+
+}
+
+.feature-card:nth-child(even){
+
+  margin-left:35px;
 
 }
 
 .feature-card:hover{
 
-transform:translateY(-8px);
+  transform:translateY(-8px);
 
-border-color:rgba(198,161,91,.28);
+  border-color:rgba(198,161,91,.28);
 
-box-shadow:
-
-0 35px 80px
-rgba(14,58,93,.12);
+  box-shadow:
+    0 35px 80px rgba(14,58,93,.12);
 
 }
 
-.feature-number{
+.feature-icon{
 
-flex-shrink:0;
+  flex-shrink:0;
 
-width:74px;
+  width:74px;
 
-height:74px;
+  height:74px;
 
-display:flex;
+  display:flex;
 
-align-items:center;
+  align-items:center;
 
-justify-content:center;
+  justify-content:center;
 
-border-radius:20px;
+  border-radius:20px;
 
-background:
+  background:
 
-linear-gradient(
-135deg,
-#0E3A5D,
-#1B5B8C
-);
+    linear-gradient(
+      135deg,
+      #0E3A5D,
+      #1B5B8C
+    );
 
-color:#fff;
+  color:#FFFFFF;
 
-font-size:1.25rem;
+  font-size:2rem;
 
-font-weight:800;
-
-letter-spacing:.05em;
-
-box-shadow:
-
-0 18px 40px
-rgba(14,58,93,.20);
+  box-shadow:
+    0 18px 40px rgba(14,58,93,.20);
 
 }
 
 .feature-content{
 
-flex:1;
+  flex:1;
 
 }
 
 .feature-content h3{
 
-font-size:1.45rem;
+  margin:0 0 14px;
 
-font-weight:800;
+  font-size:1.45rem;
 
-line-height:1.3;
+  font-weight:800;
 
-color:#16324A;
+  line-height:1.3;
 
-margin:0 0 14px;
+  color:#16324A;
 
 }
 
 .feature-content p{
 
-margin:0;
+  margin:0;
 
-font-size:1rem;
+  font-size:1rem;
 
-line-height:1.85;
+  line-height:1.85;
 
-color:#66707C;
+  color:#66707C;
 
 }
+
 @keyframes fadeUp{
 
-from{
+  from{
 
-opacity:0;
+    opacity:0;
 
-transform:translateY(28px);
+    transform:translateY(28px);
+
+  }
+
+  to{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+  }
 
 }
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-
 @media (max-width:1100px){
 
-.why-section{
+  .why-section{
 
-padding:110px 0;
+    padding:110px 0;
 
-}
+  }
 
-.why-grid{
+  .why-grid{
 
-grid-template-columns:1fr;
+    grid-template-columns:1fr;
 
-gap:70px;
+    gap:70px;
 
-}
+  }
 
-.why-left{
+  .why-left{
 
-max-width:760px;
+    max-width:760px;
 
-margin:0 auto;
+    margin:0 auto;
 
-text-align:center;
+    text-align:center;
 
-}
+  }
 
-.why-right{
+  .why-right{
 
-max-width:760px;
+    max-width:760px;
 
-margin:0 auto;
+    margin:0 auto;
 
-}
+  }
+
+  .feature-card:nth-child(even){
+
+    margin-left:0;
+
+  }
 
 }
 
 @media (max-width:768px){
 
-.why-section{
+  .why-section{
 
-padding:90px 0;
+    padding:90px 0;
 
-}
+  }
 
-.why-grid{
+  .why-grid{
 
-gap:55px;
+    gap:55px;
 
-}
+  }
 
-.why-left h2{
+  .why-left h2{
 
-font-size:2.55rem;
+    font-size:2.55rem;
 
-}
+  }
 
-.why-left p{
+  .why-left p{
 
-font-size:1rem;
+    font-size:1rem;
 
-}
+  }
 
-.feature-card{
+  .feature-card{
 
-padding:28px;
+    padding:28px;
 
-gap:22px;
+    gap:22px;
 
-}
+  }
 
-.feature-number{
+  .feature-icon{
 
-width:62px;
+    width:62px;
 
-height:62px;
+    height:62px;
 
-border-radius:18px;
+    border-radius:18px;
 
-font-size:1.05rem;
+    font-size:1.6rem;
 
-}
+  }
 
-.feature-content h3{
+  .feature-content h3{
 
-font-size:1.28rem;
+    font-size:1.28rem;
 
-}
+  }
 
 }
 
 @media (max-width:480px){
 
-.why-section{
+  .why-section{
 
-padding:80px 0;
+    padding:80px 0;
 
-}
+  }
 
-.section-tag{
+  .section-tag{
 
-font-size:.68rem;
+    font-size:.68rem;
 
-padding:8px 14px;
+    padding:8px 14px;
 
-}
+  }
 
-.feature-card{
+  .why-left h2{
 
-flex-direction:column;
+    font-size:2rem;
 
-align-items:flex-start;
+  }
 
-padding:24px;
+  .feature-card{
 
-}
+    flex-direction:column;
 
-.feature-number{
+    align-items:flex-start;
 
-width:56px;
+    padding:24px;
 
-height:56px;
+  }
 
-}
+  .feature-icon{
 
-.feature-content h3{
+    width:56px;
 
-font-size:1.18rem;
+    height:56px;
 
-}
+    border-radius:16px;
+
+    font-size:1.45rem;
+
+  }
+
+  .feature-content h3{
+
+    font-size:1.18rem;
+
+  }
 
 }
 
