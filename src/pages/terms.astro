@@ -144,6 +144,7 @@ import Layout from "../layouts/Layout.astro";
 </section>
 
 <style>
+
 .terms-page{
 
   position:relative;
@@ -155,9 +156,13 @@ import Layout from "../layouts/Layout.astro";
   background:
 
     linear-gradient(
+
       180deg,
+
       #F8FAFC,
+
       #FFFFFF
+
     );
 
 }
@@ -173,14 +178,21 @@ import Layout from "../layouts/Layout.astro";
   background-image:
 
     linear-gradient(
+
       rgba(14,58,93,.05) 1px,
+
       transparent 1px
+
     ),
 
     linear-gradient(
+
       90deg,
+
       rgba(14,58,93,.05) 1px,
+
       transparent 1px
+
     );
 
   background-size:60px 60px;
@@ -206,9 +218,13 @@ import Layout from "../layouts/Layout.astro";
   background:
 
     radial-gradient(
+
       circle,
+
       rgba(198,161,91,.10),
+
       transparent 72%
+
     );
 
   pointer-events:none;
@@ -256,9 +272,13 @@ import Layout from "../layouts/Layout.astro";
   background:
 
     linear-gradient(
+
       90deg,
+
       #0E3A5D,
+
       #C6A15B
+
     );
 
 }
@@ -296,9 +316,13 @@ import Layout from "../layouts/Layout.astro";
   margin:0 0 16px;
 
   font-size:clamp(
+
     2.6rem,
+
     5vw,
+
     4rem
+
   );
 
   font-weight:800;
@@ -370,6 +394,7 @@ import Layout from "../layouts/Layout.astro";
   color:#C6A15B;
 
 }
+
 @media (max-width:768px){
 
   .terms-page{
@@ -457,6 +482,39 @@ import Layout from "../layouts/Layout.astro";
     font-size:.95rem;
 
     line-height:1.8;
+
+  }
+
+}
+
+/* ---------- Rendering Improvements ---------- */
+
+.terms-page,
+.terms-page *{
+
+  -webkit-font-smoothing:antialiased;
+
+  -moz-osx-font-smoothing:grayscale;
+
+}
+
+.terms-card{
+
+  will-change:transform;
+
+}
+
+/* ---------- Reduced Motion ---------- */
+
+@media (prefers-reduced-motion:reduce){
+
+  .terms-page *{
+
+    animation:none !important;
+
+    transition:none !important;
+
+    scroll-behavior:auto !important;
 
   }
 

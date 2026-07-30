@@ -29,6 +29,7 @@ const features = [
   }
 ];
 ---
+
 <section class="why-section">
 
   <div class="background-grid"></div>
@@ -136,6 +137,7 @@ const features = [
 </section>
 
 <style>
+
 .why-section{
 
   position:relative;
@@ -147,9 +149,13 @@ const features = [
   background:
 
     linear-gradient(
+
       180deg,
+
       #F8FAFC 0%,
+
       #FFFFFF 100%
+
     );
 
 }
@@ -165,14 +171,21 @@ const features = [
   background-image:
 
     linear-gradient(
+
       rgba(14,58,93,.05) 1px,
+
       transparent 1px
+
     ),
 
     linear-gradient(
+
       90deg,
+
       rgba(14,58,93,.05) 1px,
+
       transparent 1px
+
     );
 
   background-size:60px 60px;
@@ -180,9 +193,13 @@ const features = [
   mask-image:
 
     linear-gradient(
+
       180deg,
+
       rgba(0,0,0,.95),
+
       transparent
+
     );
 
   pointer-events:none;
@@ -206,9 +223,13 @@ const features = [
   background:
 
     radial-gradient(
+
       circle,
+
       rgba(198,161,91,.10),
+
       transparent 72%
+
     );
 
   pointer-events:none;
@@ -324,11 +345,15 @@ const features = [
   font-weight:700;
 
   transition:
+
     transform .35s ease,
+
     background .35s ease,
+
     box-shadow .35s ease;
 
   box-shadow:
+
     0 22px 55px rgba(14,58,93,.18);
 
 }
@@ -340,6 +365,7 @@ const features = [
   transform:translateY(-4px);
 
   box-shadow:
+
     0 30px 70px rgba(14,58,93,.24);
 
 }
@@ -365,7 +391,6 @@ const features = [
   animation:fadeUp .95s ease;
 
 }
-
 .feature-card{
 
   position:relative;
@@ -389,11 +414,15 @@ const features = [
   border:1px solid rgba(14,58,93,.06);
 
   box-shadow:
+
     0 22px 60px rgba(0,0,0,.06);
 
   transition:
+
     transform .35s ease,
+
     box-shadow .35s ease,
+
     border-color .35s ease;
 
 }
@@ -415,9 +444,13 @@ const features = [
   background:
 
     linear-gradient(
+
       90deg,
+
       #0E3A5D,
+
       #C6A15B
+
     );
 
 }
@@ -435,6 +468,7 @@ const features = [
   border-color:rgba(198,161,91,.28);
 
   box-shadow:
+
     0 35px 80px rgba(14,58,93,.12);
 
 }
@@ -458,9 +492,13 @@ const features = [
   background:
 
     linear-gradient(
+
       135deg,
+
       #0E3A5D,
+
       #1B5B8C
+
     );
 
   color:#FFFFFF;
@@ -468,6 +506,7 @@ const features = [
   font-size:2rem;
 
   box-shadow:
+
     0 18px 40px rgba(14,58,93,.20);
 
 }
@@ -666,6 +705,48 @@ const features = [
   .feature-content h3{
 
     font-size:1.18rem;
+
+  }
+
+}
+
+/* ---------- Rendering Improvements ---------- */
+
+.why-section,
+.why-section *{
+
+  -webkit-font-smoothing:antialiased;
+
+  -moz-osx-font-smoothing:grayscale;
+
+}
+
+.feature-card,
+.why-button{
+
+  will-change:transform;
+
+}
+
+.feature-icon{
+
+  transform:translateZ(0);
+
+  backface-visibility:hidden;
+
+}
+
+/* ---------- Reduced Motion ---------- */
+
+@media (prefers-reduced-motion:reduce){
+
+  .why-section *{
+
+    animation:none !important;
+
+    transition:none !important;
+
+    scroll-behavior:auto !important;
 
   }
 

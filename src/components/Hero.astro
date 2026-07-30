@@ -64,27 +64,52 @@
         </div>
 
         <div class="hero-services">
-                  <div class="service-card">
 
-            <strong>Residential</strong>
+          <div class="service-card">
 
-            <span>Site Design</span>
+            <strong>
+
+              Residential
+
+            </strong>
+
+            <span>
+
+              Site Design
+
+            </span>
 
           </div>
 
           <div class="service-card">
 
-            <strong>Commercial</strong>
+            <strong>
 
-            <span>Engineering</span>
+              Commercial
+
+            </strong>
+
+            <span>
+
+              Engineering
+
+            </span>
 
           </div>
 
           <div class="service-card">
 
-            <strong>Municipal</strong>
+            <strong>
 
-            <span>Infrastructure</span>
+              Municipal
+
+            </strong>
+
+            <span>
+
+              Infrastructure
+
+            </span>
 
           </div>
 
@@ -151,11 +176,17 @@
   padding:145px 0 105px;
 
   background:
+
     linear-gradient(
+
       180deg,
+
       #FCFDFE 0%,
+
       #F5F8FB 55%,
+
       #EEF4F8 100%
+
     );
 
 }
@@ -181,23 +212,35 @@
   background-image:
 
     linear-gradient(
+
       rgba(14,58,93,.05) 1px,
+
       transparent 1px
+
     ),
 
     linear-gradient(
+
       90deg,
+
       rgba(14,58,93,.05) 1px,
+
       transparent 1px
+
     );
 
   background-size:56px 56px;
 
   mask-image:
+
     linear-gradient(
+
       180deg,
+
       rgba(0,0,0,.95),
+
       transparent
+
     );
 
 }
@@ -213,6 +256,7 @@
   opacity:.55;
 
 }
+
 .hero-glow-left{
 
   width:520px;
@@ -294,274 +338,346 @@
   margin-bottom:28px;
 
 }
+<section class="hero">
 
-.hero h1{
+  <div class="hero-background">
 
-  font-size:clamp(3.1rem,5.7vw,5rem);
+    <div class="hero-grid-pattern"></div>
 
-  line-height:1.04;
+    <div class="hero-glow hero-glow-left"></div>
 
-  font-weight:800;
+    <div class="hero-glow hero-glow-right"></div>
 
-  letter-spacing:-.03em;
+  </div>
 
-  color:#16324A;
+  <div class="container">
 
-  margin-bottom:28px;
+    <div class="hero-layout">
 
-  text-wrap:balance;
+      <div class="hero-content">
 
-}
+        <span class="hero-eyebrow">
 
-.hero p{
+          CIVIL ENGINEERING • LAND DEVELOPMENT • PERMITTING
 
-  max-width:560px;
+        </span>
 
-  font-size:1.08rem;
+        <h1>
 
-  line-height:1.85;
+          Engineering Solutions That Move
+          Your Project Forward.
 
-  color:#66707C;
+        </h1>
 
-  margin-bottom:42px;
+        <p>
 
-}
+          MIDRA Engineering partners with homeowners,
+          developers, architects, and contractors to
+          transform ideas into approved construction
+          plans. From feasibility studies to final
+          permits, we provide practical engineering
+          solutions with accuracy, responsiveness,
+          and attention to every detail.
 
-.hero-actions{
+        </p>
 
-  display:flex;
+        <div class="hero-actions">
 
-  flex-wrap:wrap;
+          <a
+            href="/contact"
+            class="btn btn-primary"
+          >
 
-  gap:18px;
+            Request a Proposal
 
-  margin-bottom:48px;
+          </a>
 
-}
+          <a
+            href="/projects"
+            class="btn btn-secondary"
+          >
 
-.btn{
+            View Projects
 
-  display:inline-flex;
+          </a>
 
-  align-items:center;
+        </div>
 
-  justify-content:center;
+        <div class="hero-services">
 
-  height:58px;
+          <div class="service-card">
 
-  padding:0 34px;
+            <strong>
 
-  border-radius:999px;
+              Residential
 
-  font-weight:700;
+            </strong>
 
-  font-size:1rem;
+            <span>
 
-  text-decoration:none;
+              Site Design
 
-  transition:
+            </span>
 
-    transform .30s ease,
+          </div>
 
-    box-shadow .30s ease,
+          <div class="service-card">
 
-    background .30s ease,
+            <strong>
 
-    color .30s ease,
+              Commercial
 
-    border-color .30s ease;
+            </strong>
 
-}
+            <span>
 
-.btn-primary{
+              Engineering
 
-  background:#0E3A5D;
+            </span>
 
-  color:#ffffff;
+          </div>
 
-  box-shadow:
+          <div class="service-card">
 
-    0 18px 44px rgba(14,58,93,.18);
+            <strong>
 
-}
+              Municipal
 
-.btn-primary:hover{
+            </strong>
 
-  background:#184E79;
+            <span>
 
-  transform:translateY(-3px);
+              Infrastructure
 
-  box-shadow:
+            </span>
 
-    0 28px 58px rgba(14,58,93,.24);
+          </div>
 
-}
+        </div>
 
-.btn-secondary{
+      </div>
 
-  background:#ffffff;
+      <div class="hero-visual">
 
-  color:#0E3A5D;
+        <div class="hero-image-wrapper">
 
-  border:2px solid #0E3A5D;
+          <img
+            src="/hero-subdivision.jpg"
+            alt="Engineering plans and site development"
+            loading="eager"
+            decoding="async"
+          />
 
-}
+          <div class="hero-highlight"></div>
 
-.btn-secondary:hover{
+          <div class="info-card">
 
-  background:#0E3A5D;
+            <span class="info-label">
 
-  color:#ffffff;
+              TRUSTED ENGINEERING
 
-  transform:translateY(-3px);
+            </span>
 
-}
-.hero-services{
+            <strong>
 
-  display:grid;
+              From Concept
+              to Construction
 
-  grid-template-columns:repeat(3,1fr);
+            </strong>
 
-  gap:20px;
+            <p>
 
-}
+              Practical solutions.
+              Clear communication.
+              Reliable results.
 
-.service-card{
+            </p>
 
-  background:#ffffff;
+          </div>
 
-  padding:26px;
+        </div>
 
-  border-radius:20px;
+      </div>
 
-  border:1px solid rgba(14,58,93,.06);
+    </div>
 
-  box-shadow:
-    0 18px 42px rgba(0,0,0,.08);
+  </div>
 
-  transition:
-    transform .30s ease,
-    box-shadow .30s ease;
+</section>
 
-}
+<style>
 
-.service-card:hover{
-
-  transform:translateY(-6px);
-
-  box-shadow:
-    0 28px 60px rgba(0,0,0,.12);
-
-}
-
-.service-card strong{
-
-  display:block;
-
-  font-size:1.12rem;
-
-  font-weight:800;
-
-  color:#16324A;
-
-  margin-bottom:8px;
-
-}
-
-.service-card span{
-
-  display:block;
-
-  font-size:.95rem;
-
-  color:#6D7885;
-
-}
-
-.hero-visual{
-
-  display:flex;
-
-  justify-content:center;
-
-  align-items:center;
-
-  animation:fadeUp .85s ease;
-
-}
-
-.hero-image-wrapper{
+.hero{
 
   position:relative;
 
-  width:100%;
+  overflow:hidden;
 
-  max-width:560px;
+  padding:145px 0 105px;
+
+  background:
+
+    linear-gradient(
+
+      180deg,
+
+      #FCFDFE 0%,
+
+      #F5F8FB 55%,
+
+      #EEF4F8 100%
+
+    );
 
 }
 
-.hero-image-wrapper img{
-
-  display:block;
-
-  width:100%;
-
-  border-radius:28px;
-
-  box-shadow:
-    0 34px 80px rgba(0,0,0,.16);
-
-}
-
-.hero-highlight{
+.hero-background{
 
   position:absolute;
 
   inset:0;
 
-  border-radius:28px;
-
-  background:
-    linear-gradient(
-      120deg,
-      transparent 20%,
-      rgba(255,255,255,.34) 50%,
-      transparent 80%
-    );
-
-  transform:translateX(-120%);
-
-  animation:shine 7s ease-in-out infinite;
-
   pointer-events:none;
 
 }
 
-.info-card{
+.hero-grid-pattern{
 
   position:absolute;
 
-  right:-36px;
+  inset:0;
 
-  bottom:34px;
+  opacity:.18;
 
-  width:285px;
+  background-image:
 
-  padding:28px;
+    linear-gradient(
 
-  background:rgba(255,255,255,.97);
+      rgba(14,58,93,.05) 1px,
 
-  border:1px solid rgba(255,255,255,.70);
+      transparent 1px
 
-  backdrop-filter:blur(10px);
+    ),
 
-  border-radius:22px;
+    linear-gradient(
 
-  box-shadow:
-    0 24px 58px rgba(0,0,0,.15);
+      90deg,
+
+      rgba(14,58,93,.05) 1px,
+
+      transparent 1px
+
+    );
+
+  background-size:56px 56px;
+
+  mask-image:
+
+    linear-gradient(
+
+      180deg,
+
+      rgba(0,0,0,.95),
+
+      transparent
+
+    );
 
 }
 
+.hero-glow{
+
+  position:absolute;
+
+  border-radius:50%;
+
+  filter:blur(90px);
+
+  opacity:.55;
+
+}
+
+.hero-glow-left{
+
+  width:520px;
+
+  height:520px;
+
+  left:-220px;
+
+  bottom:-180px;
+
+  background:rgba(14,58,93,.08);
+
+}
+
+.hero-glow-right{
+
+  width:420px;
+
+  height:420px;
+
+  right:-120px;
+
+  top:-120px;
+
+  background:rgba(198,161,91,.18);
+
+}
+
+.hero-layout{
+
+  position:relative;
+
+  z-index:2;
+
+  display:grid;
+
+  grid-template-columns:1.05fr .95fr;
+
+  align-items:center;
+
+  gap:72px;
+
+}
+
+.hero-content{
+
+  max-width:620px;
+
+  animation:fadeUp .7s ease;
+
+}
+
+.hero-eyebrow{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  padding:10px 18px;
+
+  border-radius:999px;
+
+  background:#ffffff;
+
+  border:1px solid rgba(14,58,93,.08);
+
+  color:#0E3A5D;
+
+  font-size:.78rem;
+
+  font-weight:800;
+
+  letter-spacing:.14em;
+
+  text-transform:uppercase;
+
+  box-shadow:0 14px 36px rgba(0,0,0,.06);
+
+  margin-bottom:28px;
+
+}
 .info-label{
 
   display:block;
@@ -649,6 +765,7 @@
   }
 
 }
+
 @media (max-width:1100px){
 
   .hero{
@@ -780,7 +897,6 @@
   }
 
 }
-
 @media (max-width:480px){
 
   .hero{
@@ -824,6 +940,50 @@
   .info-card strong{
 
     font-size:1.3rem;
+
+  }
+
+}
+
+/* ---------- Rendering Improvements ---------- */
+
+.hero,
+.hero *{
+
+  -webkit-font-smoothing:antialiased;
+
+  -moz-osx-font-smoothing:grayscale;
+
+}
+
+.hero-image-wrapper img{
+
+  image-rendering:auto;
+
+  backface-visibility:hidden;
+
+  transform:translateZ(0);
+
+}
+
+.btn,
+.service-card{
+
+  will-change:transform;
+
+}
+
+/* ---------- Reduced Motion ---------- */
+
+@media (prefers-reduced-motion:reduce){
+
+  .hero *{
+
+    animation:none !important;
+
+    transition:none !important;
+
+    scroll-behavior:auto !important;
 
   }
 

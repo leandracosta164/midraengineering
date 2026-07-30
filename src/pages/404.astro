@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 ---
+
 <Layout
   title="404 | Page Not Found | MIDRA Engineering"
   description="The page you're looking for could not be found."
@@ -79,6 +80,7 @@ import Layout from "../layouts/Layout.astro";
 </section>
 
 <style>
+
 .error-page{
 
   position:relative;
@@ -98,9 +100,13 @@ import Layout from "../layouts/Layout.astro";
   background:
 
     linear-gradient(
+
       180deg,
+
       #F8FAFC,
+
       #FFFFFF
+
     );
 
 }
@@ -116,14 +122,21 @@ import Layout from "../layouts/Layout.astro";
   background-image:
 
     linear-gradient(
+
       rgba(14,58,93,.05) 1px,
+
       transparent 1px
+
     ),
 
     linear-gradient(
+
       90deg,
+
       rgba(14,58,93,.05) 1px,
+
       transparent 1px
+
     );
 
   background-size:60px 60px;
@@ -149,9 +162,13 @@ import Layout from "../layouts/Layout.astro";
   background:
 
     radial-gradient(
+
       circle,
+
       rgba(198,161,91,.10),
+
       transparent 72%
+
     );
 
   pointer-events:none;
@@ -201,9 +218,13 @@ import Layout from "../layouts/Layout.astro";
   background:
 
     linear-gradient(
+
       90deg,
+
       #0E3A5D,
+
       #C6A15B
+
     );
 
 }
@@ -319,9 +340,13 @@ import Layout from "../layouts/Layout.astro";
   font-weight:700;
 
   transition:
+
     transform .3s ease,
+
     background .3s ease,
+
     color .3s ease,
+
     box-shadow .3s ease;
 
 }
@@ -472,6 +497,41 @@ import Layout from "../layouts/Layout.astro";
     font-size:.98rem;
 
     line-height:1.8;
+
+  }
+
+}
+
+/* ---------- Rendering Improvements ---------- */
+
+.error-page,
+.error-page *{
+
+  -webkit-font-smoothing:antialiased;
+
+  -moz-osx-font-smoothing:grayscale;
+
+}
+
+.error-card,
+.primary-button,
+.secondary-button{
+
+  will-change:transform;
+
+}
+
+/* ---------- Reduced Motion ---------- */
+
+@media (prefers-reduced-motion:reduce){
+
+  .error-page *{
+
+    animation:none !important;
+
+    transition:none !important;
+
+    scroll-behavior:auto !important;
 
   }
 
