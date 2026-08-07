@@ -1,0 +1,413 @@
+/*
+==================================================
+MIDRA Engineering Design System
+Typography
+==================================================
+*/
+
+/* ==========================================
+   Body
+========================================== */
+
+body{
+
+  font-family:var(--font-primary);
+
+  font-size:var(--font-size-md);
+
+  font-weight:400;
+
+  line-height:var(--line-height-body);
+
+  color:var(--color-text);
+
+  background:var(--color-background);
+
+}
+
+/* ==========================================
+   Headings
+========================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+
+  font-family:var(--font-heading);
+
+  font-weight:700;
+
+  color:var(--color-primary);
+
+  line-height:var(--line-height-heading);
+
+  letter-spacing:-.02em;
+
+}
+
+h1{
+
+  font-size:clamp(2.75rem,5vw,4.5rem);
+
+  margin-bottom:1.5rem;
+
+}
+
+h2{
+
+  font-size:clamp(2.2rem,4vw,3.4rem);
+
+  margin-bottom:1.25rem;
+
+}
+
+h3{
+
+  font-size:clamp(1.6rem,2vw,2rem);
+
+  margin-bottom:1rem;
+
+}
+
+h4{
+
+  font-size:1.35rem;
+
+  margin-bottom:.9rem;
+
+}
+
+h5{
+
+  font-size:1.15rem;
+
+  margin-bottom:.75rem;
+
+}
+
+h6{
+
+  font-size:1rem;
+
+  margin-bottom:.75rem;
+
+}
+/* ==========================================
+   Paragraphs
+========================================== */
+
+p{
+
+  margin:0 0 1.5rem;
+
+  color:var(--color-text-light);
+
+  line-height:var(--line-height-body);
+
+}
+
+p:last-child{
+
+  margin-bottom:0;
+
+}
+
+/* ==========================================
+   Links
+========================================== */
+
+a{
+
+  color:inherit;
+
+  transition:color var(--transition-fast);
+
+}
+
+a:hover{
+
+  color:var(--color-primary);
+
+}
+
+/* ==========================================
+   Lists
+========================================== */
+
+ul,
+ol{
+
+  margin:0;
+
+  padding:0;
+
+}
+
+li{
+
+  line-height:var(--line-height-body);
+
+}
+
+/* ==========================================
+   Strong / Emphasis
+========================================== */
+
+strong{
+
+  font-weight:700;
+
+  color:var(--color-text);
+
+}
+
+em{
+
+  font-style:italic;
+
+}
+
+/* ==========================================
+   Small Text
+========================================== */
+
+small{
+
+  font-size:var(--font-size-sm);
+
+  color:var(--color-text-light);
+
+}
+
+/* ==========================================
+   Section Labels
+========================================== */
+
+.section-tag{
+
+  display:inline-block;
+
+  margin-bottom:1rem;
+
+  color:var(--color-accent);
+
+  font-size:.78rem;
+
+  font-weight:700;
+
+  letter-spacing:.18em;
+
+  text-transform:uppercase;
+
+}
+/* ==========================================
+   Blockquotes
+========================================== */
+
+blockquote{
+
+  margin:2rem 0;
+
+  padding:1.5rem 2rem;
+
+  border-left:4px solid var(--color-accent);
+
+  background:var(--color-surface);
+
+  color:var(--color-text);
+
+  font-style:italic;
+
+  line-height:var(--line-height-loose);
+
+}
+
+blockquote p{
+
+  margin:0;
+
+}
+
+/* ==========================================
+   Code
+========================================== */
+
+code{
+
+  padding:.15rem .4rem;
+
+  border-radius:4px;
+
+  background:var(--color-gray-100);
+
+  font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;
+
+  font-size:.92em;
+
+}
+
+pre{
+
+  overflow-x:auto;
+
+  padding:1.5rem;
+
+  border-radius:var(--radius-lg);
+
+  background:var(--color-gray-900);
+
+  color:var(--color-white);
+
+}
+
+pre code{
+
+  padding:0;
+
+  background:none;
+
+  color:inherit;
+
+}
+
+/* ==========================================
+   Horizontal Rule
+========================================== */
+
+hr{
+
+  margin:3rem 0;
+
+  border:0;
+
+  border-top:1px solid var(--color-border);
+
+}
+
+/* ==========================================
+   Text Utilities
+========================================== */
+
+.text-center{
+
+  text-align:center;
+
+}
+
+.text-left{
+
+  text-align:left;
+
+}
+
+.text-right{
+
+  text-align:right;
+
+}
+
+.text-muted{
+
+  color:var(--color-text-light);
+
+}
+/* ==========================================
+   Responsive Typography
+========================================== */
+
+@media (max-width:768px){
+
+  body{
+
+    font-size:.95rem;
+
+  }
+
+  h1{
+
+    font-size:2.6rem;
+
+  }
+
+  h2{
+
+    font-size:2.1rem;
+
+  }
+
+  h3{
+
+    font-size:1.7rem;
+
+  }
+
+  p{
+
+    line-height:1.8;
+
+  }
+
+}
+
+@media (max-width:480px){
+
+  h1{
+
+    font-size:2.15rem;
+
+  }
+
+  h2{
+
+    font-size:1.8rem;
+
+  }
+
+  h3{
+
+    font-size:1.45rem;
+
+  }
+
+  h4{
+
+    font-size:1.2rem;
+
+  }
+
+  .section-tag{
+
+    font-size:.7rem;
+
+    letter-spacing:.16em;
+
+  }
+
+}
+
+/* ==========================================
+   Print
+========================================== */
+
+@media print{
+
+  body{
+
+    color:#000;
+
+    background:#fff;
+
+  }
+
+  a{
+
+    color:#000;
+
+    text-decoration:underline;
+
+  }
+
+}

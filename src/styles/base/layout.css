@@ -1,0 +1,427 @@
+/*
+==================================================
+MIDRA Engineering Design System
+Layout
+==================================================
+*/
+
+/* ==========================================
+   Page Layout
+========================================== */
+
+body{
+
+  display:flex;
+
+  flex-direction:column;
+
+}
+
+main{
+
+  flex:1;
+
+  display:block;
+
+  min-height:60vh;
+
+}
+
+/* ==========================================
+   Container
+========================================== */
+
+.container{
+
+  width:min(100% - 48px,var(--container-width));
+
+  margin-inline:auto;
+
+}
+
+/* ==========================================
+   Sections
+========================================== */
+
+section{
+
+  position:relative;
+
+  padding:var(--section-padding) 0;
+
+}
+
+/* ==========================================
+   Section Headers
+========================================== */
+
+.section-header{
+
+  max-width:760px;
+
+  margin:0 auto 72px;
+
+  text-align:center;
+
+}
+
+.section-header h2{
+
+  margin-bottom:20px;
+
+}
+
+.section-header p{
+
+  max-width:680px;
+
+  margin:0 auto;
+
+}
+/* ==========================================
+   Grid System
+========================================== */
+
+.grid{
+
+  display:grid;
+
+  gap:var(--space-8);
+
+}
+
+.grid-2{
+
+  display:grid;
+
+  grid-template-columns:repeat(2,1fr);
+
+  gap:var(--space-12);
+
+}
+
+.grid-3{
+
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:var(--space-10);
+
+}
+
+.grid-4{
+
+  display:grid;
+
+  grid-template-columns:repeat(4,1fr);
+
+  gap:var(--space-8);
+
+}
+
+/* ==========================================
+   Flex Utilities
+========================================== */
+
+.flex{
+
+  display:flex;
+
+}
+
+.flex-column{
+
+  display:flex;
+
+  flex-direction:column;
+
+}
+
+.items-center{
+
+  align-items:center;
+
+}
+
+.items-start{
+
+  align-items:flex-start;
+
+}
+
+.items-end{
+
+  align-items:flex-end;
+
+}
+
+.justify-center{
+
+  justify-content:center;
+
+}
+
+.justify-between{
+
+  justify-content:space-between;
+
+}
+
+.justify-end{
+
+  justify-content:flex-end;
+
+}
+
+.flex-wrap{
+
+  flex-wrap:wrap;
+
+}
+
+.gap-sm{
+
+  gap:var(--space-4);
+
+}
+
+.gap-md{
+
+  gap:var(--space-6);
+
+}
+
+.gap-lg{
+
+  gap:var(--space-10);
+
+}
+/* ==========================================
+   Width Utilities
+========================================== */
+
+.w-full{
+
+  width:100%;
+
+}
+
+.max-content{
+
+  max-width:760px;
+
+}
+
+.max-wide{
+
+  max-width:1100px;
+
+}
+
+/* ==========================================
+   Spacing Utilities
+========================================== */
+
+.mt-0{margin-top:0;}
+.mt-1{margin-top:var(--space-2);}
+.mt-2{margin-top:var(--space-4);}
+.mt-3{margin-top:var(--space-6);}
+.mt-4{margin-top:var(--space-8);}
+.mt-5{margin-top:var(--space-12);}
+
+.mb-0{margin-bottom:0;}
+.mb-1{margin-bottom:var(--space-2);}
+.mb-2{margin-bottom:var(--space-4);}
+.mb-3{margin-bottom:var(--space-6);}
+.mb-4{margin-bottom:var(--space-8);}
+.mb-5{margin-bottom:var(--space-12);}
+
+.pt-section{
+
+  padding-top:var(--section-padding);
+
+}
+
+.pb-section{
+
+  padding-bottom:var(--section-padding);
+
+}
+
+/* ==========================================
+   Card Layout
+========================================== */
+
+.card{
+
+  background:var(--color-white);
+
+  border:1px solid var(--color-border);
+
+  border-radius:var(--radius-xl);
+
+  box-shadow:var(--shadow-sm);
+
+}
+
+.card-body{
+
+  padding:var(--space-10);
+
+}
+/* ==========================================
+   Responsive Layout
+========================================== */
+
+@media (max-width:1100px){
+
+  .container{
+
+    width:min(100% - 40px,var(--container-width));
+
+  }
+
+  .grid-4{
+
+    grid-template-columns:repeat(2,1fr);
+
+  }
+
+  .grid-3{
+
+    grid-template-columns:repeat(2,1fr);
+
+  }
+
+  .section-header{
+
+    margin-bottom:60px;
+
+  }
+
+}
+
+@media (max-width:768px){
+
+  .container{
+
+    width:min(100% - 32px,var(--container-width));
+
+  }
+
+  section{
+
+    padding:var(--section-padding-mobile) 0;
+
+  }
+
+  .grid-2,
+  .grid-3,
+  .grid-4{
+
+    grid-template-columns:1fr;
+
+  }
+
+  .card-body{
+
+    padding:var(--space-8);
+
+  }
+
+  .section-header{
+
+    margin-bottom:48px;
+
+  }
+
+}
+
+@media (max-width:480px){
+
+  .container{
+
+    width:min(100% - 24px,var(--container-width));
+
+  }
+
+  .card{
+
+    border-radius:var(--radius-lg);
+
+  }
+
+  .card-body{
+
+    padding:var(--space-6);
+
+  }
+
+}
+/* ==========================================
+   Rendering Improvements
+========================================== */
+
+html{
+
+  scroll-padding-top:88px;
+
+}
+
+@media (max-width:768px){
+
+  html{
+
+    scroll-padding-top:80px;
+
+  }
+
+}
+
+/* ==========================================
+   Overflow Protection
+========================================== */
+
+body{
+
+  overflow-x:hidden;
+
+}
+
+img,
+svg{
+
+  backface-visibility:hidden;
+
+  transform:translateZ(0);
+
+}
+
+/* ==========================================
+   Print
+========================================== */
+
+@media print{
+
+  .container{
+
+    width:100%;
+
+    max-width:none;
+
+    padding:0;
+
+  }
+
+  section{
+
+    padding:1.5rem 0;
+
+  }
+
+}
+
+/* ==========================================
+   End of Layout
+========================================== */

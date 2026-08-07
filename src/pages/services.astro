@@ -1,56 +1,52 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import PageHero from "../components/PageHero.astro";
+import PageHero from "../components/InnerPageHero.astro";
 import CTA from "../components/CTA.astro";
 
 const services = [
   {
     title: "Residential Engineering",
-    icon: "🏡",
     description:
-      "Professional civil engineering services for homeowners, builders, and developers throughout New Jersey.",
+      "Professional civil engineering services supporting homeowners, builders and developers from planning through construction.",
 
     features: [
       "Site Plans",
-      "Grading & Drainage",
-      "Septic Coordination",
+      "Grading Design",
+      "Drainage Design",
       "Permit Drawings"
     ]
   },
 
   {
     title: "Commercial Development",
-    icon: "🏢",
     description:
-      "Complete engineering solutions for commercial, office, retail, industrial, and mixed-use developments.",
+      "Civil engineering solutions for commercial, office, retail, industrial and mixed-use developments.",
 
     features: [
       "Site Development",
       "Utility Design",
       "Parking Layout",
-      "Permitting"
+      "Permitting Assistance"
     ]
   },
 
   {
     title: "Stormwater Management",
-    icon: "💧",
     description:
-      "NJDEP-compliant stormwater management systems designed for performance and long-term reliability.",
+      "Stormwater systems designed to satisfy regulatory requirements while supporting long-term site performance.",
 
     features: [
-      "Detention Basins",
-      "Infiltration Systems",
-      "Hydraulic Modeling",
-      "Drainage Reports"
+      "Stormwater Reports",
+      "Detention Systems",
+      "Drainage Analysis",
+      "Hydraulic Calculations"
     ]
   },
 
   {
     title: "Site Planning",
-    icon: "📐",
     description:
-      "Efficient site layouts that balance functionality, municipal requirements, and construction feasibility.",
+      "Thoughtful site layouts balancing functionality, constructability and municipal requirements.",
 
     features: [
       "ADA Compliance",
@@ -61,10 +57,9 @@ const services = [
   },
 
   {
-    title: "Permitting",
-    icon: "📄",
+    title: "Permitting Assistance",
     description:
-      "Preparation of engineering plans and supporting documentation for municipal, county, and state approvals.",
+      "Engineering plans and documentation prepared to support municipal, county and state approvals.",
 
     features: [
       "Planning Boards",
@@ -76,9 +71,8 @@ const services = [
 
   {
     title: "Construction Support",
-    icon: "🏗️",
     description:
-      "Engineering assistance during construction to help projects stay compliant, efficient, and on schedule.",
+      "Engineering support throughout construction to help projects remain coordinated, compliant and on schedule.",
 
     features: [
       "Field Support",
@@ -91,978 +85,691 @@ const services = [
 ---
 
 <Layout
-  title="Civil Engineering Services | MIDRA Engineering"
-  description="Professional civil engineering services throughout New Jersey for residential, commercial, municipal, and land development projects."
+    title="Civil Engineering Services | MIDRA Engineering"
+    description="Professional civil engineering services for residential, commercial, municipal and land development projects."
 >
 
 <PageHero
-  title="Engineering Services"
-  subtitle="Comprehensive Civil Engineering Solutions for Residential, Commercial, and Municipal Projects."
+    title="Engineering Services"
+    subtitle="Practical Civil Engineering Solutions Designed to Support Successful Projects."
 />
 
 <section class="services-page">
 
-  <div class="background-grid"></div>
+<div class="container">
 
-  <div class="background-glow"></div>
+<div class="services-intro">
 
-  <div class="container">
+<span>
 
-    <div class="services-intro">
+WHAT WE DO
 
-      <span>
+</span>
 
-        WHAT WE DO
+<h2>
 
-      </span>
+Professional Civil
+Engineering Services
 
-      <h2>
+</h2>
 
-        Engineering Solutions
-        Designed Around
-        Your Project
+<p>
 
-      </h2>
+MIDRA Engineering provides practical civil engineering
+solutions from planning and permitting through construction.
+Every service is delivered with technical expertise,
+responsive communication and attention to detail.
 
-      <p>
+</p>
 
-        From concept through construction, MIDRA Engineering delivers
-        practical civil engineering solutions focused on quality,
-        efficiency, regulatory compliance, and long-term performance
-        throughout New Jersey.
+</div>
 
-      </p>
+<div class="services-grid">
 
-    </div>
+{
 
-    <div class="services-grid">
+services.map((service) => (
 
-      {
+<article class="service-card">
+<div class="service-accent"></div>
 
-        services.map((service) => (
+<h3>
 
-          <article class="service-card">
+  {service.title}
 
-            <div class="service-icon">
+</h3>
 
-              {service.icon}
+<p>
 
-            </div>
+  {service.description}
 
-            <h3>
+</p>
 
-              {service.title}
+<ul>
 
-            </h3>
+  {
 
-            <p>
+    service.features.map((feature) => (
 
-              {service.description}
+      <li>
 
-            </p>
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
 
-            <ul>
+          <polyline points="20 6 9 17 4 12"></polyline>
 
-              {
+        </svg>
 
-                service.features.map((feature) => (
+        {feature}
 
-                  <li>
+      </li>
 
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
+    ))
 
-                      <polyline points="20 6 9 17 4 12"></polyline>
+  }
 
-                    </svg>
+</ul>
 
-                    {feature}
+<a
+  href="/contact"
+  class="service-button"
+>
 
-                  </li>
+  Request Proposal
 
-                ))
+</a>
 
-              }
+</article>
 
-            </ul>
+))
 
-            <a
-              href="/contact"
-              class="service-button"
-            >
+}
 
-              Discuss Your Project
+</div>
 
-              <span>
-
-                →
-
-              </span>
-
-            </a>
-
-          </article>
-
-        ))
-
-      }
-
-    </div>
-
-  </div>
+</div>
 
 </section>
 
 <section class="process-section">
 
-  <div class="container">
+<div class="container">
 
-    <div class="section-heading">
+<div class="section-heading">
 
-      <span>
+<span>
 
-        OUR PROCESS
+OUR PROCESS
 
-      </span>
+</span>
 
-      <h2>
+<h2>
 
-        From Initial Consultation
-        to Project Completion
+A Structured
+Approach to Every
+Engineering Project
 
-      </h2>
+</h2>
 
-      <p>
+<p>
 
-        Every project follows a structured engineering process that
-        keeps communication clear, approvals moving, and construction
-        on schedule.
+Every project follows a clear engineering process focused on
+planning, coordination, technical quality and successful
+project delivery.
 
-      </p>
+</p>
 
-    </div>
+</div>
 
-    <div class="process-grid">
+<div class="process-grid">
 
-      <div class="process-card">
+<div class="process-card">
 
-        <div class="process-number">
+<div class="process-number">
 
-          01
+01
 
-        </div>
+</div>
 
-        <h3>
+<h3>
 
-          Consultation
+Project Consultation
 
-        </h3>
+</h3>
 
-        <p>
+<p>
 
-          We discuss your project goals, property constraints,
-          regulations, schedule, and engineering requirements.
+We begin by understanding your project objectives,
+site conditions and engineering requirements.
 
-        </p>
+</p>
 
-      </div>
+</div>
 
-      <div class="process-card">
+<div class="process-card">
 
-        <div class="process-number">
+<div class="process-number">
 
-          02
+02
 
-        </div>
+</div>
 
-        <h3>
+<h3>
 
-          Site Evaluation
+Site Evaluation
 
-        </h3>
+</h3>
 
-        <p>
+<p>
 
-          Existing conditions, utilities, grading, drainage,
-          and permitting requirements are carefully evaluated.
+Existing conditions, grading, drainage,
+utilities and regulatory requirements are
+carefully evaluated.
 
-        </p>
+</p>
 
-      </div>
+</div>
 
-      <div class="process-card">
+<div class="process-card">
 
-        <div class="process-number">
+<div class="process-number">
 
-          03
+03
 
-        </div>
+</div>
 
-        <h3>
+<h3>
 
-          Engineering Design
+Engineering Design
 
-        </h3>
+</h3>
 
-        <p>
+<p>
 
-          Detailed engineering plans are prepared using practical,
-          efficient, and code-compliant design solutions.
+Detailed engineering plans are prepared
+using practical, efficient and code-compliant
+design solutions.
 
-        </p>
+</p>
 
-      </div>
+</div>
 
-      <div class="process-card">
+<div class="process-card">
 
-        <div class="process-number">
+<div class="process-number">
 
-          04
+04
 
-        </div>
+</div>
 
-        <h3>
+<h3>
 
-          Permitting
+Permitting
 
-        </h3>
+</h3>
 
-        <p>
+<p>
 
-          Plans and supporting documentation are coordinated with
-          municipalities and regulatory agencies for approval.
+Engineering plans and documentation are
+prepared for review and approval by the
+appropriate agencies.
 
-        </p>
+</p>
 
-      </div>
+</div>
 
-      <div class="process-card">
+<div class="process-card">
 
-        <div class="process-number">
+<div class="process-number">
 
-          05
+05
 
-        </div>
+</div>
 
-        <h3>
+<h3>
 
-          Construction Support
+Construction Support
 
-        </h3>
+</h3>
 
-        <p>
+<p>
 
-          We remain involved throughout construction to answer
-          questions and support successful project completion.
+We remain available throughout construction
+to assist with engineering questions and
+project coordination.
 
-        </p>
+</p>
 
-      </div>
+</div>
 
-    </div>
+</div>
 
-  </div>
+</div>
 
 </section>
 
 <CTA />
 
 <style>
-
 .services-page{
 
-  position:relative;
+    padding:120px 0;
 
-  overflow:hidden;
-
-  padding:130px 0;
-
-  background:
-    linear-gradient(
-      180deg,
-      #F8FAFC,
-      #FFFFFF
-    );
-
-}
-
-.background-grid{
-
-  position:absolute;
-
-  inset:0;
-
-  opacity:.18;
-
-  background-image:
-
-    linear-gradient(
-      rgba(14,58,93,.05) 1px,
-      transparent 1px
-    ),
-
-    linear-gradient(
-      90deg,
-      rgba(14,58,93,.05) 1px,
-      transparent 1px
-    );
-
-  background-size:60px 60px;
-
-  pointer-events:none;
-
-}
-
-.background-glow{
-
-  position:absolute;
-
-  left:-250px;
-
-  bottom:-250px;
-
-  width:650px;
-
-  height:650px;
-
-  border-radius:50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(198,161,91,.10),
-      transparent 72%
-    );
-
-  pointer-events:none;
+    background:#FFFFFF;
 
 }
 
 .services-intro{
 
-  position:relative;
+    max-width:760px;
 
-  z-index:2;
+    margin:0 auto 72px;
 
-  max-width:760px;
-
-  margin:0 auto 80px;
-
-  text-align:center;
+    text-align:center;
 
 }
 
 .services-intro span{
 
-  display:inline-flex;
+    display:inline-block;
 
-  align-items:center;
+    margin-bottom:20px;
 
-  padding:10px 18px;
+    color:#C89B3C;
 
-  border-radius:999px;
+    font-size:.82rem;
 
-  background:#fff;
+    font-weight:700;
 
-  border:1px solid rgba(14,58,93,.08);
+    letter-spacing:.18em;
 
-  box-shadow:0 15px 35px rgba(0,0,0,.05);
-
-  font-size:.78rem;
-
-  font-weight:800;
-
-  letter-spacing:.14em;
-
-  text-transform:uppercase;
-
-  color:#0E3A5D;
-
-  margin-bottom:24px;
+    text-transform:uppercase;
 
 }
 
 .services-intro h2{
 
-  font-size:clamp(2.8rem,5vw,4.2rem);
+    margin-bottom:24px;
 
-  line-height:1.08;
-
-  font-weight:800;
-
-  color:#16324A;
-
-  margin-bottom:28px;
+    color:#08295E;
 
 }
 
 .services-intro p{
 
-  max-width:700px;
+    max-width:700px;
 
-  margin:0 auto;
+    margin:0 auto;
 
-  font-size:1.08rem;
-
-  line-height:1.9;
-
-  color:#66707C;
+    line-height:1.9;
 
 }
 
 .services-grid{
 
-  display:grid;
+    display:grid;
 
-  grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(3,1fr);
 
-  gap:34px;
+    gap:32px;
 
 }
 
 .service-card{
 
-  position:relative;
+    display:flex;
 
-  display:flex;
+    flex-direction:column;
 
-  flex-direction:column;
+    padding:38px;
 
-  padding:42px;
+    background:#FFFFFF;
 
-  border-radius:28px;
+    border:1px solid #E5E7EB;
 
-  background:#FFFFFF;
+    border-radius:20px;
 
-  border:1px solid rgba(14,58,93,.08);
+    transition:
 
-  box-shadow:0 20px 55px rgba(14,58,93,.08);
+        border-color .25s ease,
 
-  transition:
-    transform .35s ease,
-    box-shadow .35s ease,
-    border-color .35s ease;
-
-}
-
-.service-card::before{
-
-  content:"";
-
-  position:absolute;
-
-  left:0;
-
-  top:0;
-
-  width:100%;
-
-  height:5px;
-
-  background:linear-gradient(
-    90deg,
-    #0E3A5D,
-    #C6A15B
-  );
+        box-shadow .25s ease;
 
 }
 
 .service-card:hover{
 
-  transform:translateY(-10px);
+    border-color:#C89B3C;
 
-  border-color:rgba(14,58,93,.14);
-
-  box-shadow:0 34px 80px rgba(14,58,93,.16);
+    box-shadow:0 12px 30px rgba(8,41,94,.08);
 
 }
 
-.service-icon{
+.service-accent{
 
-  display:flex;
+    width:56px;
 
-  align-items:center;
+    height:4px;
 
-  justify-content:center;
+    margin-bottom:24px;
 
-  width:76px;
+    border-radius:999px;
 
-  height:76px;
-
-  margin-bottom:28px;
-
-  border-radius:22px;
-
-  background:linear-gradient(
-    135deg,
-    #0E3A5D,
-    #1B5B8C
-  );
-
-  color:#FFFFFF;
-
-  font-size:2rem;
-
-  box-shadow:0 20px 45px rgba(14,58,93,.22);
+    background:#C89B3C;
 
 }
 
 .service-card h3{
 
-  font-size:1.75rem;
+    margin-bottom:18px;
 
-  line-height:1.25;
-
-  font-weight:800;
-
-  color:#16324A;
-
-  margin-bottom:18px;
+    color:#08295E;
 
 }
 
 .service-card p{
 
-  color:#66707C;
+    margin-bottom:28px;
 
-  line-height:1.9;
-
-  margin-bottom:28px;
+    line-height:1.8;
 
 }
 
 .service-card ul{
 
-  list-style:none;
+    display:grid;
 
-  display:grid;
+    gap:14px;
 
-  gap:16px;
+    margin-bottom:32px;
 
-  margin-bottom:36px;
+    list-style:none;
 
 }
 
 .service-card li{
 
-  display:flex;
+    display:flex;
 
-  align-items:center;
+    align-items:center;
 
-  gap:12px;
+    gap:12px;
 
-  color:#16324A;
-
-  font-weight:600;
+    color:#374151;
 
 }
 
 .service-card li svg{
 
-  width:18px;
+    width:18px;
 
-  height:18px;
+    height:18px;
 
-  flex-shrink:0;
+    flex-shrink:0;
 
-  color:#C6A15B;
+    color:#C89B3C;
 
 }
 
 .service-button{
 
-  margin-top:auto;
+    margin-top:auto;
 
-  display:inline-flex;
+    display:inline-flex;
 
-  align-items:center;
+    align-items:center;
 
-  gap:12px;
+    justify-content:center;
 
-  font-weight:700;
+    min-height:48px;
 
-  color:#0E3A5D;
+    padding:0 24px;
 
-  transition:gap .3s ease,color .3s ease;
+    border-radius:999px;
 
-}
+    background:#08295E;
 
-.service-button span{
+    color:#FFFFFF;
 
-  transition:transform .3s ease;
+    font-weight:600;
+
+    transition:
+
+        background-color .25s ease,
+
+        box-shadow .25s ease;
 
 }
 
 .service-button:hover{
 
-  color:#1B5B8C;
+    background:#103A7A;
 
-  gap:18px;
-
-}
-
-.service-button:hover span{
-
-  transform:translateX(4px);
+    box-shadow:0 10px 24px rgba(8,41,94,.16);
 
 }
-
 .process-section{
 
-  padding:130px 0;
+    padding:120px 0;
 
-  background:#FFFFFF;
+    background:#F8FAFC;
 
 }
 
 .section-heading{
 
-  max-width:760px;
+    max-width:760px;
 
-  margin:0 auto 80px;
+    margin:0 auto 72px;
 
-  text-align:center;
+    text-align:center;
 
 }
 
 .section-heading span{
 
-  display:inline-flex;
+    display:inline-block;
 
-  align-items:center;
+    margin-bottom:20px;
 
-  padding:10px 18px;
+    color:#C89B3C;
 
-  border-radius:999px;
+    font-size:.82rem;
 
-  background:#F8FAFC;
+    font-weight:700;
 
-  border:1px solid rgba(14,58,93,.08);
+    letter-spacing:.18em;
 
-  font-size:.78rem;
-
-  font-weight:800;
-
-  letter-spacing:.14em;
-
-  text-transform:uppercase;
-
-  color:#0E3A5D;
-
-  margin-bottom:24px;
+    text-transform:uppercase;
 
 }
 
 .section-heading h2{
 
-  font-size:clamp(2.7rem,5vw,4rem);
+    margin-bottom:24px;
 
-  line-height:1.08;
-
-  font-weight:800;
-
-  color:#16324A;
-
-  margin-bottom:24px;
+    color:#08295E;
 
 }
 
 .section-heading p{
 
-  max-width:680px;
+    max-width:680px;
 
-  margin:0 auto;
+    margin:0 auto;
 
-  color:#66707C;
-
-  font-size:1.08rem;
-
-  line-height:1.9;
+    line-height:1.9;
 
 }
 
 .process-grid{
 
-  display:grid;
+    display:grid;
 
-  grid-template-columns:repeat(5,1fr);
+    grid-template-columns:repeat(5,1fr);
 
-  gap:24px;
+    gap:24px;
 
 }
 
 .process-card{
 
-  padding:34px 28px;
+    padding:32px 24px;
 
-  background:#F8FAFC;
+    background:#FFFFFF;
 
-  border-radius:24px;
+    border:1px solid #E5E7EB;
 
-  border:1px solid rgba(14,58,93,.08);
+    border-radius:20px;
 
-  transition:
-    transform .35s ease,
-    box-shadow .35s ease;
+    transition:
+
+        border-color .25s ease,
+
+        box-shadow .25s ease;
 
 }
 
 .process-card:hover{
 
-  transform:translateY(-8px);
+    border-color:#C89B3C;
 
-  box-shadow:0 22px 55px rgba(14,58,93,.12);
+    box-shadow:0 10px 24px rgba(8,41,94,.08);
 
 }
 
 .process-number{
 
-  width:58px;
+    display:flex;
 
-  height:58px;
+    align-items:center;
 
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  margin-bottom:22px;
-
-  border-radius:16px;
-
-  background:linear-gradient(
-    135deg,
-    #0E3A5D,
-    #1B5B8C
-  );
-
-  color:#FFFFFF;
-
-  font-weight:800;
-
-  font-size:1rem;
-
-}
-
-.process-card h3{
-
-  margin-bottom:14px;
-
-  font-size:1.35rem;
-
-  font-weight:800;
-
-  color:#16324A;
-
-}
-
-.process-card p{
-
-  color:#66707C;
-
-  line-height:1.8;
-
-}
-
-@media (max-width:1100px){
-
-  .services-page{
-
-    padding:110px 0;
-
-  }
-
-  .services-grid{
-
-    grid-template-columns:repeat(2,1fr);
-
-    gap:28px;
-
-  }
-
-  .process-grid{
-
-    grid-template-columns:repeat(2,1fr);
-
-  }
-
-}
-
-@media (max-width:768px){
-
-  .services-page{
-
-    padding:90px 0;
-
-  }
-
-  .process-section{
-
-    padding:90px 0;
-
-  }
-
-  .services-intro{
-
-    margin-bottom:60px;
-
-  }
-
-  .services-intro h2{
-
-    font-size:2.5rem;
-
-  }
-
-  .services-intro p{
-
-    font-size:1rem;
-
-  }
-
-  .services-grid{
-
-    grid-template-columns:1fr;
-
-    gap:24px;
-
-  }
-
-  .service-card{
-
-    padding:34px;
-
-  }
-
-  .service-icon{
-
-    width:68px;
-
-    height:68px;
-
-    font-size:1.8rem;
-
-  }
-
-  .section-heading{
-
-    margin-bottom:60px;
-
-  }
-
-  .section-heading h2{
-
-    font-size:2.5rem;
-
-  }
-
-  .section-heading p{
-
-    font-size:1rem;
-
-  }
-
-  .process-grid{
-
-    grid-template-columns:1fr;
-
-    gap:22px;
-
-  }
-
-}
-
-@media (max-width:480px){
-
-  .services-page{
-
-    padding:80px 0;
-
-  }
-
-  .process-section{
-
-    padding:80px 0;
-
-  }
-
-  .services-intro span,
-
-  .section-heading span{
-
-    font-size:.68rem;
-
-    padding:8px 14px;
-
-  }
-
-  .services-intro h2,
-
-  .section-heading h2{
-
-    font-size:2rem;
-
-  }
-
-  .service-card{
-
-    padding:28px;
-
-    border-radius:22px;
-
-  }
-
-  .service-card h3{
-
-    font-size:1.45rem;
-
-  }
-
-  .service-icon{
-
-    width:60px;
-
-    height:60px;
-
-    border-radius:18px;
-
-    font-size:1.6rem;
-
-  }
-
-  .process-card{
-
-    padding:28px 24px;
-
-    border-radius:20px;
-
-  }
-
-  .process-number{
+    justify-content:center;
 
     width:52px;
 
     height:52px;
 
+    margin-bottom:20px;
+
+    border-radius:14px;
+
+    background:#08295E;
+
+    color:#FFFFFF;
+
+    font-weight:700;
+
     font-size:.95rem;
-
-  }
-
-  .process-card h3{
-
-    font-size:1.2rem;
-
-  }
 
 }
 
+.process-card h3{
+
+    margin-bottom:14px;
+
+    color:#08295E;
+
+    font-size:1.2rem;
+
+}
+
+.process-card p{
+
+    margin:0;
+
+    line-height:1.8;
+
+}
+
+@media (max-width:1100px){
+
+    .services-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .process-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .services-page,
+
+    .process-section{
+
+        padding:90px 0;
+
+    }
+
+    .services-grid,
+
+    .process-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .services-intro{
+
+        margin-bottom:56px;
+
+    }
+
+    .section-heading{
+
+        margin-bottom:56px;
+
+    }
+
+    .service-card{
+
+        padding:32px;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .services-page,
+
+    .process-section{
+
+        padding:72px 0;
+
+    }
+
+    .service-card{
+
+        padding:28px;
+
+        border-radius:18px;
+
+    }
+
+    .process-card{
+
+        padding:28px 22px;
+
+        border-radius:18px;
+
+    }
+
+}
 </style>
 
 </Layout>

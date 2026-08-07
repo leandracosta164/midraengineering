@@ -1,0 +1,180 @@
+/*
+==================================================
+MIDRA Engineering Design System
+Design Tokens
+
+Version: 1.0
+==================================================
+*/
+
+:root{
+
+/* ==========================================
+   Brand Colors
+========================================== */
+
+--color-primary:#08295E;
+--color-primary-light:#184A8C;
+--color-primary-dark:#061E45;
+
+--color-accent:#C89B3C;
+--color-accent-light:#D8B15A;
+--color-accent-dark:#A97E28;
+
+/* ==========================================
+   Neutral Colors
+========================================== */
+
+--color-white:#FFFFFF;
+
+--color-gray-50:#F8FAFC;
+--color-gray-100:#F3F6F9;
+--color-gray-200:#E8EDF2;
+--color-gray-300:#D9E0E8;
+--color-gray-400:#B5C0CB;
+--color-gray-500:#8A97A5;
+--color-gray-600:#66707C;
+--color-gray-700:#475569;
+--color-gray-800:#2F3E4D;
+--color-gray-900:#16324A;
+
+/* ==========================================
+   Semantic Colors
+========================================== */
+
+--color-background:#FFFFFF;
+
+--color-surface:#F8FAFC;
+
+--color-border:#E8EDF2;
+
+--color-text:#16324A;
+
+--color-text-light:#66707C;
+
+--color-success:#2E7D32;
+
+--color-warning:#EDB100;
+
+--color-danger:#C62828;
+
+/* ==========================================
+   Typography
+========================================== */
+
+--font-primary:"Inter",sans-serif;
+
+--font-heading:"Playfair Display",serif;
+
+--font-size-xs:.75rem;
+--font-size-sm:.875rem;
+--font-size-md:1rem;
+--font-size-lg:1.125rem;
+--font-size-xl:1.25rem;
+--font-size-2xl:1.5rem;
+--font-size-3xl:2rem;
+--font-size-4xl:2.75rem;
+--font-size-5xl:3.5rem;
+
+--line-height-tight:1.15;
+--line-height-heading:1.25;
+--line-height-body:1.7;
+--line-height-loose:1.9;
+/* ==========================================
+   Layout
+========================================== */
+
+--container-width:1280px;
+
+--section-padding:120px;
+
+--section-padding-mobile:80px;
+
+/* ==========================================
+   Spacing Scale
+========================================== */
+
+--space-1:4px;
+--space-2:8px;
+--space-3:12px;
+--space-4:16px;
+--space-5:20px;
+--space-6:24px;
+--space-8:32px;
+--space-10:40px;
+--space-12:48px;
+--space-16:64px;
+--space-20:80px;
+--space-24:96px;
+--space-30:120px;
+
+/* ==========================================
+   Border Radius
+========================================== */
+
+--radius-sm:8px;
+--radius-md:12px;
+--radius-lg:18px;
+--radius-xl:24px;
+--radius-pill:999px;
+
+/* ==========================================
+   Borders
+========================================== */
+
+--border-width:1px;
+
+--border-color:var(--color-border);
+
+/* ==========================================
+   Shadows
+========================================== */
+
+--shadow-sm:
+0 8px 20px rgba(8,41,94,.05);
+
+--shadow-md:
+0 16px 40px rgba(8,41,94,.08);
+
+--shadow-lg:
+0 28px 70px rgba(8,41,94,.14);
+
+/* ==========================================
+   Animation
+========================================== */
+
+--transition-fast:.2s ease;
+
+--transition-base:.3s ease;
+
+--transition-slow:.45s ease;
+
+/* ==========================================
+   Layering
+========================================== */
+
+--z-header:1000;
+
+--z-dropdown:1100;
+
+--z-modal:1200;
+
+--z-toast:1300;
+
+/* ==========================================
+   Breakpoints (documentation)
+========================================== */
+
+/*
+
+480px  Mobile
+
+768px  Tablet
+
+1100px Laptop
+
+1280px Desktop
+
+*/
+
+}

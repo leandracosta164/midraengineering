@@ -10,89 +10,84 @@ const navigation = [
 ];
 ---
 
-<header
-  class="site-header"
-  id="siteHeader"
->
-
-  <div class="header-glass"></div>
-
+<header class="site-header" id="site-header">
   <div class="container">
 
     <div class="header-inner">
+
+      <!-- Logo -->
 
       <a
         href="/"
         class="logo"
         aria-label="MIDRA Engineering"
       >
-
         <img
-          src="/midra-logo-transparent.png"
+          src="/images/branding/midra-logo.png"
           alt="MIDRA Engineering"
+          width="220"
+          height="70"
           loading="eager"
           decoding="async"
           fetchpriority="high"
         />
-
       </a>
+
+      <!-- Desktop Navigation -->
 
       <nav
         class="desktop-nav"
         aria-label="Primary Navigation"
       >
-
         {
-
-          navigation.map((item)=>{
+          navigation.map((item) => {
 
             const active =
               item.href === "/"
                 ? currentPath === "/"
                 : currentPath.startsWith(item.href);
 
-            return(
+            return (
 
               <a
                 href={item.href}
-                class={active ? "active" : ""}
+                class:list={[
+                  "nav-link",
+                  { active }
+                ]}
                 aria-current={active ? "page" : undefined}
               >
-
                 {item.label}
-
               </a>
 
             );
 
           })
-
         }
-
       </nav>
+
+      <!-- Call To Action -->
 
       <a
         href="/contact"
-        class="proposal-btn"
+        class="proposal-button"
       >
-
         Request Proposal
-
       </a>
 
+      <!-- Mobile Toggle -->
+
       <button
-        id="mobileToggle"
+        id="mobile-toggle"
         class="mobile-toggle"
         type="button"
-        aria-label="Open Navigation"
+        aria-label="Open navigation"
         aria-expanded="false"
-        aria-controls="mobileMenu"
+        aria-controls="mobile-menu"
       >
 
         <span></span>
-
         <span></span>
-
         <span></span>
 
       </button>
@@ -100,49 +95,46 @@ const navigation = [
     </div>
 
   </div>
-
 </header>
+
 <div
-  id="mobileMenu"
+  id="mobile-menu"
   class="mobile-menu"
 >
 
   <nav aria-label="Mobile Navigation">
 
     {
-
-      navigation.map((item)=>{
+      navigation.map((item) => {
 
         const active =
           item.href === "/"
             ? currentPath === "/"
             : currentPath.startsWith(item.href);
 
-        return(
+        return (
 
           <a
             href={item.href}
-            class={active ? "active" : ""}
+            class:list={[
+              "mobile-link",
+              { active }
+            ]}
             aria-current={active ? "page" : undefined}
           >
-
             {item.label}
-
           </a>
 
         );
 
       })
-
     }
 
     <a
       href="/contact"
-      class="mobile-proposal"
+      class="mobile-button"
     >
-
       Request Proposal
-
     </a>
 
   </nav>
@@ -151,727 +143,570 @@ const navigation = [
 
 <script>
 
-const header = document.getElementById("siteHeader");
+const header = document.getElementById("site-header");
+const toggle = document.getElementById("mobile-toggle");
+const menu = document.getElementById("mobile-menu");
 
-const toggle = document.getElementById("mobileToggle");
+function closeMenu() {
 
-const menu = document.getElementById("mobileMenu");
-
-function closeMenu(){
-
-  if(!toggle || !menu) return;
+  if (!toggle || !menu) return;
 
   toggle.classList.remove("open");
-
   menu.classList.remove("open");
 
-  toggle.setAttribute("aria-expanded","false");
+  toggle.setAttribute(
+    "aria-expanded",
+    "false"
+  );
 
 }
 
-toggle?.addEventListener("click",()=>{
+toggle?.addEventListener("click", () => {
 
-  if(!menu) return;
+  if (!menu) return;
 
   const open = menu.classList.toggle("open");
 
-  toggle.classList.toggle("open",open);
+  toggle.classList.toggle("open", open);
 
-  toggle.setAttribute("aria-expanded",String(open));
+  toggle.setAttribute(
+    "aria-expanded",
+    String(open)
+  );
 
 });
 
-window.addEventListener("resize",()=>{
+window.addEventListener("resize", () => {
 
-  if(window.innerWidth>960){
-
+if (window.innerWidth > 768) {
     closeMenu();
-
-  }
+}
 
 });
 
 document
   .querySelectorAll(".mobile-menu a")
-  .forEach(link=>{
+  .forEach((link) => {
 
-    link.addEventListener("click",closeMenu);
+    link.addEventListener(
+      "click",
+      closeMenu
+    );
 
   });
 
-window.addEventListener("scroll",()=>{
+window.addEventListener("scroll", () => {
 
-  if(!header) return;
+  if (!header) return;
 
-  if(window.scrollY>24){
-
-    header.classList.add("scrolled");
-
-  }else{
-
-    header.classList.remove("scrolled");
-
-  }
+  header.classList.toggle(
+    "scrolled",
+    window.scrollY > 8
+  );
 
 });
 
 </script>
 
 <style>
+/* ==========================================================
+   MIDRA ENGINEERING
+   Header Styles
+   ========================================================== */
 
-:root{
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 
-  --navy:#0E3153;
+  width: 100%;
+  background: #ffffff;
 
-  --gold:#B68A35;
-
-  --text:#263342;
-
-  --border:#E9EDF3;
-
-}
-
-.site-header{
-
-  position:fixed;
-
-  top:22px;
-
-  left:22px;
-
-  right:22px;
-
-  z-index:5000;
-
-  border-radius:18px;
-
-  overflow:hidden;
-
-  background:rgba(255,255,255,.94);
-
-  backdrop-filter:blur(18px);
-
-  -webkit-backdrop-filter:blur(18px);
-
-  border:1px solid rgba(255,255,255,.55);
-
-  box-shadow:
-
-    0 20px 50px rgba(13,33,58,.10);
+  border-bottom: 1px solid rgba(8, 41, 94, 0.08);
 
   transition:
-
-    top .30s ease,
-
-    box-shadow .30s ease,
-
-    background .30s ease;
-
-}
-
-.site-header.scrolled{
-
-  top:12px;
-
-  background:rgba(255,255,255,.97);
-
-  box-shadow:
-
-    0 26px 60px rgba(13,33,58,.16);
-
-}
-
-.header-glass{
-
-  position:absolute;
-
-  inset:0;
-
-  pointer-events:none;
-
-  background:
-
-    linear-gradient(
-
-      180deg,
-
-      rgba(255,255,255,.38),
-
-      rgba(255,255,255,.08)
-
-    );
-
-}
-
-.container{
-
-  width:min(1320px,92%);
-
-  margin:auto;
-
-}
-
-.header-inner{
-
-  height:86px;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:space-between;
-
-  gap:38px;
-
-}
-
-.logo{
-
-  display:flex;
-
-  align-items:center;
-
-  flex-shrink:0;
-
-  text-decoration:none;
-
-}
-
-.logo img{
-
-  display:block;
-
-  height:56px;
-
-  width:auto;
-
-  transition:
-
-    transform .28s ease;
-
-}
-
-.logo:hover img{
-
-  transform:scale(1.02);
-
-}
-
-.desktop-nav{
-
-  display:flex;
-
-  align-items:center;
-
-  gap:42px;
-
-  margin-left:auto;
-
-}
-.desktop-nav a{
-
-  position:relative;
-
-  display:flex;
-
-  align-items:center;
-
-  height:86px;
-
-  text-decoration:none;
-
-  color:var(--text);
-
-  font-size:.96rem;
-
-  font-weight:600;
-
-  letter-spacing:.02em;
-
-  transition:
-
-    color .25s ease;
-
-}
-
-.desktop-nav a::after{
-
-  content:"";
-
-  position:absolute;
-
-  left:50%;
-
-  bottom:18px;
-
-  transform:translateX(-50%);
-
-  width:0;
-
-  height:2px;
-
-  border-radius:999px;
-
-  background:var(--gold);
-
-  transition:
-
-    width .25s ease;
-
-}
-
-.desktop-nav a:hover{
-
-  color:var(--navy);
-
-}
-
-.desktop-nav a:hover::after,
-.desktop-nav a.active::after{
-
-  width:100%;
-
-}
-
-.desktop-nav a.active{
-
-  color:var(--navy);
-
-}
-
-.proposal-btn{
-
-  display:inline-flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  height:54px;
-
-  min-width:220px;
-
-  padding:0 34px;
-
-  border-radius:999px;
-
-  background:var(--navy);
-
-  color:#ffffff;
-
-  text-decoration:none;
-
-  font-size:.95rem;
-
-  font-weight:700;
-
-  letter-spacing:.02em;
-
-  box-shadow:
-
-    0 14px 34px rgba(14,49,83,.18);
-
-  transition:
-
-    transform .25s ease,
-
+    background-color .25s ease,
     box-shadow .25s ease,
+    border-color .25s ease;
+}
 
-    background .25s ease;
+.site-header.scrolled {
+  background: rgba(255,255,255,.98);
+  box-shadow: 0 10px 28px rgba(8,41,94,.08);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 88px;
+  gap: 48px;
+}
+
+/* ===========================
+   Logo
+=========================== */
+
+.logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo img {
+  display: block;
+  height: 60px;
+  width: auto;
+}
+
+/*
+---------------------------------------------------
+
+NO LOGO ANIMATION
+
+No hover.
+
+No transition.
+
+No scale.
+
+No rotation.
+
+The logo remains completely static.
+
+---------------------------------------------------
+*/
+
+/* ===========================
+   Desktop Navigation
+=========================== */
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  margin-left: auto;
+}
+
+.nav-link {
+  position: relative;
+
+  color: #1F2937;
+
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+
+  letter-spacing: .02em;
+
+  text-decoration: none;
+
+  transition: color .2s ease;
+}
+
+.nav-link:hover {
+  color: #08295E;
+}
+
+.nav-link.active {
+  color: #08295E;
+}
+
+.nav-link::after {
+
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -12px;
+
+  width: 100%;
+  height: 3px;
+
+  background: #C89B3C;
+
+  transform: scaleX(0);
+
+  transform-origin: left;
+
+  transition: transform .22s ease;
 
 }
 
-.proposal-btn:hover{
+.nav-link:hover::after,
+.nav-link.active::after {
 
-  transform:translateY(-2px);
+  transform: scaleX(1);
+
+}
+
+/* ===========================
+   CTA
+=========================== */
+
+.proposal-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 52px;
+    padding: 0 24px;   /* was 30px */
+
+    white-space: nowrap;
+
+    border-radius: 999px;
+    background: #08295E;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.proposal-button:hover {
+
+  background: #103D82;
+
+  transform: translateY(-1px);
 
   box-shadow:
-
-    0 20px 44px rgba(14,49,83,.24);
-
-}
-
-.proposal-btn:focus-visible,
-.desktop-nav a:focus-visible,
-.mobile-toggle:focus-visible{
-
-  outline:2px solid var(--gold);
-
-  outline-offset:4px;
-
-  border-radius:8px;
+    0 16px 34px rgba(8,41,94,.16);
 
 }
 
-.mobile-toggle{
+.proposal-button:focus-visible,
+.nav-link:focus-visible {
 
-  display:none;
+  outline: 3px solid #C89B3C;
 
-  width:40px;
-
-  height:32px;
-
-  padding:0;
-
-  border:none;
-
-  background:none;
-
-  cursor:pointer;
-
-  position:relative;
-
-  flex-shrink:0;
+  outline-offset: 4px;
 
 }
 
-.mobile-toggle span{
+/* ===========================
+   Mobile Toggle
+=========================== */
 
-  position:absolute;
+.mobile-toggle {
 
-  left:0;
+  display: none;
 
-  width:100%;
+  width: 42px;
+  height: 34px;
 
-  height:3px;
+  position: relative;
 
-  border-radius:999px;
+  border: none;
+  background: transparent;
 
-  background:var(--navy);
-
-  transition:.30s;
-
-}
-
-.mobile-toggle span:nth-child(1){
-
-  top:4px;
+  cursor: pointer;
 
 }
 
-.mobile-toggle span:nth-child(2){
+.mobile-toggle span {
 
-  top:14px;
+  position: absolute;
 
-}
+  left: 0;
 
-.mobile-toggle span:nth-child(3){
+  width: 100%;
 
-  top:24px;
+  height: 3px;
 
-}
+  border-radius: 999px;
 
-.mobile-toggle.open span:nth-child(1){
-
-  top:14px;
-
-  transform:rotate(45deg);
-
-}
-
-.mobile-toggle.open span:nth-child(2){
-
-  opacity:0;
-
-}
-
-.mobile-toggle.open span:nth-child(3){
-
-  top:14px;
-
-  transform:rotate(-45deg);
-
-}
-
-.mobile-menu{
-
-  position:fixed;
-
-  top:122px;
-
-  left:22px;
-
-  right:22px;
-
-  border-radius:18px;
-
-  overflow:hidden;
-
-  background:rgba(255,255,255,.98);
-
-  backdrop-filter:blur(18px);
-
-  -webkit-backdrop-filter:blur(18px);
-
-  border:1px solid var(--border);
-
-  box-shadow:
-
-    0 24px 54px rgba(12,25,45,.12);
-
-  transform:translateY(-120%);
-
-  opacity:0;
-
-  visibility:hidden;
+  background: #08295E;
 
   transition:
-
-    transform .30s ease,
-
-    opacity .30s ease,
-
-    visibility .30s ease;
-
-  z-index:4900;
+    transform .25s ease,
+    opacity .25s ease,
+    top .25s ease;
 
 }
 
-.mobile-menu.open{
-
-  transform:translateY(0);
-
-  opacity:1;
-
-  visibility:visible;
-
+.mobile-toggle span:nth-child(1) {
+  top: 5px;
 }
 
-.mobile-menu nav{
-
-  display:flex;
-
-  flex-direction:column;
-
-  align-items:center;
-
-  gap:22px;
-
-  padding:34px;
-
+.mobile-toggle span:nth-child(2) {
+  top: 15px;
 }
 
-.mobile-menu a{
+.mobile-toggle span:nth-child(3) {
+  top: 25px;
+}
 
-  color:var(--text);
+.mobile-toggle.open span:nth-child(1) {
+  top: 15px;
+  transform: rotate(45deg);
+}
 
-  text-decoration:none;
+.mobile-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
 
-  font-size:1.02rem;
+.mobile-toggle.open span:nth-child(3) {
+  top: 15px;
+  transform: rotate(-45deg);
+}
+/* ==========================================================
+   Mobile Navigation
+   ========================================================== */
 
-  font-weight:600;
+.mobile-menu {
+
+  position: fixed;
+
+  top: 88px;
+  left: 0;
+  right: 0;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid rgba(8,41,94,.08);
+
+  box-shadow:
+    0 20px 40px rgba(8,41,94,.08);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateY(-16px);
 
   transition:
+    opacity .25s ease,
+    visibility .25s ease,
+    transform .25s ease;
 
-    color .20s ease,
-
-    transform .20s ease;
-
-}
-
-.mobile-menu a:hover,
-.mobile-menu a.active{
-
-  color:var(--gold);
-
-  transform:translateY(-2px);
+  z-index: 999;
 
 }
 
-.mobile-proposal{
+.mobile-menu.open {
 
-  display:flex;
+  opacity: 1;
+  visibility: visible;
 
-  align-items:center;
-
-  justify-content:center;
-
-  width:100%;
-
-  max-width:260px;
-
-  height:50px;
-
-  margin-top:10px;
-
-  border-radius:999px;
-
-  background:var(--navy);
-
-  color:#ffffff !important;
-
-  text-decoration:none;
-
-  font-weight:700;
-
-  box-shadow:
-
-    0 14px 34px rgba(14,49,83,.16);
-
-}
-.mobile-proposal:hover{
-
-  transform:translateY(-2px);
-
-  box-shadow:
-
-    0 20px 44px rgba(14,49,83,.22);
+  transform: translateY(0);
 
 }
 
-.mobile-proposal:focus-visible,
-.mobile-menu a:focus-visible{
+.mobile-menu nav {
 
-  outline:2px solid var(--gold);
+  display: flex;
+  flex-direction: column;
 
-  outline-offset:4px;
+  padding: 32px 24px;
 
-  border-radius:8px;
+  gap: 8px;
 
 }
 
-@media (max-width:960px){
+.mobile-link {
+
+  display: block;
+
+  padding: 14px 0;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  color: #1F2937;
+
+  text-decoration: none;
+
+  border-bottom: 1px solid rgba(8,41,94,.05);
+
+  transition:
+    color .2s ease,
+    padding-left .2s ease;
+
+}
+
+.mobile-link:hover,
+.mobile-link.active {
+
+  color: #08295E;
+
+  padding-left: 10px;
+
+}
+
+.mobile-button {
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 20px;
+
+  height: 52px;
+
+  border-radius: 999px;
+
+  background: #08295E;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-weight: 700;
+
+  transition:
+    background-color .2s ease;
+
+}
+
+.mobile-button:hover {
+
+  background: #103D82;
+
+}
+
+/* ==========================================================
+   Responsive
+   ========================================================== */
+
+@media (max-width: 768px) {
 
   .desktop-nav,
-  .proposal-btn{
+  .proposal-button {
+    display: none;
+  }
 
-    display:none;
+  .mobile-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  .header-inner {
+    height: 80px;
+  }
+
+  .logo img {
+    height: 54px;
+  }
+
+}
+
+@media (max-width: 640px) {
+
+  .header-inner {
+
+    height: 72px;
 
   }
 
-  .mobile-toggle{
+  .logo img {
 
-    display:block;
-
-    margin-left:auto;
+    height: 48px;
 
   }
 
-  .site-header{
+  .mobile-menu {
 
-    top:16px;
-
-    left:16px;
-
-    right:16px;
-
-    border-radius:16px;
-
-  }
-
-  .header-inner{
-
-    height:78px;
-
-  }
-
-  .logo img{
-
-    height:48px;
-
-  }
-
-  .mobile-menu{
-
-    top:108px;
-
-    left:16px;
-
-    right:16px;
+    top: 72px;
 
   }
 
 }
 
-@media (max-width:640px){
+/* ==========================================================
+   Accessibility
+   ========================================================== */
 
-  .site-header{
+@media (prefers-reduced-motion: reduce) {
 
-    top:10px;
+  * {
 
-    left:10px;
+    animation: none !important;
 
-    right:10px;
+    transition: none !important;
 
-    border-radius:14px;
-
-  }
-
-  .header-inner{
-
-    height:70px;
+    scroll-behavior: auto !important;
 
   }
 
-  .logo img{
+}
+/* ==========================================================
+   Focus States
+   ========================================================== */
 
-    height:42px;
+.logo:focus-visible,
+.mobile-toggle:focus-visible,
+.mobile-link:focus-visible,
+.mobile-button:focus-visible {
+
+  outline: 3px solid #C89B3C;
+  outline-offset: 4px;
+
+  border-radius: 6px;
+
+}
+
+/* ==========================================================
+   Improve Image Rendering
+   ========================================================== */
+
+.logo img {
+
+  image-rendering: auto;
+
+  user-select: none;
+
+  -webkit-user-drag: none;
+
+}
+
+/* ==========================================================
+   Prevent Horizontal Overflow
+   ========================================================== */
+
+html,
+body {
+
+  overflow-x: hidden;
+
+}
+
+/* ==========================================================
+   Better Touch Targets
+   ========================================================== */
+
+@media (pointer: coarse) {
+
+  .nav-link,
+  .mobile-link {
+
+    min-height: 44px;
+
+    display: flex;
+
+    align-items: center;
 
   }
 
-  .mobile-menu{
+  .proposal-button,
+  .mobile-button {
 
-    top:92px;
-
-    left:10px;
-
-    right:10px;
-
-  }
-
-  .mobile-menu nav{
-
-    padding:28px 22px;
-
-    gap:18px;
-
-  }
-
-  .mobile-proposal{
-
-    max-width:100%;
-
-    height:48px;
+    min-height: 52px;
 
   }
 
 }
 
-html{
+/* ==========================================================
+   Printing
+   ========================================================== */
 
-  scroll-behavior:smooth;
+@media print {
 
-}
+  .site-header,
+  .mobile-menu {
 
-body{
-
-  overflow-x:hidden;
-
-  text-rendering:optimizeLegibility;
-
-  -webkit-font-smoothing:antialiased;
-
-  -moz-osx-font-smoothing:grayscale;
-
-}
-
-.logo img,
-.proposal-btn,
-.desktop-nav a{
-
-  will-change:transform;
-
-}
-
-@media (prefers-reduced-motion:reduce){
-
-  *{
-
-    animation:none !important;
-
-    transition:none !important;
-
-    scroll-behavior:auto !important;
+    display: none;
 
   }
 

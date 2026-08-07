@@ -2,32 +2,29 @@
 import Layout from "../layouts/Layout.astro";
 
 import Hero from "../components/Hero.astro";
-import ServicesPreview from "../components/ServicesPreview.astro";
-import WhyChoose from "../components/WhyChoose.astro";
-import Projects from "../components/Projects.astro";
-import Trust from "../components/Trust.astro";
-import CTA from "../components/CTA.astro";
+
+import AboutPreview from "../components/home/AboutPreview.astro";
+import ServicesPreview from "../components/home/ServicesPreview.astro";
+import ProjectsPreview from "../components/home/ProjectsPreview.astro";
+import WhyChoose from "../components/home/WhyChoose.astro";
+import CallToAction from "../components/home/CallToAction.astro";
 ---
 
 <Layout
-  title="MIDRA Engineering | Civil Engineering Consultants in New Jersey"
-  description="MIDRA Engineering provides professional civil engineering services for residential, commercial, municipal, stormwater management, land development, permitting, and infrastructure projects throughout New Jersey."
+  title="MIDRA Engineering | Civil Engineering Consultants"
+  description="Professional civil engineering consulting services for residential, commercial, municipal and land development projects."
 >
 
   <Hero />
 
-  <main id="main-content">
+  <AboutPreview />
 
-    <ServicesPreview />
+  <ServicesPreview />
 
-    <WhyChoose />
+  <ProjectsPreview />
 
-    <Projects />
+  <WhyChoose />
 
-    <Trust />
-
-    <CTA />
-
-  </main>
+  <CallToAction />
 
 </Layout>

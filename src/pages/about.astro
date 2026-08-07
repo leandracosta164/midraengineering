@@ -1,72 +1,64 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import PageHero from "../components/PageHero.astro";
+import InnerPageHero from "../components/InnerPageHero.astro";
 import CTA from "../components/CTA.astro";
 
 const values = [
   {
-    icon: "🎯",
     title: "Technical Excellence",
-    text: "Every project is developed using proven engineering principles, attention to detail, and current industry standards."
+    text: "Every project is developed using sound engineering principles, attention to detail, and current industry standards."
   },
 
   {
-    icon: "🤝",
-    title: "Client Partnership",
-    text: "Strong communication, transparency, and responsiveness are the foundation of every successful project."
+    title: "Client-Focused Service",
+    text: "Clear communication, responsiveness, and collaboration are central to every successful project."
   },
 
   {
-    icon: "📐",
-    title: "Practical Design",
-    text: "Efficient engineering solutions designed to be buildable, cost-effective, and fully code compliant."
+    title: "Practical Engineering",
+    text: "Our solutions are designed to be efficient, constructible, and aligned with regulatory requirements."
   },
 
   {
-    icon: "✔️",
     title: "Integrity",
-    text: "We approach every project with professionalism, accountability, honesty, and long-term commitment."
+    text: "We approach every project with professionalism, accountability, and a commitment to long-term client relationships."
   }
 ];
 
-const stats = [
+const capabilities = [
   {
-    number: "Residential",
-    label: "Engineering"
+    title: "Residential",
+    subtitle: "Engineering"
   },
 
   {
-    number: "Commercial",
-    label: "Development"
+    title: "Commercial",
+    subtitle: "Development"
   },
 
   {
-    number: "Municipal",
-    label: "Infrastructure"
+    title: "Municipal",
+    subtitle: "Infrastructure"
   },
 
   {
-    number: "Stormwater",
-    label: "Management"
+    title: "Land",
+    subtitle: "Development"
   }
 ];
 ---
 
 <Layout
   title="About MIDRA Engineering"
-  description="Learn about MIDRA Engineering and our commitment to delivering responsive civil engineering solutions throughout New Jersey."
+  description="Learn about MIDRA Engineering and our commitment to delivering practical civil engineering solutions for residential, commercial, municipal, and land development projects."
 >
 
-<PageHero
+<InnerPageHero
   title="About MIDRA Engineering"
-  subtitle="Professional Civil Engineering Solutions Built on Experience, Communication, and Practical Design."
+  subtitle="Professional Civil Engineering Solutions Built on Experience, Technical Excellence, and Client-Focused Service."
 />
 
 <section class="about-story">
-
-  <div class="background-grid"></div>
-
-  <div class="background-glow"></div>
 
   <div class="container">
 
@@ -82,36 +74,35 @@ const stats = [
 
         <h2>
 
-          Engineering
-          Relationships Built
-          on Trust.
+          Engineering Expertise
+          Built on Trust,
+          Precision and Service.
 
         </h2>
 
         <p>
 
-          MIDRA Engineering is a New Jersey civil engineering consulting
-          firm providing practical engineering solutions for residential,
-          commercial, municipal, and land development projects.
+          MIDRA Engineering is a civil engineering consulting firm providing
+          practical engineering solutions for residential, commercial,
+          municipal and land development projects.
 
         </p>
 
         <p>
 
-          Every project begins with understanding our client's goals.
-          We combine technical expertise, responsive communication,
-          and practical engineering to create solutions that are
-          efficient, buildable, and fully compliant with applicable
-          regulations.
+          We combine technical knowledge, responsive communication and
+          practical design to help clients move confidently from planning
+          through construction while meeting applicable regulatory
+          requirements.
 
         </p>
 
         <p>
 
-          From planning and permitting through construction support,
-          we work closely with owners, architects, surveyors,
-          contractors, and municipal agencies to keep projects moving
-          forward with confidence.
+          Our approach emphasizes collaboration, attention to detail and
+          dependable service, allowing owners, developers, architects,
+          contractors and public agencies to move projects forward with
+          confidence.
 
         </p>
 
@@ -119,19 +110,19 @@ const stats = [
 
           {
 
-            stats.map((stat) => (
+            capabilities.map((item) => (
 
               <div class="stat-card">
 
                 <strong>
 
-                  {stat.number}
+                  {item.title}
 
                 </strong>
 
                 <span>
 
-                  {stat.label}
+                  {item.subtitle}
 
                 </span>
 
@@ -144,8 +135,7 @@ const stats = [
         </div>
 
       </div>
-
-      <div class="about-card">
+            <div class="about-card">
 
         <div class="card-top">
 
@@ -157,9 +147,10 @@ const stats = [
 
           <p>
 
-            Deliver practical engineering solutions that combine
-            technical excellence, responsive communication,
-            and dependable client service.
+            To provide practical, high-quality civil engineering solutions
+            through technical excellence, responsive communication, and a
+            commitment to helping every client achieve successful project
+            outcomes.
 
           </p>
 
@@ -171,13 +162,14 @@ const stats = [
 
             <strong>
 
-              Practical Engineering
+              Technical Expertise
 
             </strong>
 
             <span>
 
-              Efficient designs that perform in the field.
+              Engineering solutions developed with accuracy, efficiency,
+              and attention to every project detail.
 
             </span>
 
@@ -193,7 +185,8 @@ const stats = [
 
             <span>
 
-              Keeping clients informed throughout every phase.
+              Keeping clients informed throughout planning, permitting,
+              design and construction.
 
             </span>
 
@@ -203,14 +196,14 @@ const stats = [
 
             <strong>
 
-              Dependable Delivery
+              Commitment to Quality
 
             </strong>
 
             <span>
 
-              Reliable engineering focused on schedules,
-              quality, and successful project outcomes.
+              Delivering dependable engineering solutions that support
+              successful construction and long-term performance.
 
             </span>
 
@@ -240,17 +233,17 @@ const stats = [
 
       <h2>
 
-        The Principles
-        That Guide
-        Every Project
+        Principles That
+        Guide Every
+        Engineering Solution
 
       </h2>
 
       <p>
 
-        Our work is built on professionalism, technical expertise,
-        and a commitment to delivering practical engineering
-        solutions for every client.
+        Every project reflects our commitment to professionalism,
+        technical excellence, practical engineering and long-term
+        client relationships.
 
       </p>
 
@@ -264,11 +257,7 @@ const stats = [
 
           <article class="value-card">
 
-            <div class="value-icon">
-
-              {value.icon}
-
-            </div>
+            <div class="value-accent"></div>
 
             <h3>
 
@@ -297,668 +286,395 @@ const stats = [
 <CTA />
 
 <style>
-
 .about-story{
 
-  position:relative;
+    padding:120px 0;
 
-  overflow:hidden;
-
-  padding:130px 0;
-
-  background:#FFFFFF;
-
-}
-
-.background-grid{
-
-  position:absolute;
-
-  inset:0;
-
-  opacity:.18;
-
-  background-image:
-
-    linear-gradient(
-      rgba(14,58,93,.05) 1px,
-      transparent 1px
-    ),
-
-    linear-gradient(
-      90deg,
-      rgba(14,58,93,.05) 1px,
-      transparent 1px
-    );
-
-  background-size:60px 60px;
-
-  pointer-events:none;
-
-}
-
-.background-glow{
-
-  position:absolute;
-
-  right:-240px;
-
-  top:-220px;
-
-  width:620px;
-
-  height:620px;
-
-  border-radius:50%;
-
-  background:
-
-    radial-gradient(
-      circle,
-      rgba(198,161,91,.10),
-      transparent 72%
-    );
-
-  pointer-events:none;
+    background:#FFFFFF;
 
 }
 
 .about-grid{
 
-  position:relative;
+    display:grid;
 
-  z-index:2;
+    grid-template-columns:1.2fr .8fr;
 
-  display:grid;
+    gap:72px;
 
-  grid-template-columns:1.15fr .85fr;
-
-  gap:80px;
-
-  align-items:center;
+    align-items:start;
 
 }
 
 .about-content{
 
-  max-width:720px;
+    max-width:720px;
 
 }
 
 .section-tag{
 
-  display:inline-flex;
+    display:inline-block;
 
-  align-items:center;
+    margin-bottom:22px;
 
-  padding:10px 18px;
+    color:#C89B3C;
 
-  border-radius:999px;
+    font-size:.82rem;
 
-  background:#FFFFFF;
+    font-weight:700;
 
-  border:1px solid rgba(14,58,93,.08);
+    letter-spacing:.18em;
 
-  box-shadow:0 14px 35px rgba(0,0,0,.05);
-
-  font-size:.78rem;
-
-  font-weight:800;
-
-  letter-spacing:.14em;
-
-  text-transform:uppercase;
-
-  color:#0E3A5D;
-
-  margin-bottom:24px;
+    text-transform:uppercase;
 
 }
 
 .about-content h2{
 
-  font-size:clamp(2.8rem,5vw,4.2rem);
+    margin-bottom:28px;
 
-  line-height:1.08;
-
-  font-weight:800;
-
-  color:#16324A;
-
-  margin-bottom:28px;
+    color:#08295E;
 
 }
 
 .about-content p{
 
-  margin-bottom:22px;
+    margin-bottom:22px;
 
-  font-size:1.08rem;
+    font-size:1.05rem;
 
-  line-height:1.95;
-
-  color:#66707C;
+    line-height:1.9;
 
 }
 
 .stats-grid{
 
-  display:grid;
+    display:grid;
 
-  grid-template-columns:repeat(2,1fr);
+    grid-template-columns:repeat(2,1fr);
 
-  gap:18px;
+    gap:18px;
 
-  margin-top:42px;
+    margin-top:42px;
 
 }
 
 .stat-card{
 
-  padding:28px;
+    padding:28px;
 
-  border-radius:22px;
+    background:#F8FAFC;
 
-  background:#F8FAFC;
+    border:1px solid #E5E7EB;
 
-  border:1px solid rgba(14,58,93,.08);
+    border-radius:18px;
+
+    transition:
+
+        border-color .25s ease,
+
+        box-shadow .25s ease;
+
+}
+
+.stat-card:hover{
+
+    border-color:#C89B3C;
+
+    box-shadow:0 10px 28px rgba(8,41,94,.08);
 
 }
 
 .stat-card strong{
 
-  display:block;
+    display:block;
 
-  margin-bottom:8px;
+    margin-bottom:8px;
 
-  font-size:1.4rem;
+    font-size:1.3rem;
 
-  font-weight:800;
-
-  color:#0E3A5D;
+    color:#08295E;
 
 }
 
 .stat-card span{
 
-  color:#66707C;
+    color:#6B7280;
 
-  font-weight:600;
+    font-weight:500;
 
 }
 
 .about-card{
 
-  position:relative;
+    padding:44px;
 
-  overflow:hidden;
+    background:#08295E;
 
-  padding:44px;
+    color:#FFFFFF;
 
-  border-radius:30px;
+    border-radius:24px;
 
-  background:
-
-    linear-gradient(
-      135deg,
-      #0E3A5D,
-      #184F7C
-    );
-
-  color:#FFFFFF;
-
-  box-shadow:0 35px 90px rgba(14,58,93,.18);
+    box-shadow:0 24px 60px rgba(8,41,94,.16);
 
 }
 
-.about-card::before{
+.card-top{
 
-  content:"";
-
-  position:absolute;
-
-  top:-120px;
-
-  right:-120px;
-
-  width:280px;
-
-  height:280px;
-
-  border-radius:50%;
-
-  background:
-
-    radial-gradient(
-      circle,
-      rgba(255,255,255,.10),
-      transparent 72%
-    );
-
-}
-
-.card-top,
-.mission-list{
-
-  position:relative;
-
-  z-index:2;
+    margin-bottom:36px;
 
 }
 
 .card-top h3{
 
-  margin-bottom:18px;
+    color:#FFFFFF;
 
-  font-size:2rem;
-
-  font-weight:800;
+    margin-bottom:18px;
 
 }
 
 .card-top p{
 
-  margin-bottom:34px;
+    color:rgba(255,255,255,.88);
 
-  line-height:1.9;
-
-  color:rgba(255,255,255,.84);
+    line-height:1.9;
 
 }
 
 .mission-list{
 
-  display:grid;
+    display:flex;
 
-  gap:26px;
+    flex-direction:column;
+
+    gap:28px;
 
 }
 
 .mission-list div{
 
-  padding-top:24px;
+    padding-top:24px;
 
-  border-top:1px solid rgba(255,255,255,.16);
+    border-top:1px solid rgba(255,255,255,.18);
 
 }
 
 .mission-list div:first-child{
 
-  border-top:none;
+    border-top:none;
 
-  padding-top:0;
+    padding-top:0;
 
 }
 
 .mission-list strong{
 
-  display:block;
+    display:block;
 
-  margin-bottom:8px;
+    margin-bottom:8px;
 
-  font-size:1.15rem;
+    color:#FFFFFF;
 
 }
 
 .mission-list span{
 
-  line-height:1.8;
+    color:rgba(255,255,255,.82);
 
-  color:rgba(255,255,255,.80);
+    line-height:1.8;
 
 }
-
 .values{
 
-  padding:130px 0;
+    padding:120px 0;
 
-  background:linear-gradient(
-    180deg,
-    #F8FAFC,
-    #FFFFFF
-  );
+    background:#F8FAFC;
 
 }
 
 .section-header{
 
-  max-width:760px;
+    max-width:760px;
 
-  margin:0 auto 80px;
+    margin:0 auto 72px;
 
-  text-align:center;
+    text-align:center;
 
 }
 
 .section-header span{
 
-  display:inline-flex;
+    display:inline-block;
 
-  align-items:center;
+    margin-bottom:20px;
 
-  padding:10px 18px;
+    color:#C89B3C;
 
-  border-radius:999px;
+    font-size:.82rem;
 
-  background:#FFFFFF;
+    font-weight:700;
 
-  border:1px solid rgba(14,58,93,.08);
+    letter-spacing:.18em;
 
-  font-size:.78rem;
-
-  font-weight:800;
-
-  letter-spacing:.14em;
-
-  text-transform:uppercase;
-
-  color:#0E3A5D;
-
-  margin-bottom:24px;
+    text-transform:uppercase;
 
 }
 
 .section-header h2{
 
-  font-size:clamp(2.7rem,5vw,4rem);
+    margin-bottom:24px;
 
-  line-height:1.08;
-
-  font-weight:800;
-
-  color:#16324A;
-
-  margin-bottom:24px;
+    color:#08295E;
 
 }
 
 .section-header p{
 
-  max-width:680px;
+    max-width:680px;
 
-  margin:0 auto;
+    margin:0 auto;
 
-  color:#66707C;
-
-  line-height:1.9;
+    line-height:1.9;
 
 }
 
 .values-grid{
 
-  display:grid;
+    display:grid;
 
-  grid-template-columns:repeat(2,1fr);
+    grid-template-columns:repeat(2,1fr);
 
-  gap:30px;
+    gap:28px;
 
 }
 
 .value-card{
 
-  position:relative;
+    background:#FFFFFF;
 
-  overflow:hidden;
+    border:1px solid #E5E7EB;
 
-  padding:38px;
+    border-radius:20px;
 
-  background:#FFFFFF;
+    padding:36px;
 
-  border-radius:24px;
+    transition:
 
-  border:1px solid rgba(14,58,93,.08);
+        border-color .25s ease,
 
-  box-shadow:0 18px 45px rgba(14,58,93,.06);
-
-  transition:
-    transform .35s ease,
-    box-shadow .35s ease,
-    border-color .35s ease;
-
-}
-
-.value-card::before{
-
-  content:"";
-
-  position:absolute;
-
-  left:0;
-
-  top:0;
-
-  width:100%;
-
-  height:5px;
-
-  background:linear-gradient(
-    90deg,
-    #0E3A5D,
-    #C6A15B
-  );
+        box-shadow .25s ease;
 
 }
 
 .value-card:hover{
 
-  transform:translateY(-10px);
+    border-color:#C89B3C;
 
-  border-color:rgba(198,161,91,.30);
-
-  box-shadow:0 34px 80px rgba(14,58,93,.14);
+    box-shadow:0 12px 30px rgba(8,41,94,.08);
 
 }
 
-.value-icon{
+.value-accent{
 
-  display:flex;
+    width:56px;
 
-  align-items:center;
+    height:4px;
 
-  justify-content:center;
+    border-radius:999px;
 
-  width:72px;
+    background:#C89B3C;
 
-  height:72px;
-
-  margin-bottom:24px;
-
-  border-radius:20px;
-
-  background:linear-gradient(
-    135deg,
-    #0E3A5D,
-    #1B5B8C
-  );
-
-  color:#FFFFFF;
-
-  font-size:2rem;
-
-  box-shadow:0 18px 45px rgba(14,58,93,.22);
+    margin-bottom:24px;
 
 }
 
 .value-card h3{
 
-  margin-bottom:18px;
+    margin-bottom:18px;
 
-  font-size:1.45rem;
-
-  font-weight:800;
-
-  line-height:1.3;
-
-  color:#16324A;
+    color:#08295E;
 
 }
 
 .value-card p{
 
-  margin:0;
+    margin:0;
 
-  line-height:1.9;
-
-  color:#66707C;
+    line-height:1.8;
 
 }
 
-@media (max-width:1100px){
+@media (max-width:1024px){
 
-  .about-grid{
+    .about-grid{
 
-    grid-template-columns:1fr;
+        grid-template-columns:1fr;
 
-    gap:60px;
+        gap:56px;
 
-  }
+    }
 
-  .about-content{
+    .about-card{
 
-    max-width:100%;
+        max-width:760px;
 
-  }
-
-  .about-card{
-
-    max-width:760px;
-
-    margin:0 auto;
-
-  }
+    }
 
 }
 
 @media (max-width:768px){
 
-  .about-story,
+    .about-story,
 
-  .values{
+    .values{
 
-    padding:90px 0;
+        padding:90px 0;
 
-  }
+    }
 
-  .about-content h2,
+    .stats-grid,
 
-  .section-header h2{
+    .values-grid{
 
-    font-size:2.5rem;
+        grid-template-columns:1fr;
 
-  }
+    }
 
-  .about-content p,
+    .about-card{
 
-  .section-header p{
+        padding:36px;
 
-    font-size:1rem;
-
-  }
-
-  .stats-grid{
-
-    grid-template-columns:1fr;
-
-  }
-
-  .values-grid{
-
-    grid-template-columns:1fr;
-
-    gap:24px;
-
-  }
-
-  .about-card{
-
-    padding:34px;
-
-  }
-
-  .value-card{
-
-    padding:32px;
-
-  }
+    }
 
 }
 
 @media (max-width:480px){
 
-  .about-story,
+    .about-story,
 
-  .values{
+    .values{
 
-    padding:80px 0;
+        padding:72px 0;
 
-  }
+    }
 
-  .section-tag,
+    .about-card{
 
-  .section-header span{
+        padding:28px;
 
-    font-size:.68rem;
+        border-radius:20px;
 
-    padding:8px 14px;
+    }
 
-  }
+    .value-card{
 
-  .about-content h2,
+        padding:28px;
 
-  .section-header h2{
-
-    font-size:2rem;
-
-  }
-
-  .about-card{
-
-    padding:28px;
-
-    border-radius:24px;
-
-  }
-
-  .card-top h3{
-
-    font-size:1.7rem;
-
-  }
-
-  .stat-card{
-
-    padding:22px;
-
-  }
-
-  .value-card{
-
-    padding:28px;
-
-    border-radius:20px;
-
-  }
-
-  .value-icon{
-
-    width:60px;
-
-    height:60px;
-
-    border-radius:18px;
-
-    font-size:1.7rem;
-
-  }
-
-  .value-card h3{
-
-    font-size:1.3rem;
-
-  }
+    }
 
 }
-
 </style>
 
 </Layout>
+

@@ -1,4 +1,6 @@
 ---
+import "../styles/base/global.css";
+
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
@@ -21,7 +23,6 @@ const {
 const siteUrl = "https://www.midraengineering.com";
 
 const canonicalUrl = new URL(canonical, siteUrl).toString();
-
 const ogImage = new URL(image, siteUrl).toString();
 
 const robots = noindex
@@ -35,7 +36,7 @@ const organizationSchema = {
   name: "MIDRA Engineering",
   alternateName: "MIDRA Engineering LLC",
   url: siteUrl,
-  logo: `${siteUrl}/Final_Midra_Logo_Transparent.png`,
+  logo: `${siteUrl}/images/branding/midra-logo.png`,
   image: ogImage,
   description,
   telephone: "+1-732-555-5555",
@@ -57,11 +58,10 @@ const organizationSchema = {
   serviceType: [
     "Civil Engineering",
     "Residential Engineering",
-    "Commercial Engineering",
-    "Municipal Engineering",
+    "Commercial Development",
     "Stormwater Management",
+    "Municipal Infrastructure",
     "Land Development",
-    "Site Planning",
     "Construction Support"
   ],
 
@@ -106,7 +106,7 @@ const websiteSchema = {
 
 <meta
   name="theme-color"
-  content="#0E3A5D"
+  content="#08295E"
 />
 
 <meta
@@ -135,7 +135,6 @@ const websiteSchema = {
   rel="canonical"
   href={canonicalUrl}
 />
-
 <link
   rel="icon"
   href="/favicon.ico"
@@ -197,9 +196,14 @@ const websiteSchema = {
 />
 
 <link
+  href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap"
+  rel="stylesheet"
+/>
+
+<link
   rel="preload"
   as="image"
-  href="/Final_Midra_Logo_Transparent.png"
+  href="/images/branding/midra-logo.png"
   fetchpriority="high"
 />
 
@@ -287,7 +291,6 @@ const websiteSchema = {
   type="application/ld+json"
   set:html={JSON.stringify(websiteSchema)}
 />
-
 <!-- Google tag (gtag.js) -->
 
 <script
@@ -340,312 +343,3 @@ const websiteSchema = {
 </body>
 
 </html>
-
-<style is:global>
-
-:root{
-
-  --primary:#0E3A5D;
-
-  --primary-light:#174D79;
-
-  --secondary:#C6A15B;
-
-  --dark:#16324A;
-
-  --text:#66707C;
-
-  --background:#F8FAFC;
-
-  --white:#FFFFFF;
-
-  --border:#E8EDF2;
-
-  --container:1280px;
-
-  --radius:24px;
-
-  --transition:.35s ease;
-
-  --shadow-sm:0 8px 24px rgba(14,58,93,.06);
-
-  --shadow-md:0 18px 45px rgba(14,58,93,.10);
-
-  --shadow-lg:0 32px 80px rgba(14,58,93,.16);
-
-}
-
-*,
-*::before,
-*::after{
-
-  margin:0;
-
-  padding:0;
-
-  box-sizing:border-box;
-
-}
-
-html{
-
-  scroll-behavior:smooth;
-
-  scroll-padding-top:104px;
-
-  -webkit-text-size-adjust:100%;
-
-}
-body{
-
-  font-family:"Inter",sans-serif;
-
-  font-size:16px;
-
-  line-height:1.6;
-
-  color:var(--dark);
-
-  background:var(--white);
-
-  text-rendering:optimizeLegibility;
-
-  -webkit-font-smoothing:antialiased;
-
-  -moz-osx-font-smoothing:grayscale;
-
-  overflow-x:hidden;
-
-  min-height:100vh;
-
-}
-
-main{
-
-  display:block;
-
-  min-height:60vh;
-
-}
-
-img{
-
-  display:block;
-
-  max-width:100%;
-
-  height:auto;
-
-  border:0;
-
-  user-select:none;
-
-  -webkit-user-drag:none;
-
-}
-
-picture{
-
-  display:block;
-
-}
-
-svg{
-
-  display:block;
-
-}
-
-a{
-
-  color:inherit;
-
-  text-decoration:none;
-
-}
-
-button,
-input,
-textarea,
-select{
-
-  font:inherit;
-
-}
-
-button{
-
-  cursor:pointer;
-
-  border:none;
-
-  background:none;
-
-}
-
-.container{
-
-  width:min(100% - 48px,var(--container));
-
-  margin-inline:auto;
-
-}
-
-section{
-
-  position:relative;
-
-}
-
-::selection{
-
-  background:var(--primary);
-
-  color:#fff;
-
-}
-
-:focus-visible{
-
-  outline:3px solid var(--secondary);
-
-  outline-offset:3px;
-
-  border-radius:6px;
-
-}
-
-.skip-link{
-
-  position:absolute;
-
-  left:-9999px;
-
-  top:12px;
-
-  z-index:99999;
-
-  padding:12px 18px;
-
-  background:var(--primary);
-
-  color:#fff;
-
-  font-weight:700;
-
-  border-radius:10px;
-
-}
-
-.skip-link:focus{
-
-  left:12px;
-
-}
-
-html:focus-within{
-
-  scroll-behavior:smooth;
-
-}
-
-body,
-main,
-header,
-footer{
-
-  position:relative;
-
-}
-
-/* Improve rendering consistency */
-
-img,
-svg{
-
-  backface-visibility:hidden;
-
-  transform:translateZ(0);
-
-}
-
-/* Prevent horizontal overflow */
-
-body{
-
-  overflow-x:hidden;
-
-}
-
-/* Better tap targets on touch devices */
-
-@media (pointer:coarse){
-
-  button,
-  a{
-
-    min-height:44px;
-
-  }
-
-}
-@media (prefers-reduced-motion:reduce){
-
-  html{
-
-    scroll-behavior:auto;
-
-  }
-
-  *,
-  *::before,
-  *::after{
-
-    animation:none !important;
-
-    transition:none !important;
-
-    scroll-behavior:auto !important;
-
-  }
-
-}
-
-@media (max-width:768px){
-
-  .container{
-
-    width:min(100% - 32px,var(--container));
-
-  }
-
-  html{
-
-    scroll-padding-top:88px;
-
-  }
-
-  body{
-
-    font-size:15px;
-
-  }
-
-}
-
-@media (max-width:480px){
-
-  .container{
-
-    width:min(100% - 24px,var(--container));
-
-  }
-
-  html{
-
-    scroll-padding-top:80px;
-
-  }
-
-}
-</style>

@@ -1,26 +1,23 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import PageHero from "../components/PageHero.astro";
+import PageHero from "../components/InnerPageHero.astro";
 
 const contactInfo = [
 
   {
-    icon: "✉️",
     title: "Email",
     value: "info@midraengineering.com",
     href: "mailto:info@midraengineering.com"
   },
 
   {
-    icon: "📞",
     title: "Phone",
     value: "(732) 555-5555",
     href: "tel:+17325555555"
   },
 
   {
-    icon: "📍",
-    title: "Location",
+    title: "Office",
     value: "New Jersey",
     href: null
   }
@@ -42,267 +39,261 @@ const socialLinks = [
   {
     name: "LinkedIn",
     url: "https://linkedin.com/company/midraengineering"
+  },
+
+  {
+    name: "X",
+    url: "https://x.com/midraengineering"
   }
 
 ];
 ---
 
 <Layout
-  title="Contact MIDRA Engineering | Civil Engineering in New Jersey"
-  description="Contact MIDRA Engineering to discuss residential, commercial, municipal, stormwater, and land development engineering projects throughout New Jersey."
+  title="Contact MIDRA Engineering"
+  description="Contact MIDRA Engineering to discuss residential, commercial, municipal, stormwater and land development engineering projects."
 >
 
 <PageHero
-  title="Contact Us"
-  subtitle="Let's discuss your project and determine the best engineering solution."
+  title="Contact MIDRA Engineering"
+  subtitle="We look forward to learning about your project and discussing practical engineering solutions."
 />
 
 <section class="contact-page">
 
-  <div class="background-grid"></div>
+<div class="container">
 
-  <div class="background-glow"></div>
+<div class="contact-grid">
 
-  <div class="container">
+<div class="contact-content">
 
-    <div class="contact-grid">
+<span class="section-tag">
 
-      <div class="contact-content">
+GET IN TOUCH
 
-        <span class="section-tag">
+</span>
 
-          GET IN TOUCH
+<h2>
 
-        </span>
+Let's Discuss
+Your Next
+Project
 
-        <h2>
+</h2>
 
-          Let's Build
-          Something Great
-          Together.
+<p>
 
-        </h2>
+Whether you're planning a residential,
+commercial, municipal or land development
+project, MIDRA Engineering is ready to provide
+practical engineering guidance from concept
+through construction.
 
-        <p>
+</p>
 
-          Whether you're planning a residential development,
-          commercial property, subdivision, stormwater
-          improvements, or municipal infrastructure project,
-          our experienced engineering team is ready to help
-          bring your vision to life.
+<div class="contact-cards">
 
-        </p>
+{
 
-        <div class="contact-cards">
+contactInfo.map((item) => (
 
-          {
+<div class="contact-card">
 
-            contactInfo.map((item) => (
+<div class="contact-accent"></div>
 
-              <div class="contact-card">
+<div>
 
-                <div class="contact-icon">
+<h3>
 
-                  {item.icon}
+{item.title}
 
-                </div>
+</h3>
 
-                <div>
+{
 
-                  <h3>
+item.href ? (
 
-                    {item.title}
+<a href={item.href}>
 
-                  </h3>
+{item.value}
 
-                  {
+</a>
 
-                    item.href ? (
+) : (
 
-                      <a href={item.href}>
+<p>
 
-                        {item.value}
+{item.value}
 
-                      </a>
+</p>
 
-                    ) : (
+)
 
-                      <p>
+}
 
-                        {item.value}
+</div>
 
-                      </p>
+</div>
 
-                    )
+))
 
-                  }
+}
 
-                </div>
+<div class="contact-card">
 
-              </div>
+<div class="contact-accent"></div>
 
-            ))
+<div>
 
-          }
+<h3>
 
-          <div class="contact-card">
+Connect With Us
 
-            <div class="contact-icon">
+</h3>
 
-              🌐
+<div class="social-links">
 
-            </div>
+{
 
-            <div>
+socialLinks.map((social) => (
 
-              <h3>
+<a
+href={social.url}
+target="_blank"
+rel="noopener noreferrer"
+>
 
-                Follow Us
+{social.name}
 
-              </h3>
+</a>
 
-              <div class="social-links">
+))
 
-                {
+}
 
-                  socialLinks.map((social) => (
+</div>
 
-                    <a
-                      href={social.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+</div>
 
-                      {social.name}
+</div>
 
-                    </a>
+</div>
 
-                  ))
+</div>
 
-                }
+<div class="contact-form-card">
+<h3>
 
-              </div>
+Request a Proposal
 
-            </div>
+</h3>
 
-          </div>
+<p class="form-intro">
 
-        </div>
+Tell us about your project and a member of our team
+will contact you as soon as possible.
 
-      </div>
+</p>
 
-      <div class="contact-form-card">
+<form
+  id="contact-form"
+  action="https://formspree.io/f/mykrlepz"
+  method="POST"
+>
 
-        <h3>
+<input
+  type="hidden"
+  name="_subject"
+  value="New MIDRA Engineering Website Inquiry"
+/>
 
-          Request a Proposal
+<input
+  type="text"
+  name="_gotcha"
+  tabindex="-1"
+  autocomplete="off"
+  style="display:none"
+/>
 
-        </h3>
+<div class="form-grid">
 
-        <p class="form-intro">
+<input
+  type="text"
+  name="name"
+  placeholder="Full Name"
+  autocomplete="name"
+  required
+/>
 
-          Tell us a little about your project and we'll
-          get back to you as soon as possible.
+<input
+  type="email"
+  name="email"
+  placeholder="Email Address"
+  autocomplete="email"
+  required
+/>
 
-        </p>
+<input
+  type="tel"
+  name="phone"
+  placeholder="Phone Number"
+  autocomplete="tel"
+/>
 
-        <form
-          id="contact-form"
-          action="https://formspree.io/f/mykrlepz"
-          method="POST"
-        >
+<input
+  type="text"
+  name="location"
+  placeholder="Project Location"
+  autocomplete="address-level2"
+/>
 
-          <input
-            type="hidden"
-            name="_subject"
-            value="New MIDRA Engineering Website Inquiry"
-          />
+<textarea
+  name="message"
+  rows="6"
+  placeholder="Please describe your project..."
+  required
+></textarea>
 
-          <input
-            type="text"
-            name="_gotcha"
-            tabindex="-1"
-            autocomplete="off"
-            style="display:none"
-          />
+<button
+  id="submit-button"
+  type="submit"
+>
 
-          <div class="form-grid">
+Request Proposal
 
-            <input
-              type="text"
-              name="name"
-              placeholder="Full Name"
-              autocomplete="name"
-              required
-            />
+</button>
 
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              autocomplete="email"
-              required
-            />
+<p
+  id="form-success"
+  class="form-message success"
+  hidden
+>
 
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Phone Number"
-              autocomplete="tel"
-            />
+Thank you. Your message has been received.
+A member of MIDRA Engineering will contact you soon.
 
-            <input
-              type="text"
-              name="location"
-              placeholder="Project Location"
-              autocomplete="address-level2"
-            />
+</p>
 
-            <textarea
-              name="message"
-              rows="6"
-              placeholder="Tell us about your project..."
-              required
-            ></textarea>
+<p
+  id="form-error"
+  class="form-message error"
+  hidden
+>
 
-            <button
-              id="submit-button"
-              type="submit"
-            >
+We were unable to send your message.
+Please try again or contact us directly.
 
-              Send Message
+</p>
 
-            </button>
+</div>
 
-            <p
-              id="form-success"
-              class="form-message success"
-              hidden
-            >
+</form>
 
-              ✅ Thank you! Your message has been sent successfully. We'll get back to you as soon as possible.
+</div>
 
-            </p>
+</div>
 
-            <p
-              id="form-error"
-              class="form-message error"
-              hidden
-            >
-
-              Sorry, something went wrong. Please try again.
-
-            </p>
-
-          </div>
-
-        </form>
-
-      </div>
-
-    </div>
-
-  </div>
+</div>
 
 </section>
 
@@ -310,459 +301,295 @@ const socialLinks = [
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  const form = document.getElementById("contact-form");
-  const submitButton = document.getElementById("submit-button");
-  const successMessage = document.getElementById("form-success");
-  const errorMessage = document.getElementById("form-error");
+const form = document.getElementById("contact-form");
+const submitButton = document.getElementById("submit-button");
+const successMessage = document.getElementById("form-success");
+const errorMessage = document.getElementById("form-error");
 
-  if (!form) return;
+if (!form) return;
 
-  form.addEventListener("submit", async (event) => {
+form.addEventListener("submit", async (event) => {
 
-    event.preventDefault();
+event.preventDefault();
 
-    successMessage.hidden = true;
-    errorMessage.hidden = true;
+successMessage.hidden = true;
+errorMessage.hidden = true;
 
-    submitButton.disabled = true;
-    submitButton.textContent = "Sending...";
+submitButton.disabled = true;
+submitButton.textContent = "Sending...";
 
-    const formData = new FormData(form);
+const formData = new FormData(form);
 
-    try {
+try {
 
-      const response = await fetch(form.action, {
+const response = await fetch(form.action, {
 
-        method: "POST",
+method: "POST",
 
-        body: formData,
+body: formData,
 
-        headers: {
+headers: {
 
-          Accept: "application/json"
+Accept: "application/json"
 
-        }
+}
 
-      });
+});
 
-      if (response.ok) {
+if (response.ok) {
 
-        form.reset();
+form.reset();
 
-        successMessage.hidden = false;
+successMessage.hidden = false;
 
-      } else {
+} else {
 
-        errorMessage.hidden = false;
+errorMessage.hidden = false;
 
-      }
+}
 
-    } catch {
+} catch {
 
-      errorMessage.hidden = false;
+errorMessage.hidden = false;
 
-    }
+}
 
-    submitButton.disabled = false;
+submitButton.disabled = false;
 
-    submitButton.textContent = "Send Message";
+submitButton.textContent = "Request Proposal";
 
-  });
+});
 
 });
 
 </script>
 
 <style>
-
 .contact-page{
 
-  position:relative;
+    padding:120px 0;
 
-  overflow:hidden;
-
-  padding:130px 0;
-
-  background:
-
-    linear-gradient(
-      180deg,
-      #F8FAFC,
-      #FFFFFF
-    );
-
-}
-
-.background-grid{
-
-  position:absolute;
-
-  inset:0;
-
-  opacity:.18;
-
-  background-image:
-
-    linear-gradient(
-      rgba(14,58,93,.05) 1px,
-      transparent 1px
-    ),
-
-    linear-gradient(
-      90deg,
-      rgba(14,58,93,.05) 1px,
-      transparent 1px
-    );
-
-  background-size:60px 60px;
-
-  pointer-events:none;
-
-}
-
-.background-glow{
-
-  position:absolute;
-
-  left:-250px;
-
-  bottom:-220px;
-
-  width:650px;
-
-  height:650px;
-
-  border-radius:50%;
-
-  background:
-
-    radial-gradient(
-      circle,
-      rgba(198,161,91,.10),
-      transparent 72%
-    );
-
-  pointer-events:none;
+    background:#FFFFFF;
 
 }
 
 .contact-grid{
 
-  position:relative;
+    display:grid;
 
-  z-index:2;
+    grid-template-columns:1fr 1fr;
 
-  display:grid;
+    gap:64px;
 
-  grid-template-columns:1fr 1fr;
-
-  gap:70px;
-
-  align-items:start;
+    align-items:start;
 
 }
 
 .section-tag{
 
-  display:inline-flex;
+    display:inline-block;
 
-  align-items:center;
+    margin-bottom:20px;
 
-  padding:10px 18px;
+    color:#C89B3C;
 
-  background:#FFFFFF;
+    font-size:.82rem;
 
-  border:1px solid rgba(14,58,93,.08);
+    font-weight:700;
 
-  border-radius:999px;
+    letter-spacing:.18em;
 
-  font-size:.78rem;
-
-  font-weight:800;
-
-  letter-spacing:.14em;
-
-  text-transform:uppercase;
-
-  color:#0E3A5D;
-
-  margin-bottom:24px;
-
-  box-shadow:
-
-    0 14px 35px rgba(0,0,0,.05);
+    text-transform:uppercase;
 
 }
 
 .contact-content h2{
 
-  margin:0 0 24px;
+    margin-bottom:24px;
 
-  font-size:clamp(2.8rem,5vw,4.2rem);
-
-  line-height:1.06;
-
-  font-weight:800;
-
-  letter-spacing:-.03em;
-
-  color:#16324A;
-
-  text-wrap:balance;
+    color:#08295E;
 
 }
 
-.contact-content p{
+.contact-content > p{
 
-  margin:0 0 42px;
+    margin-bottom:40px;
 
-  max-width:620px;
-
-  font-size:1.08rem;
-
-  line-height:1.95;
-
-  color:#66707C;
+    line-height:1.9;
 
 }
 
 .contact-cards{
 
-  display:grid;
+    display:grid;
 
-  gap:22px;
+    gap:18px;
 
 }
 
 .contact-card{
 
-  display:flex;
+    display:flex;
 
-  align-items:flex-start;
+    gap:20px;
 
-  gap:20px;
+    align-items:flex-start;
 
-  padding:30px;
+    padding:28px;
 
-  background:#FFFFFF;
+    background:#FFFFFF;
 
-  border-radius:22px;
+    border:1px solid #E5E7EB;
 
-  border:1px solid #EEF2F6;
+    border-radius:18px;
 
-  box-shadow:
+    transition:
 
-    0 16px 40px rgba(15,58,93,.06);
+        border-color .25s ease,
 
-  transition:
-
-    transform .35s ease,
-    border-color .35s ease,
-    box-shadow .35s ease;
+        box-shadow .25s ease;
 
 }
 
 .contact-card:hover{
 
-  transform:translateY(-6px);
+    border-color:#C89B3C;
 
-  border-color:rgba(198,161,91,.30);
-
-  box-shadow:
-
-    0 26px 60px rgba(15,58,93,.12);
+    box-shadow:0 10px 24px rgba(8,41,94,.08);
 
 }
 
-.contact-icon{
+.contact-accent{
 
-  display:flex;
+    width:4px;
 
-  align-items:center;
+    min-width:4px;
 
-  justify-content:center;
+    align-self:stretch;
 
-  width:58px;
+    border-radius:999px;
 
-  height:58px;
-
-  flex-shrink:0;
-
-  border-radius:16px;
-
-  background:
-
-    linear-gradient(
-      135deg,
-      rgba(14,58,93,.08),
-      rgba(198,161,91,.12)
-    );
-
-  font-size:1.5rem;
+    background:#C89B3C;
 
 }
 
 .contact-card h3{
 
-  margin:0 0 10px;
+    margin-bottom:10px;
 
-  font-size:1.15rem;
-
-  font-weight:800;
-
-  color:#16324A;
+    color:#08295E;
 
 }
 
-.contact-card a,
+.contact-card a{
 
-.contact-card p{
+    color:#374151;
 
-  margin:0;
-
-  color:#66707C;
-
-  text-decoration:none;
-
-  line-height:1.8;
-
-  transition:color .3s ease;
+    text-decoration:none;
 
 }
 
 .contact-card a:hover{
 
-  color:#0E3A5D;
+    color:#08295E;
+
+}
+
+.contact-card p{
+
+    margin:0;
 
 }
 
 .social-links{
 
-  display:flex;
+    display:flex;
 
-  flex-wrap:wrap;
+    flex-wrap:wrap;
 
-  gap:10px;
+    gap:10px;
 
-  margin-top:8px;
+    margin-top:10px;
 
 }
 
 .social-links a{
 
-  display:inline-flex;
+    display:inline-flex;
 
-  align-items:center;
+    align-items:center;
 
-  justify-content:center;
+    justify-content:center;
 
-  padding:8px 14px;
+    padding:8px 14px;
 
-  border-radius:999px;
+    border:1px solid #E5E7EB;
 
-  background:#F8FAFC;
+    border-radius:999px;
 
-  border:1px solid #E2E8F0;
+    color:#08295E;
 
-  color:#0E3A5D;
+    font-size:.9rem;
 
-  font-size:.9rem;
+    font-weight:600;
 
-  font-weight:700;
+    transition:
 
-  text-decoration:none;
+        border-color .25s ease,
 
-  transition:
+        background-color .25s ease,
 
-    background .3s ease,
-    color .3s ease,
-    transform .3s ease;
+        color .25s ease;
 
 }
 
 .social-links a:hover{
 
-  background:#0E3A5D;
+    background:#08295E;
 
-  color:#FFFFFF;
+    border-color:#08295E;
 
-  transform:translateY(-2px);
+    color:#FFFFFF;
 
 }
 
 .contact-form-card{
 
-  position:relative;
+    padding:40px;
 
-  overflow:hidden;
+    background:#FFFFFF;
 
-  padding:42px;
+    border:1px solid #E5E7EB;
 
-  background:#FFFFFF;
+    border-radius:20px;
 
-  border-radius:28px;
-
-  border:1px solid #EEF2F6;
-
-  box-shadow:
-
-    0 22px 60px rgba(15,58,93,.08);
-
-}
-
-.contact-form-card::before{
-
-  content:"";
-
-  position:absolute;
-
-  top:0;
-
-  left:0;
-
-  width:100%;
-
-  height:5px;
-
-  background:
-
-    linear-gradient(
-      90deg,
-      #0E3A5D,
-      #C6A15B
-    );
+    box-shadow:0 12px 30px rgba(8,41,94,.08);
 
 }
 
 .contact-form-card h3{
 
-  margin:0 0 12px;
+    margin-bottom:12px;
 
-  font-size:2rem;
-
-  font-weight:800;
-
-  color:#16324A;
+    color:#08295E;
 
 }
 
 .form-intro{
 
-  margin:0 0 30px !important;
+    margin-bottom:28px;
 
-  color:#66707C;
-
-  line-height:1.8;
+    line-height:1.8;
 
 }
 
 .form-grid{
 
-  display:grid;
+    display:grid;
 
-  grid-template-columns:1fr 1fr;
+    grid-template-columns:repeat(2,1fr);
 
-  gap:20px;
+    gap:18px;
 
 }
 
@@ -770,35 +597,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
 .form-grid textarea{
 
-  width:100%;
+    width:100%;
 
-  padding:16px 18px;
+    padding:16px;
 
-  border:1px solid #DCE7F0;
+    border:1px solid #D1D5DB;
 
-  border-radius:14px;
+    border-radius:12px;
 
-  background:#FBFCFD;
+    background:#FFFFFF;
 
-  font:inherit;
+    font:inherit;
 
-  box-sizing:border-box;
+    transition:
 
-  transition:
+        border-color .25s ease,
 
-    border-color .3s ease,
-    background .3s ease,
-    box-shadow .3s ease;
+        box-shadow .25s ease;
 
 }
 
 .form-grid textarea{
 
-  grid-column:1 / -1;
+    grid-column:1/-1;
 
-  min-height:180px;
+    resize:vertical;
 
-  resize:vertical;
+    min-height:180px;
 
 }
 
@@ -806,258 +631,184 @@ document.addEventListener("DOMContentLoaded", () => {
 
 .form-grid textarea:focus{
 
-  outline:none;
+    outline:none;
 
-  background:#FFFFFF;
+    border-color:#08295E;
 
-  border-color:#0E3A5D;
-
-  box-shadow:
-
-    0 0 0 4px rgba(14,58,93,.08);
+    box-shadow:0 0 0 3px rgba(8,41,94,.08);
 
 }
 
 .form-grid button{
 
-  grid-column:1 / -1;
+    grid-column:1/-1;
 
-  display:inline-flex;
+    min-height:52px;
 
-  align-items:center;
+    border:none;
 
-  justify-content:center;
+    border-radius:999px;
 
-  padding:18px;
+    background:#08295E;
 
-  border:none;
+    color:#FFFFFF;
 
-  border-radius:999px;
+    font-weight:600;
 
-  background:#0E3A5D;
+    transition:
 
-  color:#FFFFFF;
+        background-color .25s ease,
 
-  font-size:1rem;
-
-  font-weight:700;
-
-  cursor:pointer;
-
-  transition:
-
-    background .3s ease,
-    transform .3s ease,
-    box-shadow .3s ease;
+        box-shadow .25s ease;
 
 }
 
 .form-grid button:hover{
 
-  background:#174D79;
+    background:#103A7A;
 
-  transform:translateY(-3px);
-
-  box-shadow:
-
-    0 18px 40px rgba(14,58,93,.18);
+    box-shadow:0 10px 24px rgba(8,41,94,.16);
 
 }
 
 .form-grid button:disabled{
 
-  opacity:.75;
+    opacity:.7;
 
-  cursor:not-allowed;
-
-  transform:none;
-
-  box-shadow:none;
+    cursor:not-allowed;
 
 }
-
 .form-message{
 
-  grid-column:1 / -1;
+    grid-column:1/-1;
 
-  margin:0;
+    margin:0;
 
-  padding:16px 20px;
+    padding:16px 18px;
 
-  border-radius:14px;
+    border-radius:12px;
 
-  font-size:.95rem;
+    font-size:.95rem;
 
-  font-weight:600;
-
-  line-height:1.6;
+    line-height:1.7;
 
 }
 
 .success{
 
-  background:#ECFDF3;
+    background:#F0FDF4;
 
-  border:1px solid #BBF7D0;
+    border:1px solid #BBF7D0;
 
-  color:#166534;
+    color:#166534;
 
 }
 
 .error{
 
-  background:#FEF2F2;
+    background:#FEF2F2;
 
-  border:1px solid #FECACA;
+    border:1px solid #FECACA;
 
-  color:#B91C1C;
+    color:#991B1B;
 
 }
 
 @media (max-width:1100px){
 
-  .contact-page{
+    .contact-grid{
 
-    padding:110px 0;
+        grid-template-columns:1fr;
 
-  }
+        gap:56px;
 
-  .contact-grid{
-
-    grid-template-columns:1fr;
-
-    gap:60px;
-
-  }
+    }
 
 }
 
 @media (max-width:768px){
 
-  .contact-page{
+    .contact-page{
 
-    padding:90px 0;
+        padding:90px 0;
 
-  }
+    }
 
-  .contact-content h2{
+    .contact-form-card{
 
-    font-size:2.5rem;
+        padding:32px;
 
-  }
+    }
 
-  .contact-content p{
+    .form-grid{
 
-    font-size:1rem;
+        grid-template-columns:1fr;
 
-  }
+    }
 
-  .contact-form-card{
+    .form-grid textarea,
 
-    padding:32px;
+    .form-grid button,
 
-    border-radius:24px;
+    .form-message{
 
-  }
+        grid-column:auto;
 
-  .form-grid{
-
-    grid-template-columns:1fr;
-
-  }
-
-  .form-grid textarea,
-
-  .form-grid button,
-
-  .form-message{
-
-    grid-column:auto;
-
-  }
+    }
 
 }
 
 @media (max-width:480px){
 
-  .contact-page{
+    .contact-page{
 
-    padding:80px 0;
+        padding:72px 0;
 
-  }
+    }
 
-  .section-tag{
+    .contact-card{
 
-    font-size:.68rem;
+        padding:22px;
 
-    padding:8px 14px;
+    }
 
-  }
+    .contact-form-card{
 
-  .contact-content h2{
+        padding:24px;
 
-    font-size:2rem;
+        border-radius:18px;
 
-  }
+    }
 
-  .contact-card{
+    .social-links{
 
-    flex-direction:column;
+        gap:8px;
 
-    align-items:flex-start;
+    }
 
-    padding:24px;
+    .social-links a{
 
-  }
+        width:100%;
 
-  .contact-icon{
+        justify-content:center;
 
-    width:52px;
+    }
 
-    height:52px;
+    .form-grid input,
 
-    font-size:1.35rem;
+    .form-grid textarea{
 
-  }
+        padding:14px;
 
-  .social-links{
+    }
 
-    gap:8px;
+    .form-grid button{
 
-  }
+        width:100%;
 
-  .social-links a{
-
-    width:100%;
-
-    justify-content:center;
-
-  }
-
-  .contact-form-card{
-
-    padding:24px;
-
-    border-radius:22px;
-
-  }
-
-  .contact-form-card h3{
-
-    font-size:1.75rem;
-
-  }
-
-  .form-grid input,
-
-  .form-grid textarea{
-
-    padding:14px 16px;
-
-  }
+    }
 
 }
-
 </style>
 
 </Layout>

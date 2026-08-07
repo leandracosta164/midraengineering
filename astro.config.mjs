@@ -1,5 +1,4 @@
 import { defineConfig } from "astro/config";
-
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
@@ -10,32 +9,25 @@ export default defineConfig({
 
   compressHTML: true,
 
+  devToolbar: {
+    enabled: false,
+  },
+
   integrations: [
-
     sitemap()
-
   ],
 
   image: {
-
     service: {
-
       entrypoint: "astro/assets/services/sharp"
-
     }
-
   },
 
   vite: {
-
     build: {
-
       cssMinify: true,
-
       assetsInlineLimit: 4096
-
     }
-
   }
 
 });
